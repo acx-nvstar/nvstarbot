@@ -923,6 +923,7 @@ def bot(op):
                 kc.findAndAddContactsByMid(midd)
                 kc.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Bot?"]:
+              if msg.from_ in admin:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
