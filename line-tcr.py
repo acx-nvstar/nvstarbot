@@ -35,7 +35,6 @@ helpMessage =""" NvStar BOT  􀔃􀄆red check mark􏿿
 [Set View] Cek Privasi Group
 [Open Url]  Membuka Url Group
 [Close Url] Menutup Url Group
-
 􀔃􀅕red arrow right􏿿 Command Private
 [Set group] Menggatur Privasi Grup
 [Banned @] Bann Target 
@@ -2261,13 +2260,13 @@ def bot(op):
                 kk.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
                 kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
             elif msg.text in ["#welcome"]:
-                ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
-                kk.sendText(msg.to,"Jangan nakal ok!")
+		if msg.from_ in admin:
+                	ki.sendText(msg.to,"Selamat datang di Official Group Anime Loverz")
+                	kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
-                ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
-                kc.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
+		if msg.from_ in admin:
+                	ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
 #-----------------------------------------------
 
        #-------------Fungsi Respon Start---------------------#
@@ -2287,7 +2286,8 @@ def bot(op):
                 ki.sendText(msg.to,"Admin List\n\n->Panpan\n->FT\n->Alfz~\n->[NvStar]Agy Pascha (Urgent WA +6283822526441)\n->Miocimiho\n\nThat's it\n\nIf there is any question please ask admin above by Private Message\n\nThank you")
 
             elif msg.text in ["Shut Down"]:
-                ki.sendText(msg.to,"Shutting Down...")
+		if msg.from_ in admin:
+                	ki.sendText(msg.to,"Shutting Down...")
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
@@ -2302,15 +2302,9 @@ def bot(op):
             elif msg.text in ["Ban"]:
                 wait["wblacklist"] = True
                 cl.sendText(msg.to,"send contact")
-                ki.sendText(msg.to,"send contact")
-                kk.sendText(msg.to,"send contact")
-                kc.sendText(msg.to,"send contact")
             elif msg.text in ["Unban"]:
                 wait["dblacklist"] = True
                 cl.sendText(msg.to,"send contact")
-                ki.sendText(msg.to,"send contact")
-                kk.sendText(msg.to,"send contact")
-                kc.sendText(msg.to,"send contact")
       #-------------Fungsi Banned Send Contact Finish------------------#
       
       #-------------Fungsi Bannlist Start------------------#          
@@ -2354,10 +2348,7 @@ def bot(op):
                         ki.kickoutFromGroup(msg.to,[jj])
                         kk.kickoutFromGroup(msg.to,[jj])
                         kc.kickoutFromGroup(msg.to,[jj])
-                    cl.sendText(msg.to,"Blacklist emang pantas tuk di usir")
-                    ki.sendText(msg.to,"Blacklist emang pantas tuk di usir")
-                    kk.sendText(msg.to,"Blacklist emang pantas tuk di usir")
-                    kc.sendText(msg.to,"Blacklist emang pantas tuk di usir")
+                    cl.sendText(msg.to,"Blacklist keluar aja")
             elif msg.text in ["Clear"]:
                 if msg.toType == 2:
                     group = cl.getGroup(msg.to)
