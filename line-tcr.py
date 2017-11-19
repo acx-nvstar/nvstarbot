@@ -2292,10 +2292,11 @@ def bot(op):
 
        #-------------Fungsi Speedbot Start---------------------#
             elif msg.text in ["Speedbot","speedbot"]:
-                start = time.time()
-                cl.sendText(msg.to, "Waiting...")
-                elapsed_time = time.time() - start
-                cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+		if msg.from_ in admin:
+                	start = time.time()
+                	cl.sendText(msg.to, "Waiting...")
+                	elapsed_time = time.time() - start
+                	cl.sendText(msg.to, "%sseconds" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
