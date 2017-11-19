@@ -2272,13 +2272,14 @@ def bot(op):
 
        #-------------Fungsi Respon Start---------------------#
             elif msg.text in ["Respon","respon","Respon Dong","respon dong"]:
-                cl.sendText(msg.to,"Loading...")
-                ki.sendText(msg.to,"█▒▒▒▒▒▒▒▒▒")
-                kk.sendText(msg.to,"███▒▒▒▒▒▒▒ 10%")
-                kc.sendText(msg.to,"█████▒▒▒▒▒ 30%")
-                ks.sendText(msg.to,"███████▒▒▒ 50%")
-                ka.sendText(msg.to,"██████████ 100%")
-                ke.sendText(msg.to,"Complete")
+		if msg.from_ in admin:
+		   	cl.sendText(msg.to,"Loading...")
+               		ki.sendText(msg.to,"█▒▒▒▒▒▒▒▒▒")
+                	kk.sendText(msg.to,"███▒▒▒▒▒▒▒ 10%")
+                	kc.sendText(msg.to,"█████▒▒▒▒▒ 30%")
+                	ks.sendText(msg.to,"███████▒▒▒ 50%")
+                	ka.sendText(msg.to,"██████████ 100%")
+                	ke.sendText(msg.to,"Complete")
       #-------------Fungsi Respon Finish---------------------#
 
       #-------------Fungsi Balesan Respon Start---------------------#
