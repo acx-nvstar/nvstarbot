@@ -2472,3 +2472,72 @@ while True:
         if (Op.type != OpType.END_OF_OPERATION):
             cl.Poll.rev = max(cl.Poll.rev, Op.revision)
             bot(Op)
+		
+						#-----------------Fungsi Add ADMIN-----------------#
+			elif "Admin add @" in msg.text:
+				if msg.from_ in admin:
+					print "[Command]Staff and executing"
+					_name = msg.text.replace("Admin add @","")
+					_nametarget = msg.rstrip('  ')
+					gs = cl.getGroup(msg.to)
+					gs = ki.getGroup(msg.to)
+					gs = kk.getGroup(msg.to)
+					gs = kc.getGroup(msg.to)
+					targets = []
+					for g in gs.member:
+						if _nametarget == g.displayName:
+							targets.append(g.mid)
+					if targets == []
+						ki.sendText(msg.to,"Kontak tidak ditemukan"
+					else:
+						for target in targets:
+							try:
+								admin.append(target)
+								cl.sendText(msg.to,"Admin Ditambahkan")
+							except:
+								pass
+					print "[Command]Staff add executed"
+				else:
+					cl.sendText(msg.to"Perintah Ditolak")
+					cl.sendText(msg.to"Hanya [NvStar]Agy Pascha yang dapat menambahkan admin")
+					
+			elif "Admin remove @" in msg.text:
+                if msg.from_ in creator:
+                    print "[Command]Staff remove executing"
+                    _name = msg.text.replace("Admin remove @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    gs = ki.getGroup(msg.to)
+                    gs = kk.getGroup(msg.to)
+                    gs = kc.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        ki.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.remove(target)
+                                cl.sendText(msg.to,"Admin Dihapus")
+                            except:
+                                pass
+                    print "[Command]Staff remove executed"
+                else:
+                    cl.sendText(msg.to,"Command DiTolak")
+                    cl.sendText(msg.to,"Admin Tidak Bisa Menggunakan")
+					
+			elif msg.text in ["Adminlist","adminlist"]:
+              if msg.from_ in creator:
+                if admin == []:
+                    cl.sendText(msg.to,"The adminlist is empty")
+                else:
+                    cl.sendText(msg.to,"Tunggu...")
+                    mc = ""
+                    for mi_d in admin:
+                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
+                    cl.sendText(msg.to,mc)
+                    print "[Command]Stafflist executed"
+					
+				#-----------------Fungsi Add ADMIN-----------------#
