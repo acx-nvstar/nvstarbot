@@ -18,6 +18,9 @@ sys.setdefaultencoding('utf-7')
 helpMessage =""" NvStar BOT  􀔃􀄆red check mark􏿿
 
 􀔃􀅕red arrow right􏿿 Command Public
+[Admin add @] Menambahkan Admin
+[Admin remove@ @] Menghapus Admin
+[Adminlist] Cek List Admin
 [Me]       Cek Akun Sendiri
 [My mid]   Cek Akun Mid
 [Bot?]     Cek Akun Bot
