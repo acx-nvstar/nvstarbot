@@ -2475,3 +2475,14 @@ while True:
         if (Op.type != OpType.END_OF_OPERATION):
             cl.Poll.rev = max(cl.Poll.rev, Op.revision)
             bot(Op)
+		
+import datetime
+import time
+
+def main():
+    print "System time:" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+
+if __name__ == '__main__':
+    while True:
+        main()
+        time.sleep(5)
