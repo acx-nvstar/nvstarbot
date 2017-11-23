@@ -2475,14 +2475,40 @@ while True:
         if (Op.type != OpType.END_OF_OPERATION):
             cl.Poll.rev = max(cl.Poll.rev, Op.revision)
             bot(Op)
-		
-import datetime
-import time
 
-def main():
-    print "System time:" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+#-----------------------------------------------------#
+#import datetime
+#import time
+#
+#def main():
+#    print "System time:" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M")
+#
+#if __name__ == '__main__':
+#    while True:
+#        main()
+#        time.sleep(5)
+#	
+#-----------------------------------------------------#
 
-if __name__ == '__main__':
-    while True:
-        main()
-        time.sleep(5)
+import os, time
+
+def daemon(func):
+    def wrapper(*args, **kwargs):
+        if os.fork(): return
+        func(*args, **kwargs)
+        os._exit(os.EX_OK)
+    return wrapper
+
+@daemon
+def my_func(count=10):    
+  for i in range(0,count):
+     print('parent pid: %d' % os.getppid())
+     time.sleep(1)
+
+
+my_func(count=10)
+#still in parent thread
+time.sleep(2)
+#after 2 seconds the function my_func lives on is own
+
+#-----------------------------------------------------#
