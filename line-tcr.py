@@ -6,7 +6,7 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(token="En1bRiO3HtlHt7ueO1I3.2Ye65G/LL8JrF39EU8sJGW.3HJx9ZLkzfU1ycoTV64AcWw29kLh9A+Hoxl3pHkNbGI=")
+cl.login(token="EnCyc2tjiwlQ76mZXwn3.2Ye65G/LL8JrF39EU8sJGW.+dhKNTwM1DM/JL36fdX6ul8N7up2FsZtg3ZrOzQQ0Rk=")
 cl.loginResult()
 
 ki = kk = kc = ks = ka = kb = ko = ke = ku = cl
@@ -15,51 +15,62 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT  􀔃􀄆red check mark􏿿
+helpMessage =""" NvStar BOT Version 1.9.3
 
-􀔃􀅕red arrow right􏿿 Command Public
-[Admin add @] Menambahkan Admin
-[Admin remove@ @] Menghapus Admin
-[Adminlist] Cek List Admin
-[Me]       Cek Akun Sendiri
-[My mid]   Cek Akun Mid
-[Bot?]     Cek Akun Bot
-[Id Group] Cek Id Group
-[Ginfo]    Group Info
-[Mid RA]   Cek All mid Bot
-[RA 1/2/3/4] Cek Mid Bot
-[Respon]   Cek Respon Bot
-[Speedbot] Cek Kecepatan Bot
-[Up]       Fungsi Spam Chat
-[Tagall]   Mention Semua User
-[Banlist]  Cek List Akun Banned
-[Gn namagroup] Ganti Nama Group
-[Cancel] Cancel User Masuk Group
-[Set View] Cek Privasi Group
-[Open Url]  Membuka Url Group
-[Close Url] Menutup Url Group
-􀔃􀅕red arrow right􏿿 Command Private
-[Set group] Menggatur Privasi Grup
-[Banned @] Bann Target 
-[Unban @]  Unbann Target
-[Kill @] Kick Target Bann
-[Nk @]   Kick Target User
-[Invite mid] Invite Via Mid
-[Kick mid] Kick Via mid
-[Ayo masuk] Invite Semua Bot
-[_namabot join] Invite Bot
-[Bye _namabot]  Leave Bot
+========================
+     Command member
+========================
+> Me            |Cek Akun Sendiri
+> My mid        | Cek Akun Mid
+> Id Group      | Cek Id Group
+> Ginfo         | Group Info
+> Apakah        | Implementasi dari BOT Kerang Ajaib
+> Rate          | Implementasi dari BOT Cocoklogi
+
+========================
+     Command Admin
+========================
+> Respon        | Cek Respon Bot
+> Speedbot      | Cek Kecepatan Bot
+> Up            | Fungsi Spam Chat
+> Tagall        | Mention Semua User
+> Banlist       | Cek List Akun Banned
+> Gn namagroup  | Ganti Nama Group
+> Cancel        | Membatalkan User Masuk Group
+> Set View      | Cek Privasi Group
+> Open Url      | Membuka Url Group
+> Close Url     | Menutup Url Group
+> Set group     | Melihat Configurasi Private Menu
+> Banned @      | Memasukan target kedalam blacklist dengan mention
+> Unban @       | Menghapus target dari daftar blacklist
+> Kill @        | Mengeluarkan 1 orang target blacklist dari group 
+> Kill          | Mengeluarkan semua target blacklist dari group
+> Nk @          | Mengaluarkan 1 member dari group
+> Invite MID    | Mengundang seseorang kedalam group dengan MID
+> Kick MID      | Mengeluarkan seseorang dari group dengan MID
+> Bye all       | Mengeluarkan BOT dari group
+
+========================
+     Command Khusus [NvStar]Agy Pascha
+========================
+> Admadd @	| Menambahkan admin
+> Admrem @	| Menghilangkan admin
 """
 
-Setgroup =""" Private Menu 􀔃􀄆red check mark􏿿
-
-[Protect Group]
+Setgroup ="""
+========================
+     Private Command Admin
+========================
+Protect Group
 -- Gr on/off
-[Mid Via Contact]
- -- Contact on/off
-[Cancel All Invited]
+
+Melihat info detail contact
+-- Contact on/off
+
+Otomatis membatalkan undangan group
 -- Cancl on/off
-[No Joinned]
+
+Mengeluarkan member yang baru bergabung
 -- Joinn on/off
 """
 KAC=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
@@ -75,8 +86,9 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42"]
+creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
     'autoJoin':True,
@@ -780,47 +792,29 @@ def bot(op):
                    if msg.contentMetadata["mid"] in wait["commentBlack"]:
                         del wait["commentBlack"][msg.contentMetadata["mid"]]
                         cl.sendText(msg.to,"deleted")
-                        ki.sendText(msg.to,"deleted")
-                        kk.sendText(msg.to,"deleted")
-                        kc.sendText(msg.to,"deleted")
                         wait["dblack"] = False
 
                    else:
                         wait["dblack"] = False
                         cl.sendText(msg.to,"It is not in the black list")
-                        ki.sendText(msg.to,"It is not in the black list")
-                        kk.sendText(msg.to,"It is not in the black list")
-                        kc.sendText(msg.to,"It is not in the black list")
                elif wait["wblacklist"] == True:
                    if msg.contentMetadata["mid"] in wait["blacklist"]:
                         cl.sendText(msg.to,"already")
-                        ki.sendText(msg.to,"already")
-                        kk.sendText(msg.to,"already")
-                        kc.sendText(msg.to,"already")
                         wait["wblacklist"] = False
                    else:
                         wait["blacklist"][msg.contentMetadata["mid"]] = True
                         wait["wblacklist"] = False
                         cl.sendText(msg.to,"aded")
-                        ki.sendText(msg.to,"aded")
-                        kk.sendText(msg.to,"aded")
-                        kc.sendText(msg.to,"aded")
 
                elif wait["dblacklist"] == True:
                    if msg.contentMetadata["mid"] in wait["blacklist"]:
                         del wait["blacklist"][msg.contentMetadata["mid"]]
                         cl.sendText(msg.to,"deleted")
-                        ki.sendText(msg.to,"deleted")
-                        kk.sendText(msg.to,"deleted")
-                        kc.sendText(msg.to,"deleted")
                         wait["dblacklist"] = False
 
                    else:
                         wait["dblacklist"] = False
                         cl.sendText(msg.to,"It is not in the black list")
-                        ki.sendText(msg.to,"It is not in the black list")
-                        kk.sendText(msg.to,"It is not in the black list")
-                        kc.sendText(msg.to,"It is not in the black list")
                elif wait["contact"] == True:
                     msg.contentType = 0
                     cl.sendText(msg.to,msg.contentMetadata["mid"])
@@ -861,6 +855,7 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,Sett)
             elif ("Gn " in msg.text):
+              if msg.from_ in admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
@@ -925,7 +920,6 @@ def bot(op):
                 kc.findAndAddContactsByMid(midd)
                 kc.inviteIntoGroup(msg.to,[midd])
             elif msg.text in ["Bot?"]:
-              if msg.from_ in admin:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
                 cl.sendMessage(msg)
@@ -969,44 +963,45 @@ def bot(op):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': Bmid}
                 kk.sendMessage(msg)
-            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Gift"]:
-                msg.contentType = 9
-                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
-                                    'PRDTYPE': 'THEME',
-                                    'MSGTPL': '5'}
-                msg.text = None
-                cl.sendMessage(msg)
-            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Cv1 gift"]:
-                msg.contentType = 9
-                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
-                                    'PRDTYPE': 'THEME',
-                                    'MSGTPL': '6'}
-                msg.text = None
-                ki.sendMessage(msg)
-            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Cv2 gift"]:
-                msg.contentType = 9
-                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
-                                    'PRDTYPE': 'THEME',
-                                    'MSGTPL': '8'}
-                msg.text = None
-                kk.sendMessage(msg)
-            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Cv3 gift"]:
-                msg.contentType = 9
-                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
-                                    'PRDTYPE': 'THEME',
-                                    'MSGTPL': '10'}
-                msg.text = None
-                kc.sendMessage(msg)
-            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","All gift"]:
-                msg.contentType = 9
-                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
-                                    'PRDTYPE': 'THEME',
-                                    'MSGTPL': '12'}
-                msg.text = None
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-                kc.sendMessage(msg)
+#            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Gift"]:
+#                msg.contentType = 9
+#                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
+#                                    'PRDTYPE': 'THEME',
+#                                    'MSGTPL': '5'}
+#                msg.text = None
+#                cl.sendMessage(msg)
+#            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Cv1 gift"]:
+#                msg.contentType = 9
+#                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
+#                                    'PRDTYPE': 'THEME',
+#                                    'MSGTPL': '6'}
+#                msg.text = None
+#                ki.sendMessage(msg)
+#            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Cv2 gift"]:
+#                msg.contentType = 9
+#                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
+#                                    'PRDTYPE': 'THEME',
+#                                    'MSGTPL': '8'}
+#                msg.text = None
+#                kk.sendMessage(msg)
+#            elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","Cv3 gift"]:
+#                msg.contentType = 9
+#                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
+#                                    'PRDTYPE': 'THEME',
+#                                    'MSGTPL': '10'}
+#                msg.text = None
+#                kc.sendMessage(msg)
+#           elif msg.text in ["æ„›ã�®ãƒ—ãƒ¬ã‚¼ãƒ³ãƒˆ","All gift"]:
+#                msg.contentType = 9
+#                msg.contentMetadata={'PRDID': 'a0768339-c2d3-4189-9653-2909e9bb6f58',
+#                                    'PRDTYPE': 'THEME',
+#                                    'MSGTPL': '12'}
+#                msg.text = None
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#                kc.sendMessage(msg)
             elif msg.text in ["Cancel","cancel"]:
+              if msg.from_ in Admin:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
                     if X.invitee is not None:
@@ -1042,19 +1037,20 @@ def bot(op):
                 #print cl.getGroup(msg.to)
                 ##cl.sendMessage(msg)
             elif msg.text in ["Open url","open url"]:
-                if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
-                    X.preventJoinByTicket = False
-                    cl.updateGroup(X)
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Invite by link open")
+                if msg.from_ in Admin:
+                    if msg.toType == 2:
+                        X = cl.getGroup(msg.to)
+                        X.preventJoinByTicket = False
+                        cl.updateGroup(X)
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Invite by link open")
+                        else:
+                            cl.sendText(msg.to,"Already open")
                     else:
-                        cl.sendText(msg.to,"Already open")
-                else:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
-                    else:
-                        cl.sendText(msg.to,"Not for use less than group")
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Can not be used outside the group")
+                        else:
+                            cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv1 ourl","Cv1 link on"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -1098,19 +1094,20 @@ def bot(op):
                     else:
                         kc.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Close url","close url"]:
-                if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
-                    X.preventJoinByTicket = True
-                    cl.updateGroup(X)
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Invite by link Close")
+                if msg.from_ in Admin:
+                    if msg.toType == 2:
+                        X = cl.getGroup(msg.to)
+                        X.preventJoinByTicket = True
+                        cl.updateGroup(X)
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Invite by link Close")
+                        else:
+                            cl.sendText(msg.to,"Already close")
                     else:
-                        cl.sendText(msg.to,"Already close")
-                else:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
-                    else:
-                        cl.sendText(msg.to,"Not for use less than group")
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Can not be used outside the group")
+                        else:
+                            cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv1 curl","Cv1 link off"]:
                 if msg.toType == 2:
                     X = ki.getGroup(msg.to)
@@ -1218,96 +1215,96 @@ def bot(op):
                 kk.sendText(msg.to,Bmid)
             elif "RA 4" == msg.text:
                 kc.sendText(msg.to,Cmid)
-           # elif msg.text in ["Wkwkwk","Wkwk","Wk","wkwkwk","wkwk","wk"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "100",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                cl.sendMessage(msg)
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Hehehe","Hehe","He","hehehe","hehe","he"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "10",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Galau"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "9",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["You"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "7",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Hadeuh"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "6",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Please"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "4",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Haaa"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "3",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Lol"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "110",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
-           # elif msg.text in ["Hmmm","Hmm","Hm","hmmm","hmm","hm"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "101",
-                                     "STKPKGID": "1",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-           # elif msg.text in ["Welcome"]:
-                msg.contentType = 7
-                msg.text = None
-                msg.contentMetadata = {
-                                     "STKID": "247",
-                                     "STKPKGID": "3",
-                                     "STKVER": "100" }
-                ki.sendMessage(msg)
-                kk.sendMessage(msg)
+#            elif msg.text in ["Wkwkwk","Wkwk","Wk","wkwkwk","wkwk","wk"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "100",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                cl.sendMessage(msg)
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Hehehe","Hehe","He","hehehe","hehe","he"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "10",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Galau"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "9",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["You"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "7",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Hadeuh"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "6",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Please"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "4",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Haaa"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "3",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Lol"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "110",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
+#            elif msg.text in ["Hmmm","Hmm","Hm","hmmm","hmm","hm"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "101",
+#                                     "STKPKGID": "1",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#            elif msg.text in ["Welcome"]:
+#                msg.contentType = 7
+#                msg.text = None
+#                msg.contentMetadata = {
+#                                     "STKID": "247",
+#                                     "STKPKGID": "3",
+#                                     "STKVER": "100" }
+#                ki.sendMessage(msg)
+#                kk.sendMessage(msg)
             elif msg.text in ["TL: "]:
                 tl_text = msg.text.replace("TL: ","")
                 cl.sendText(msg.to,"line://home/post?userMid="+mid+"&postId="+cl.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
@@ -1535,28 +1532,29 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"è¦�äº†å…³æ–­ã€‚")
             elif msg.text in ["Set View"]:
-                md = ""
-                if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
-                else: md+=" Block Join Off\n"
-                if wait["Protectgr"] == True: md+="􀔃􀆑lock􏿿   Block Group\n"
-                else: md+=" Block Group Off\n"
-                if wait["Protectcancl"] == True: md+="􀔃􀆑lock􏿿 Cancel All Invited\n"
-                else: md+=" Cancel All Invited Off\n"
-                if wait["contact"] == True: md+=" Contact    : on\n"
-                else: md+=" Contact    : off\n"
-                if wait["autoJoin"] == True: md+=" Auto join : on\n"
-                else: md +=" Auto join : off\n"
-                if wait["autoCancel"]["on"] == True:md+=" Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
-                else: md+= " Group cancel : off\n"
-                if wait["leaveRoom"] == True: md+=" Auto leave    : on\n"
-                else: md+=" Auto leave : off\n"
-                if wait["timeline"] == True: md+=" Share   : on\n"
-                else:md+=" Share   : off\n"
-                if wait["autoAdd"] == True: md+=" Auto add : on\n"
-                else:md+=" Auto add : off\n"
-                if wait["commentOn"] == True: md+=" Comment : on\n"
-                else:md+=" Comment : off\n"
-                cl.sendText(msg.to,md)
+                if msg.from_ in admin:
+                    md = ""
+                    if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
+                    else: md+=" Block Join Off\n"
+                    if wait["Protectgr"] == True: md+="􀔃􀆑lock􏿿   Block Group\n"
+                    else: md+=" Block Group Off\n"
+                    if wait["Protectcancl"] == True: md+="􀔃􀆑lock􏿿 Cancel All Invited\n"
+                    else: md+=" Cancel All Invited Off\n"
+                    if wait["contact"] == True: md+=" Contact    : on\n"
+                    else: md+=" Contact    : off\n"
+                    if wait["autoJoin"] == True: md+=" Auto join : on\n"
+                    else: md +=" Auto join : off\n"
+                    if wait["autoCancel"]["on"] == True:md+=" Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
+                    else: md+= " Group cancel : off\n"
+                    if wait["leaveRoom"] == True: md+=" Auto leave    : on\n"
+                    else: md+=" Auto leave : off\n"
+                    if wait["timeline"] == True: md+=" Share   : on\n"
+                    else:md+=" Share   : off\n"
+                    if wait["autoAdd"] == True: md+=" Auto add : on\n"
+                    else:md+=" Auto add : off\n"
+                    if wait["commentOn"] == True: md+=" Comment : on\n"
+                    else:md+=" Comment : off\n"
+                    cl.sendText(msg.to,md)
             elif "album merit " in msg.text:
                 gid = msg.text.replace("album merit ","")
                 album = cl.getAlbum(gid)
@@ -1780,74 +1778,156 @@ def bot(op):
                     
         #-------------Fungsi Jam on/off Start-------------------#            
             elif msg.text in ["Jam on"]:
-                if wait["clock"] == True:
-                    kc.sendText(msg.to,"Bot 4 jam on")
-                else:
-                    wait["clock"] = True
-                    now2 = datetime.now()
-                    nowT = datetime.strftime(now2,"(%H:%M)")
-                    profile = kc.getProfile()
-                    profile.displayName = wait["cName4"] + nowT
-                    kc.updateProfile(profile)
-                    kc.sendText(msg.to,"Jam Selalu On")
-            elif msg.text in ["Jam off"]:
-                if wait["clock"] == False:
-                    kc.sendText(msg.to,"Bot 4 jam off")
-                else:
-                    wait["clock"] = False
-                    kc.sendText(msg.to,"Jam Sedang Off")
+                if msg.from_ in admin:
+                    if wait["clock"] == True:
+                        kc.sendText(msg.to,"Bot 4 jam on")
+                    else:
+                        wait["clock"] = True
+                        now2 = datetime.now()
+                        nowT = datetime.strftime(now2,"(%H:%M)")
+                        profile = kc.getProfile()
+                        profile.displayName = wait["cName4"] + nowT
+                        kc.updateProfile(profile)
+                        kc.sendText(msg.to,"Jam Selalu On")
+                elif msg.text in ["Jam off"]:
+                    if wait["clock"] == False:
+                        kc.sendText(msg.to,"Bot 4 jam off")
+                    else:
+                        wait["clock"] = False
+                        kc.sendText(msg.to,"Jam Sedang Off")
          #-------------Fungsi Jam on/off Finish-------------------#           
          
          #-------------Fungsi Change Clock Start------------------#
             elif msg.text in ["Change clock"]:
-                n = msg.text.replace("Change clock","")
-                if len(n.decode("utc+7")) > 13:
-                    cl.sendText(msg.to,"changed")
+                if msg.from_ in admin:
+                    n = msg.text.replace("Change clock","")
+                    if len(n.decode("utc+7")) > 13:
+                        cl.sendText(msg.to,"changed")
+                    else:
+                        wait["cName"] = n
+                        cl.sendText(msg.to,"changed to\n\n" + n)
+         #-------------Fungsi Change Clock Finish-----------------# 
+		 
+         #-------------Fungsi Menambahkan / menghapus Admin Start-------------#
+            elif "Admadd @" in msg.text:
+                if msg.from_ in creator:
+                    print "[Command]Staff add executing"
+                    _name = msg.text.replace("Admadd @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.append(target)
+                                cl.sendText(msg.to,"Admin Ditambahkan")
+                                ki.sendText(msg.to,"Selamat Kamu Admin Baru")
+                                kk.sendText(msg.to,"Selamat Ya Selamat")
+                            except:
+                                pass
+                    print "[Command]Staff add executed"
                 else:
-                    wait["cName"] = n
-                    cl.sendText(msg.to,"changed to\n\n" + n)
-         #-------------Fungsi Change Clock Finish-----------------#           
+                    cl.sendText(msg.to,"Command DiTolak")
+                    cl.sendText(msg.to,"Lu bukan Creator")
+                    cl.sendText(msg.to,"Hanya [NvStar] Agy Pascha yang dapat melakukannya")
+            elif "Admrem @" in msg.text:
+                if msg.from_ in creator:
+                    print "[Command]Staff remove executing"
+                    _name = msg.text.replace("Admrem @","")
+                    _nametarget = _name.rstrip('  ')
+                    gs = cl.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            targets.append(g.mid)
+                    if targets == []:
+                        cl.sendText(msg.to,"Contact not found")
+                    else:
+                        for target in targets:
+                            try:
+                                admin.remove(target)
+                                cl.sendText(msg.to,"Admin Dihapus")
+                                cl.sendText(msg.to,"Kamu DiPecat Jadi Admin :(")
+                                cl.sendText(msg.to,"Yang Sabar Ya Boss..")
+                            except:
+                                pass
+                    print "[Command]Staff remove executed"
+                else:
+                    cl.sendText(msg.to,"Command DiTolak")
+                    cl.sendText(msg.to,"Hanya [NvStar] Agy Pascha yang dapat melakukannya")
+		 #-------------Fungsi Menambahkan / menghapus Admin Finish-------------#
+		
+		 #-------------Fungsi Music start---------------#
+#            elif ".Music" in msg.text:
+#	            songname = msg.text.lower().replace(".music","")
+#	            params = {"songname":" songname"}
+#	            r = requests.get('https://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
+#	            data = r.text
+#	            data = json.loads(data)
+#	            for song in data:
+#		            cl.sendMessage(msg.to, song[4])
+
+            elif ".Youtube " in msg.text:
+                 query = msg.text.replace(".Youtube ","")
+                 with requests.session() as s:
+                     s.headers['user-agent'] = 'Mozilla/5.0'
+                     url    = 'http://www.youtube.com/results'
+                     params = {'search_query': query}
+                     r    = s.get(url, params=params)
+                     soup = BeautifulSoup(r.content, 'html5lib')
+                     for a in soup.select('.yt-lockup-title > a[title]'):
+                         if '&List' not in a['href']:
+                               cl.sendText(msg.to,'http://www.youtube.com' + a['href'] + a['title'])
+		 #-------------Fungsi Music finish---------------#
         
          #-------------Fungsi Jam Update Start---------------------#            
             elif msg.text in ["Jam Update"]:
-                if wait["clock"] == True:
-                    now2 = datetime.now()
-                    nowT = datetime.strftime(now2,"(%H:%M)")
-                    profile = kc.getProfile()
-                    profile.displayName = wait["cName4"] + nowT
-                    kc.updateProfile(profile)
-                    kc.sendText(msg.to,"Sukses update")
-                else:
-                    kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
+                if msg.from_ in admin:
+                    if wait["clock"] == True:
+                        now2 = datetime.now()
+                        nowT = datetime.strftime(now2,"(%H:%M)")
+                        profile = kc.getProfile()
+                        profile.displayName = wait["cName4"] + nowT
+                        kc.updateProfile(profile)
+                        kc.sendText(msg.to,"Sukses update")
+                    else:
+                        kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "$set":
-                    cl.sendText(msg.to, "Check sider")
-                    ki.sendText(msg.to, "Check sider")
-                    kk.sendText(msg.to, "Check sider")
-                    kc.sendText(msg.to, "Check sider")
-                    try:
-                        del wait2['readPoint'][msg.to]
-                        del wait2['readMember'][msg.to]
-                    except:
-                        pass
-                    wait2['readPoint'][msg.to] = msg.id
-                    wait2['readMember'][msg.to] = ""
-                    wait2['ROM'][msg.to] = {}
-                    print wait2
-            elif msg.text == "$read":
-                    if msg.to in wait2['readPoint']:
-                        if wait2["ROM"][msg.to].items() == []:
-                            chiya = ""
-                        else:
-                            chiya = ""
-                            for rom in wait2["ROM"][msg.to].items():
-                                print rom
-                                chiya += rom[1] + "\n"
+            elif msg.text == "Check":
+                if msg.from_ in admin:
+                        cl.sendText(msg.to, "Siderss")
+                        try:
+                            del wait2['readPoint'][msg.to]
+                            del wait2['readMember'][msg.to]
+                        except:
+                            pass
+                        now2 = datetime.now()
+                        wait2['readPoint'][msg.to] = msg.id
+                        wait2['readMember'][msg.to] = ""
+                        wait2['ROM'][msg.to] = {}
+                        wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                        print wait2
 
-                        cl.sendText(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
-                    else:
-                        cl.sendText(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")
+            elif msg.text == "Absen":
+                if msg.from_ in admin:
+                        if msg.to in wait2['readPoint']:
+                            if wait2["ROM"][msg.to].items() == []:
+                                chiya = ""
+                            else:
+                                chiya = ""
+                                for rom in wait2["ROM"][msg.to].items():
+                                    print rom
+                                    chiya += rom[1] + "\n"
+
+                            cl.sendText(msg.to, "== Bakekok Sider == %s\nthat's it\n\nPeople who have ignored reads\n%skampret lo sider. ??\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        else:
+                            cl.sendText(msg.to, "An already read point has not been set.\n¡¸set¡¹you can send ?? read point will be created ??")
 #-----------------------------------------------
 
 #-----------------------------------------------
@@ -1938,7 +2018,21 @@ def bot(op):
                   Ticket = cl.reissueGroupTicket(msg.to)
     #----------------------Fungsi Join Group Finish---------------#
 
+    #-------------------Fungsi BOT Kerang Ajaib & Cocoklogi Start-------------------#
+            elif "Apakah " in msg.text:
+                tanya = msg.text.replace("Apakah ","")
+                jawab = ("Ya","Tidak")
+                jawaban = random.choice(jawab)
+                cl.sendText(msg.to,jawaban)
+            elif "Rate" in msg.text:
+                tanya = msg.text.replace("Rate","")
+                jawab = ("1%","2%","3%","4%","5%","6%","7%","9%","10%","11%","12%","13%","""""""""""","20%","30%","40%","50%","60%","70%","80%","90%","100%")
+                jawaban = random.choice(jawab)
+                cl.sendText(msg.to,jawaban)
+    #-------------------Fungsi BOT Kerang Ajaib & Cocoklogi Finish------------------#	
+
     #-------------Fungsi Leave Group Start---------------#
+
             elif msg.text in ["Bye all"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
@@ -1972,13 +2066,13 @@ def bot(op):
                     except:
                         pass
             elif msg.text in ["Bye _Fourth"]:
-              if msg.from_ in admin:
-                if msg.toType == 2:
-                    ginfo = cl.getGroup(msg.to)
-                    try:
-                        kc.leaveGroup(msg.to)
-                    except:
-                        pass
+                if msg.from_ in admin:
+                    if msg.toType == 2:
+                        ginfo = cl.getGroup(msg.to)
+                        try:
+                            kc.leaveGroup(msg.to)
+                        except:
+                            pass
             elif msg.text in ["Cv1 @bye"]:
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -2003,7 +2097,7 @@ def bot(op):
     #-------------Fungsi Leave Group Finish---------------#
     
     #-------------Fungsi Tag All Start---------------#
-            elif msg.text in ["kiwkiw","Tagall"]:
+            elif msg.text in ["Tagall"]:
                 if msg.from_ in admin:
                      group = cl.getGroup(msg.to)
                      nama = [contact.mid for contact in group.members]
@@ -2116,24 +2210,25 @@ def bot(op):
                                     kc.sendText(msg.to,"Hehehe")
         #----------------Fungsi Kick User Target Finish----------------------#      
             elif "Blacklist @ " in msg.text:
-                _name = msg.text.replace("Blacklist @ ","")
-                _kicktarget = _name.rstrip(' ')
-                gs = ki2.getGroup(msg.to)
-                targets = []
-                for g in gs.members:
-                    if _kicktarget == g.displayName:
-                        targets.append(g.mid)
-                        if targets == []:
-                            cl.sendText(msg.to,"Not found")
-                        else:
-                            for target in targets:
-                                try:
-                                    wait["blacklist"][target] = True
-                                    f=codecs.open('st2__b.json','w','utf-8')
-                                    json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                                    k3.sendText(msg.to,"Succes Cv")
-                                except:
-                                    ki.sendText(msg.to,"error")
+                if msg.from_ in admin:
+                    _name = msg.text.replace("Blacklist @ ","")
+                    _kicktarget = _name.rstrip(' ')
+                    gs = ki2.getGroup(msg.to)
+                    targets = []
+                    for g in gs.members:
+                        if _kicktarget == g.displayName:
+                            targets.append(g.mid)
+                            if targets == []:
+                                cl.sendText(msg.to,"Not found")
+                            else:
+                                for target in targets:
+                                    try:
+                                        wait["blacklist"][target] = True
+                                        f=codecs.open('st2__b.json','w','utf-8')
+                                        json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
+                                        k3.sendText(msg.to,"Succes Cv")
+                                    except:
+                                        ki.sendText(msg.to,"error")
             
             #----------------Fungsi Banned User Target Start-----------------------#
             elif "Banned @" in msg.text:
@@ -2152,9 +2247,6 @@ def bot(op):
                             targets.append(g.mid)
                     if targets == []:
                         cl.sendText(msg.to,"Dilarang Banned Bot")
-                        ki.sendText(msg.to,"Dilarang Banned Bot")
-                        kk.sendText(msg.to,"Dilarang Banned Bot")
-                        kc.sendText(msg.to,"Dilarang Banned Bot")
                     else:
                         for target in targets:
                             try:
@@ -2183,9 +2275,6 @@ def bot(op):
                             targets.append(g.mid)
                     if targets == []:
                         cl.sendText(msg.to,"Tidak Ditemukan.....")
-                        ki.sendText(msg.to,"Tidak Ditemukan.....")
-                        kk.sendText(msg.to,"Tidak Ditemukan.....")
-                        kc.sendText(msg.to,"Tidak Ditemukan.....")
                     else:
                         for target in targets:
                             try:
@@ -2199,167 +2288,172 @@ def bot(op):
            
         #-------------Fungsi Spam Start---------------------#
             elif msg.text in ["...Up Up"]:
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
-                kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    cl.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    ki.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
+                    kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
         #-------------Fungsi Spam Finish---------------------#
 
         #-------------Fungsi Broadcast Start------------#
             elif "Bc " in msg.text:
-				bctxt = msg.text.replace("Bc ","")
-				ki.sendText(msg.to,(bctxt))
-				kk.sendText(msg.to,(bctxt))
-				kc.sendText(msg.to,(bctxt))
+                if msg.from_ in admin:
+                    bctxt = msg.text.replace("Bc ","")
+                    ki.sendText(msg.to,(bctxt))
        #--------------Fungsi Broadcast Finish-----------#
 
-            elif msg.text in ["Cv say hi"]:
-                ki.sendText(msg.to,"Hi buddy 􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"Hi buddy 􀜁􀅔Har Har􏿿")
-                kc.sendText(msg.to,"Hi buddy 􀜁􀅔Har Har􏿿")
+#            elif msg.text in ["Cv say hi"]:
+#                ki.sendText(msg.to,"Hi buddy 􀜁􀅔Har Har􏿿")
+#                kk.sendText(msg.to,"Hi buddy 􀜁􀅔Har Har􏿿")
+#                kc.sendText(msg.to,"Hi buddy 􀜁􀅔Har Har􏿿")
 
 #-----------------------------------------------
-
-            elif msg.text in ["Cv say hinata pekok"]:
-                ki.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
-                kc.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
-            elif msg.text in ["Cv say didik pekok"]:
-                ki.sendText(msg.to,"Didik pekok 􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"Didik pekok 􀜁􀅔Har Har􏿿")
-                kc.sendText(msg.to,"Didik pekok 􀜁􀅔Har Har􏿿")
-            elif msg.text in ["Cv say bobo ah","Bobo dulu ah"]:
-                ki.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
-                kc.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
-            elif msg.text in ["Cv say chomel pekok"]:
-                ki.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
-                kk.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
-                kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
+#
+#            elif msg.text in ["Cv say hinata pekok"]:
+#                ki.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
+#                kk.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
+#                kc.sendText(msg.to,"Hinata pekok 􀜁􀅔Har Har􏿿")
+#            elif msg.text in ["Cv say didik pekok"]:
+#                ki.sendText(msg.to,"Didik pekok 􀜁􀅔Har Har􏿿")
+#                kk.sendText(msg.to,"Didik pekok 􀜁􀅔Har Har􏿿")
+#                kc.sendText(msg.to,"Didik pekok 􀜁􀅔Har Har􏿿")
+#            elif msg.text in ["Cv say bobo ah","Bobo dulu ah"]:
+#                ki.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
+#                kk.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
+#                kc.sendText(msg.to,"Have a nice dream Cv 􀜁􀅔Har Har􏿿")
+#            elif msg.text in ["Cv say chomel pekok"]:
+#                ki.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
+#                kk.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
+#                kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
             elif msg.text in ["#welcome"]:
-		if msg.from_ in admin:
-                	ki.sendText(msg.to,"Selamat datang di Official Group Anime Loverz")
-                	kk.sendText(msg.to,"Jangan nakal ok!")
+                if msg.from_ in admin:
+                    ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
+                    kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
-		if msg.from_ in admin:
-                	ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
+                if msg.from_ in admin:
+                    ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
 #-----------------------------------------------
 
        #-------------Fungsi Respon Start---------------------#
             elif msg.text in ["Respon","respon","Respon Dong","respon dong"]:
-		if msg.from_ in admin:
-		   	cl.sendText(msg.to,"Loading...")
-               		ki.sendText(msg.to,"█▒▒▒▒▒▒▒▒▒")
-                	kk.sendText(msg.to,"███▒▒▒▒▒▒▒ 10%")
-                	kc.sendText(msg.to,"█████▒▒▒▒▒ 30%")
-                	ks.sendText(msg.to,"███████▒▒▒ 50%")
-                	ka.sendText(msg.to,"██████████ 100%")
-                	ke.sendText(msg.to,"Complete")
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,"Loading...")
+                    ki.sendText(msg.to,"█▒▒▒▒▒▒▒▒▒")
+                    kk.sendText(msg.to,"███▒▒▒▒▒▒▒ 10%")
+                    kc.sendText(msg.to,"█████▒▒▒▒▒ 30%")
+                    ks.sendText(msg.to,"███████▒▒▒ 50%")
+                    ka.sendText(msg.to,"██████████ 100%")
+                    ke.sendText(msg.to,"Complete")
       #-------------Fungsi Respon Finish---------------------#
 
       #-------------Fungsi Balesan Respon Start---------------------#
             elif msg.text in ["Admin list"]:
                 ki.sendText(msg.to,"Admin List\n\n->Panpan\n->FT\n->Alfz~\n->[NvStar]Agy Pascha (Urgent WA +6283822526441)\n->Miocimiho\n\nThat's it\n\nIf there is any question please ask admin above by Private Message\n\nThank you")
 
+        #-----------Fungsi mematikan BOT-------------------------#
             elif msg.text in ["Shut Down"]:
-		if msg.from_ in admin:
-                	ki.sendText(msg.to,"Shutting Down...")
+                if msg.from_ in Admin:
+                    ki.sendText(msg.to,"Shutting Down...")
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
             elif msg.text in ["Speedbot","speedbot"]:
-		if msg.from_ in admin:
-                	start = time.time()
-                	cl.sendText(msg.to, "Waiting...")
-                	elapsed_time = time.time() - start
-                	cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+                if msg.from_ in admin:
+                    start = time.time()
+                    cl.sendText(msg.to, "Waiting...")
+                    elapsed_time = time.time() - start
+                    cl.sendText(msg.to, "%sseconds" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
             elif msg.text in ["Ban"]:
-                wait["wblacklist"] = True
-                cl.sendText(msg.to,"send contact")
-            elif msg.text in ["Unban"]:
-                wait["dblacklist"] = True
-                cl.sendText(msg.to,"send contact")
+                if msg.from_ in admin:
+                    wait["wblacklist"] = True
+                    cl.sendText(msg.to,"send contact")
+                elif msg.text in ["Unban"]:
+                    wait["dblacklist"] = True
+                    cl.sendText(msg.to,"send contact")
       #-------------Fungsi Banned Send Contact Finish------------------#
       
       #-------------Fungsi Bannlist Start------------------#          
             elif msg.text in ["Banlist"]:
-                if wait["blacklist"] == {}:
-                    cl.sendText(msg.to,"Tidak Ada Akun Terbanned")
-                else:
-                    ki.sendText(msg.to,"Blacklist user")
-                    mc = ""
-                    for mi_d in wait["blacklist"]:
-                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
-                    cl.sendText(msg.to,mc)
+                if msg.from_ in admin:
+                    if wait["blacklist"] == {}:
+                        cl.sendText(msg.to,"Tidak Ada Akun Terbanned")
+                    else:
+                        ki.sendText(msg.to,"Blacklist user")
+                        mc = ""
+                        for mi_d in wait["blacklist"]:
+                            mc += "->" +cl.getContact(mi_d).displayName + "\n"
+                        cl.sendText(msg.to,mc)
       #-------------Fungsi Bannlist Finish------------------#  
       
             elif msg.text in ["Cek ban"]:
-                if msg.toType == 2:
-                    group = cl.getGroup(msg.to)
-                    gMembMids = [contact.mid for contact in group.members]
-                    matched_list = []
-                    for tag in wait["blacklist"]:
-                        matched_list+=filter(lambda str: str == tag, gMembMids)
-                    cocoa = ""
-                    for mm in matched_list:
-                        cocoa += mm + "\n"
-                    cl.sendText(msg.to,cocoa + "")
+                if msg.from_ in admin:
+                    if msg.toType == 2:
+                        group = cl.getGroup(msg.to)
+                        gMembMids = [contact.mid for contact in group.members]
+                        matched_list = []
+                        for tag in wait["blacklist"]:
+                            matched_list+=filter(lambda str: str == tag, gMembMids)
+                        cocoa = ""
+                        for mm in matched_list:
+                            cocoa += mm + "\n"
+                        cl.sendText(msg.to,cocoa + "")
             elif msg.text in ["Kill ban"]:
-                if msg.toType == 2:
-                    group = cl.getGroup(msg.to)
-                    gMembMids = [contact.mid for contact in group.members]
-                    matched_list = []
-                    for tag in wait["blacklist"]:
-                        matched_list+=filter(lambda str: str == tag, gMembMids)
-                    if matched_list == []:
-                        cl.sendText(msg.to,"There was no blacklist user")
-                        ki.sendText(msg.to,"There was no blacklist user")
-                        kk.sendText(msg.to,"There was no blacklist user")
-                        kc.sendText(msg.to,"There was no blacklist user")
-                        return
-                    for jj in matched_list:
-                        cl.kickoutFromGroup(msg.to,[jj])
-                        ki.kickoutFromGroup(msg.to,[jj])
-                        kk.kickoutFromGroup(msg.to,[jj])
-                        kc.kickoutFromGroup(msg.to,[jj])
-                    cl.sendText(msg.to,"Blacklist keluar aja")
+                if msg.from_ in admin:
+                    if msg.toType == 2:
+                        group = cl.getGroup(msg.to)
+                        gMembMids = [contact.mid for contact in group.members]
+                        matched_list = []
+                        for tag in wait["blacklist"]:
+                            matched_list+=filter(lambda str: str == tag, gMembMids)
+                        if matched_list == []:
+                            cl.sendText(msg.to,"Tidak ada seorangpun dalam blacklist")
+
+                            return
+                        for jj in matched_list:
+                            cl.kickoutFromGroup(msg.to,[jj])
+                            ki.kickoutFromGroup(msg.to,[jj])
+                            kk.kickoutFromGroup(msg.to,[jj])
+                            kc.kickoutFromGroup(msg.to,[jj])
+                        cl.sendText(msg.to,"Blacklist keluar aja yaa...")
+
             elif msg.text in ["Clear"]:
-                if msg.toType == 2:
-                    group = cl.getGroup(msg.to)
-                    gMembMids = [contact.mid for contact in group.invitee]
-                    for _mid in gMembMids:
-                        cl.cancelGroupInvitation(msg.to,[_mid])
-                    cl.sendText(msg.to,"I pretended to cancel and canceled.")
+                    if msg.from_ in admin:
+                        if msg.toType == 2:
+                            group = cl.getGroup(msg.to)
+                            gMembMids = [contact.mid for contact in group.invitee]
+                            for _mid in gMembMids:
+                                cl.cancelGroupInvitation(msg.to,[_mid])
+                            cl.sendText(msg.to,"I pretended to cancel and canceled.")
             elif "random: " in msg.text:
               if msg.from_ in admin:
                 if msg.toType == 2:
@@ -2475,6 +2569,7 @@ while True:
         if (Op.type != OpType.END_OF_OPERATION):
             cl.Poll.rev = max(cl.Poll.rev, Op.revision)
             bot(Op)
+
 
 #-----------------------------------------------------#
 #import datetime
