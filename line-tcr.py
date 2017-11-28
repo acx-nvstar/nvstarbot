@@ -15,21 +15,24 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 1.9.3
+helpMessage =""" NvStar BOT Version 1.9.8
 
-========================
+=================
      Command member
-========================
-> Me            |Cek Akun Sendiri
+=================
+> What's new    | Melihat Update apa yang baru keluar
+> Me            | Cek Akun Sendiri
 > My mid        | Cek Akun Mid
 > Id Group      | Cek Id Group
 > Ginfo         | Group Info
+> Creator       | Cek Creator BOT
+> Gcreator      | Melihat siapa pembuat group
 > Apakah        | Implementasi dari BOT Kerang Ajaib
 > Rate          | Implementasi dari BOT Cocoklogi
 
-========================
+==================
      Command Admin
-========================
+==================
 > Respon        | Cek Respon Bot
 > Speedbot      | Cek Kecepatan Bot
 > Up            | Fungsi Spam Chat
@@ -43,7 +46,6 @@ helpMessage =""" NvStar BOT Version 1.9.3
 > Set group     | Melihat Configurasi Private Menu
 > Banned @      | Memasukan target kedalam blacklist dengan mention
 > Unban @       | Menghapus target dari daftar blacklist
-> Kill @        | Mengeluarkan 1 orang target blacklist dari group 
 > Kill          | Mengeluarkan semua target blacklist dari group
 > Nk @          | Mengaluarkan 1 member dari group
 > Invite MID    | Mengundang seseorang kedalam group dengan MID
@@ -73,6 +75,23 @@ Setgroup ="""
 Mengeluarkan member yang baru bergabung
 -- Joinn on/off
 """
+
+Whatsnew ="""
+=================
+     What's new??
+=================
+=> Update bot dari versi 1.9.5 menjadi 1.9.8
+=> Penambahan admin secara permanent Ayane Chan
+=> Fixed commands "Cancel" "Open Url" "Close Url"
+
+=====================
+     New Member Commands
+=====================
+> Gcreator
+> Creator
+"""
+
+
 KAC=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
 DEF=[ka,kb,ko,ke,ku]
 mid = cl.getProfile().mid
@@ -86,8 +105,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -854,6 +873,12 @@ def bot(op):
                     cl.sendText(msg.to,Setgroup)
                 else:
                     cl.sendText(msg.to,Sett)
+            elif msg.text in ["What's new"]:
+              if msg.from_ in admin:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,Whatsnew)
+                else:
+                    cl.sendText(msg.to,Sett)
             elif ("Gn " in msg.text):
               if msg.from_ in admin:
                 if msg.toType == 2:
@@ -1001,22 +1026,22 @@ def bot(op):
 #                kk.sendMessage(msg)
 #                kc.sendMessage(msg)
             elif msg.text in ["Cancel","cancel"]:
-              if msg.from_ in Admin:
-                if msg.toType == 2:
-                    X = cl.getGroup(msg.to)
-                    if X.invitee is not None:
-                        gInviMids = [contact.mid for contact in X.invitee]
-                        cl.cancelGroupInvitation(msg.to, gInviMids)
+                if msg.from_ in admin:
+                    if msg.toType == 2:
+                        X = cl.getGroup(msg.to)
+                        if X.invitee is not None:
+                            gInviMids = [contact.mid for contact in X.invitee]
+                            cl.cancelGroupInvitation(msg.to, gInviMids)
+                        else:
+                            if wait["lang"] == "JP":
+                                cl.sendText(msg.to,"No one is inviting")
+                            else:
+                                cl.sendText(msg.to,"Sorry, nobody absent")
                     else:
                         if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"No one is inviting")
+                            cl.sendText(msg.to,"Can not be used outside the group")
                         else:
-                            cl.sendText(msg.to,"Sorry, nobody absent")
-                else:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Can not be used outside the group")
-                    else:
-                        cl.sendText(msg.to,"Not for use less than group")
+                            cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv cancel","Bot cancel"]:
                 if msg.toType == 2:
                     G = k3.getGroup(msg.to)
@@ -1037,7 +1062,7 @@ def bot(op):
                 #print cl.getGroup(msg.to)
                 ##cl.sendMessage(msg)
             elif msg.text in ["Open url","open url"]:
-                if msg.from_ in Admin:
+                if msg.from_ in admin:
                     if msg.toType == 2:
                         X = cl.getGroup(msg.to)
                         X.preventJoinByTicket = False
@@ -1094,7 +1119,7 @@ def bot(op):
                     else:
                         kc.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Close url","close url"]:
-                if msg.from_ in Admin:
+                if msg.from_ in admin:
                     if msg.toType == 2:
                         X = cl.getGroup(msg.to)
                         X.preventJoinByTicket = True
@@ -1807,7 +1832,35 @@ def bot(op):
                         wait["cName"] = n
                         cl.sendText(msg.to,"changed to\n\n" + n)
          #-------------Fungsi Change Clock Finish-----------------# 
-		 
+
+
+         #---------------Fungsi Cek Group Creator Start------------------#
+            elif msg.text in ["Gcreator"]:
+              if msg.toType == 2:
+                    msg.contentType = 13
+                    ginfo = cl.getGroup(msg.to)
+                    gCreator = ginfo.creator.mid
+                    try:
+                        msg.contentMetadata = {'mid': gCreator}
+                        gCreator1 = ginfo.creator.displayName
+                        
+                    except:
+                        gCreator = "Error"
+                    cl.sendText(msg.to, "Group Creator : " + gCreator1)
+                    cl.sendMessage(msg)
+          #---------------Fungsi Cek Group Creator Finish-------------------#
+
+
+          #---------------Fungsi Creator Start-------------------#
+            elif msg.text in ["Creator"]:
+                msg.contentType = 13
+                msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                cl.sendText(msg.to,"MyCreator")
+                cl.sendText(msg.to,"Mau ape lu?")
+                cl.sendMessage(msg)
+          #---------------Fungsi Creator Finish-------------------#
+
+	 
          #-------------Fungsi Menambahkan / menghapus Admin Start-------------#
             elif "Admadd @" in msg.text:
                 if msg.from_ in creator:
@@ -2127,7 +2180,7 @@ def bot(op):
     #-------------Fungsi Tag All Finish---------------#
 
          #----------------Fungsi Banned Kick Target Start-----------------------#
-            elif msg.text in ["Kill "]:
+            elif msg.text in ["Kill"]:
               if msg.from_ in admin:
                 if msg.toType == 2:
                     group = ki.getGroup(msg.to)
