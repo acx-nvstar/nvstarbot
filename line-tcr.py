@@ -40,7 +40,7 @@ helpMessage =""" NvStar BOT Version 2.0.5
 > Tagall        | Mention Semua User
 > Banlist       | Cek List Akun Banned
 > Gn namagroup  | Ganti Nama Group
-> Adminlist      | Cek siapa sajakah adminnya
+> Adminlist     | Cek siapa sajakah adminnya
 > Cancel        | Membatalkan User Masuk Group
 > Set View      | Cek Privasi Group
 > Glist         | Mengetahui dalam group mana sajakah BOT berada
