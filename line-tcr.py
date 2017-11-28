@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 1.9.8
+helpMessage =""" NvStar BOT Version 2.0.5
 
 =================
      Command member
@@ -34,13 +34,16 @@ helpMessage =""" NvStar BOT Version 1.9.8
      Command Admin
 ==================
 > Respon        | Cek Respon Bot
+> Mid @         | Cek MID dengan mention
 > Speedbot      | Cek Kecepatan Bot
 > Up            | Fungsi Spam Chat
 > Tagall        | Mention Semua User
 > Banlist       | Cek List Akun Banned
 > Gn namagroup  | Ganti Nama Group
+> Adminlist      | Cek siapa sajakah adminnya
 > Cancel        | Membatalkan User Masuk Group
 > Set View      | Cek Privasi Group
+> Glist         | Mengetahui dalam group mana sajakah BOT berada
 > Open Url      | Membuka Url Group
 > Close Url     | Menutup Url Group
 > Set group     | Melihat Configurasi Private Menu
@@ -80,15 +83,15 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update bot dari versi 1.9.5 menjadi 1.9.8
-=> Penambahan admin secara permanent Ayane Chan
-=> Fixed commands "Cancel" "Open Url" "Close Url"
+=> Update bot dari versi 1.9.8 menjadi 2.0.5
+=> Fixed some variable bugs
 
 =====================
-     New Member Commands
+     New Admin Commands
 =====================
-> Gcreator
-> Creator
+> Glist (Melihat dimana sajakah BOT berada)
+> Adminlist (Update lebih akurat)
+> Mid @ (MID dengan mention)
 """
 
 
@@ -170,8 +173,8 @@ def NOTIFIED_READ_MESSAGE(op):
             if Name in wait2['readMember'][op.param1]:
                 pass
             else:
-                wait2['readMember'][op.param1] += "\n・" + Name
-                wait2['ROM'][op.param1][op.param2] = "・" + Name
+                wait2['readMember'][op.param1] += "\n??" + Name
+                wait2['ROM'][op.param1][op.param2] = "??" + Name
         else:
             pass
     except:
@@ -1334,12 +1337,13 @@ def bot(op):
                 tl_text = msg.text.replace("TL: ","")
                 cl.sendText(msg.to,"line://home/post?userMid="+mid+"&postId="+cl.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
             elif msg.text in ["Cn "]:
-                string = msg.text.replace("Cn ","")
-                if len(string.decode('utf-8')) <= 20:
-                    profile = cl.getProfile()
-                    profile.displayName = string
-                    cl.updateProfile(profile)
-                    cl.sendText(msg.to,"name " + string + " done")
+                if msg.from_ in admin:
+                    string = msg.text.replace("Cn ","")
+                    if len(string.decode('utf-8')) <= 20:
+                        profile = cl.getProfile()
+                        profile.displayName = string
+                        cl.updateProfile(profile)
+                        cl.sendText(msg.to,"name " + string + " done")
             elif msg.text in ["Cv1 rename "]:
                 string = msg.text.replace("Cv1 rename ","")
                 if len(string.decode('utf-8')) <= 20:
@@ -1820,7 +1824,7 @@ def bot(op):
                     else:
                         wait["clock"] = False
                         kc.sendText(msg.to,"Jam Sedang Off")
-         #-------------Fungsi Jam on/off Finish-------------------#           
+         #-------------Fungsi Jam on/off Finish-------------------#
          
          #-------------Fungsi Change Clock Start------------------#
             elif msg.text in ["Change clock"]:
@@ -1954,33 +1958,31 @@ def bot(op):
 
             elif msg.text == "Check":
                 if msg.from_ in admin:
-                        cl.sendText(msg.to, "Siderss")
-                        try:
-                            del wait2['readPoint'][msg.to]
-                            del wait2['readMember'][msg.to]
-                        except:
-                            pass
-                        now2 = datetime.now()
-                        wait2['readPoint'][msg.to] = msg.id
-                        wait2['readMember'][msg.to] = ""
-                        wait2['ROM'][msg.to] = {}
-                        wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
-                        print wait2
-
+                    cl.sendText(msg.to, "Absen")
+                    try:
+                        del wait2['readPoint'][msg.to]
+                        del wait2['readMember'][msg.to]
+                    except:
+                        pass
+                    wait2['readPoint'][msg.to] = msg.id
+                    wait2['readMember'][msg.to] = ""
+                    wait2['ROM'][msg.to] = {}
+                    wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+                    print wait2
             elif msg.text == "Absen":
                 if msg.from_ in admin:
-                        if msg.to in wait2['readPoint']:
-                            if wait2["ROM"][msg.to].items() == []:
-                                chiya = ""
-                            else:
-                                chiya = ""
-                                for rom in wait2["ROM"][msg.to].items():
-                                    print rom
-                                    chiya += rom[1] + "\n"
-
-                            cl.sendText(msg.to, "== Bakekok Sider == %s\nthat's it\n\nPeople who have ignored reads\n%skampret lo sider. ??\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                    if msg.to in wait2['readPoint']:
+                        if wait2["ROM"][msg.to].items() == []:
+                            chiya = ""
                         else:
-                            cl.sendText(msg.to, "An already read point has not been set.\n¡¸set¡¹you can send ?? read point will be created ??")
+                            chiya = ""
+                            for rom in wait2["ROM"][msg.to].items():
+                                print rom
+                                chiya += rom[1] + "\n"
+
+                        cl.sendText(msg.to, "Readed By %s\nthat's it\n\nignored By\n%sIt is abnormal 鈾猏n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                    else:
+                        cl.sendText(msg.to, "An already read point has not been set.\n銆宻et銆峺ou can send 鈾?? read point will be created 鈾??")	
 #-----------------------------------------------
 
 #-----------------------------------------------
@@ -2426,9 +2428,42 @@ def bot(op):
                     ke.sendText(msg.to,"Complete")
       #-------------Fungsi Respon Finish---------------------#
 
-      #-------------Fungsi Balesan Respon Start---------------------#
-            elif msg.text in ["Admin list"]:
-                ki.sendText(msg.to,"Admin List\n\n->Panpan\n->FT\n->Alfz~\n->[NvStar]Agy Pascha (Urgent WA +6283822526441)\n->Miocimiho\n\nThat's it\n\nIf there is any question please ask admin above by Private Message\n\nThank you")
+            elif "Glist" in msg.text:
+                if msg.from_ in admin:
+                        gid = cl.getGroupIdsJoined()
+                        h = ""
+                        for i in gid:
+                            h += "=> %s  \n" % (cl.getGroup(i).name + " | Members : [ " + str(len (cl.getGroup(i).members))+" ]")
+                        cl.sendText(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
+
+      #-------------Fungsi Adminlist START---------------------#
+            elif msg.text in ["Adminlist","adminlist"]:
+              if msg.from_ in admin:
+                if admin == []:
+                    cl.sendText(msg.to,"The adminlist is empty")
+                else:
+                    cl.sendText(msg.to,"Tunggu...")
+                    mc = ""
+                    for mi_d in admin:
+                        mc += "->" +cl.getContact(mi_d).displayName + "\n"
+                    cl.sendText(msg.to,mc)
+                    print "[Command]Stafflist executed"
+      #-------------Fungsi Adminlist TUTUP---------------------#
+
+      #-------------Fungsi Adminlist TUTUP---------------------#
+
+            elif "Mid @" in msg.text:
+                if msg.from_ in admin:
+                    _name = msg.text.replace("Mid @","")
+                    _nametarget = _name.rstrip(' ')
+                    gs = cl.getGroup(msg.to)
+                    for g in gs.members:
+                        if _nametarget == g.displayName:
+                            cl.sendText(msg.to, g.mid)
+                        else:
+                            pass	
+	
+	    #-------------Fungsi Adminlist TUTUP---------------------#
 
         #-----------Fungsi mematikan BOT-------------------------#
             elif msg.text in ["Shut Down"]:
