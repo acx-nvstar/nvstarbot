@@ -2408,7 +2408,7 @@ def bot(op):
 #                kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
             elif msg.text in ["#welcome"]:
                 if msg.from_ in admin:
-                    ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
+                    ki.sendText(msg.to,"Selamat datang di group Official Anime Loverz")
                     kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
