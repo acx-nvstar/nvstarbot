@@ -20,44 +20,44 @@ helpMessage =""" NvStar BOT Version 2.1.0
 =================
      Command member
 =================
-> What's new    | Melihat Update apa yang baru keluar
-> Me            | Cek Akun Sendiri
-> My mid        | Cek Akun Mid
-> Id Group      | Cek Id Group
-> Ginfo         | Group Info
-> Creator       | Cek Creator BOT
-> Gcreator      | Melihat siapa pembuat group
-> Apakah        | Implementasi dari BOT Kerang Ajaib
-> Rate          | Implementasi dari BOT Cocoklogi
+> What's new (Melihat Update apa yang baru keluar)
+> Me (Cek Akun Sendiri)
+> My mid (Cek Akun Mid)
+> Id Group (Cek Id Group)
+> Ginfo (Group Info)
+> Creator (Cek Creator BOT)
+> Gcreator (Melihat siapa pembuat group)
+> Apakah (Implementasi dari BOT Kerang Ajaib)
+> Rate (Implementasi dari BOT Cocoklogi)
 
 ==================
      Command Admin
 ==================
-> Respon        | Cek Respon Bot
-> Mid @         | Cek MID dengan mention
-> Speedbot      | Cek Kecepatan Bot
-> Up            | Fungsi Spam Chat
-> Tagall        | Mention Semua User
-> Banlist       | Cek List Akun Banned
-> Gn namagroup  | Ganti Nama Group
-> Adminlist     | Cek admin dengan realname
-> Cancel        | Membatalkan User Masuk Group
-> Set View      | Cek Privasi Group
-> Glist         | Mengetahui dalam group mana sajakah BOT berada
-> Open Url      | Membuka Url Group
-> Close Url     | Menutup Url Group
-> Set group     | Melihat Configurasi Private Menu
-> Banned @      | Memasukan target kedalam blacklist dengan mention
-> Unban @       | Menghapus target dari daftar blacklist
-> Kill          | Mengeluarkan semua target blacklist dari group
-> Nk @          | Mengaluarkan 1 member dari group
-> Invite MID    | Mengundang seseorang kedalam group dengan MID
-> Kick MID      | Mengeluarkan seseorang dari group dengan MID
-> Bye all       | Mengeluarkan BOT dari group
-> Apakahon      | Menyalakan Fitur Kerang Ajaib
-> Apakahoff     | Mematikan fitur kerang ajaib
-> Rateon        | Menyalakan fitur rate cocoklogi
-> Rateoff       | Mematikan fitur rate cocoklogi
+> Respon (Cek Respon Bot)
+> Mid @ (Cek MID dengan mention)
+> Speedbot (Cek Kecepatan Bot)
+> Up (Fungsi Spam Chat)
+> Tagall (Mention Semua User)
+> Banlist (Cek List Akun Banned)
+> Gn namagroup (Ganti Nama Group)
+> Adminlist (Cek admin dengan realname)
+> Cancel (Membatalkan User Masuk Group)
+> Set View (Cek Privasi Group)
+> Glist (Mengetahui dalam group mana sajakah BOT berada)
+> Open Url (Membuka Url Group)
+> Close Url (Menutup Url Group)
+> Set group (Melihat Configurasi Private Menu)
+> Banned @ (Memasukan target kedalam blacklist dengan mention)
+> Unban @ (Menghapus target dari daftar blacklist)
+> Kill (Mengeluarkan semua target blacklist dari group)
+> Nk @ (Mengaluarkan 1 member dari group)
+> Invite MID (Mengundang seseorang kedalam group dengan MID)
+> Kick MID (Mengeluarkan seseorang dari group dengan MID)
+> Bye all (Mengeluarkan BOT dari group)
+> Apakahon (Menyalakan Fitur Kerang Ajaib)
+> Apakahoff (Mematikan fitur kerang ajaib)
+> Rateon (Menyalakan fitur rate cocoklogi)
+> Rateoff (Mematikan fitur rate cocoklogi)
 
 ========================
      Command Khusus [NvStar]Agy Pascha
@@ -81,26 +81,22 @@ Setgroup ="""
 
 Mengeluarkan member yang baru bergabung
 -- Joinn on/off
+
+Auto Join BOT kedalam group
+-- Join on/off
 """
 
 Whatsnew ="""
 =================
      What's new??
 =================
-=> Update bot dari versi 2.0.5 menjadi 2.1.0
-=> Memperbaiki beberapa BUG
-=> Mengundang otomatis creator BOT kedalam group
+=> Merubah Tampilan "Help" yang baru
 => Menambahkan permanent admin Mai
-=> Fitur BOT kerang ajaib ON/OFF
-=> Fitur BOT cocoklogi ON/OFF
 
 =====================
-     New Admin Commands
+     New Setgroup Commands
 =====================
-> Apakahon (Menyalakan BOT kerang ajaib)
-> Apakahoff (Mematikan BOT kerang ajaib)
-> Rateon (Menyalakan BOT cocoklogi)
-> Rateoff (Mematikan BOT cocoklogi)
+> Join on/off (BOT auto join group)
 """
 
 
