@@ -6,7 +6,7 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(qr=True)
+cl.login(token="EngJRvrps2or7ayV1jj3.2Ye65G/LL8JrF39EU8sJGW.f7EN7REKyXaXsgONoDkEDqoy7ckHWo3EHU2zeaa7msA=")
 cl.loginResult()
 
 ki = kk = kc = ks = ka = kb = ko = ke = ku = cl
@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.0.5
+helpMessage =""" NvStar BOT Version 2.1.0
 
 =================
      Command member
@@ -40,7 +40,7 @@ helpMessage =""" NvStar BOT Version 2.0.5
 > Tagall        | Mention Semua User
 > Banlist       | Cek List Akun Banned
 > Gn namagroup  | Ganti Nama Group
-> Adminlist     | Cek siapa sajakah adminnya
+> Adminlist     | Cek admin dengan realname
 > Cancel        | Membatalkan User Masuk Group
 > Set View      | Cek Privasi Group
 > Glist         | Mengetahui dalam group mana sajakah BOT berada
@@ -54,6 +54,10 @@ helpMessage =""" NvStar BOT Version 2.0.5
 > Invite MID    | Mengundang seseorang kedalam group dengan MID
 > Kick MID      | Mengeluarkan seseorang dari group dengan MID
 > Bye all       | Mengeluarkan BOT dari group
+> Apakahon      | Menyalakan Fitur Kerang Ajaib
+> Apakahoff     | Mematikan fitur kerang ajaib
+> Rateon        | Menyalakan fitur rate cocoklogi
+> Rateoff       | Mematikan fitur rate cocoklogi
 
 ========================
      Command Khusus [NvStar]Agy Pascha
@@ -83,15 +87,20 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update bot dari versi 1.9.8 menjadi 2.0.5
-=> Fixed some variable bugs
+=> Update bot dari versi 2.0.5 menjadi 2.1.0
+=> Memperbaiki beberapa BUG
+=> Mengundang otomatis creator BOT kedalam group
+=> Menambahkan permanent admin Mai
+=> Fitur BOT kerang ajaib ON/OFF
+=> Fitur BOT cocoklogi ON/OFF
 
 =====================
      New Admin Commands
 =====================
-> Glist (Melihat dimana sajakah BOT berada)
-> Adminlist (Update lebih akurat)
-> Mid @ (MID dengan mention)
+> Apakahon (Menyalakan BOT kerang ajaib)
+> Apakahoff (Mematikan BOT kerang ajaib)
+> Rateon (Menyalakan BOT cocoklogi)
+> Rateoff (Mematikan BOT cocoklogi)
 """
 
 
@@ -108,8 +117,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -144,6 +153,8 @@ wait = {
     "Protectcancl":False,
     "protectionOn":True,
     "atjointicket":True,
+    "apakah":True,
+    "rate":True,
     }
 
 wait2 = {
@@ -1336,7 +1347,7 @@ def bot(op):
             elif msg.text in ["TL: "]:
                 tl_text = msg.text.replace("TL: ","")
                 cl.sendText(msg.to,"line://home/post?userMid="+mid+"&postId="+cl.new_post(tl_text)["result"]["post"]["postInfo"]["postId"])
-            elif msg.text in ["Cn "]:
+            elif "Cn " in msg.text:
                 if msg.from_ in admin:
                     string = msg.text.replace("Cn ","")
                     if len(string.decode('utf-8')) <= 20:
@@ -1864,6 +1875,8 @@ def bot(op):
                 cl.sendMessage(msg)
           #---------------Fungsi Creator Finish-------------------#
 
+
+
 	 
          #-------------Fungsi Menambahkan / menghapus Admin Start-------------#
             elif "Admadd @" in msg.text:
@@ -2075,16 +2088,81 @@ def bot(op):
 
     #-------------------Fungsi BOT Kerang Ajaib & Cocoklogi Start-------------------#
             elif "Apakah " in msg.text:
+              if wait["apakah"] == True:
                 tanya = msg.text.replace("Apakah ","")
                 jawab = ("Ya","Tidak")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,jawaban)
-            elif "Rate" in msg.text:
+            elif "Rate " in msg.text:
+              if wait["rate"] == True:
                 tanya = msg.text.replace("Rate","")
                 jawab = ("1%","2%","3%","4%","5%","6%","7%","9%","10%","11%","12%","13%","""""""""""","20%","30%","40%","50%","60%","70%","80%","90%","100%")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,jawaban)
     #-------------------Fungsi BOT Kerang Ajaib & Cocoklogi Finish------------------#	
+	
+
+    #-------------------Fungsi Nyala/Matikan BOT cocoklogi Start-------------------------#            
+            elif msg.text in ["Apakahon"]:
+              if msg.from_ in admin:
+                if wait["apakah"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Kerang Ajaib on")
+                    else:
+                        cl.sendText(msg.to,"Sudah nyala kok kerangnya")
+                else:
+                    wait["apakah"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Kerang Ajaib Off")
+                    else:
+                        cl.sendText(msg.to,"Sudah nyala kok kerangnya")
+
+            elif msg.text in ["Apakahoff","apakahoff"]:
+              if msg.from_ in admin:
+                if wait["apakah"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Kerang Ajaib off")
+                    else:
+                        cl.sendText(msg.to,"Sudah dimatikan kok kerangnya")
+                else:
+                    wait["apakah"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Kerang Ajaib Off")
+                    else:
+                        cl.sendText(msg.to,"Sudah dimatikan kok kerangnya")
+    #-------------------Fungsi Nyala/Matikan BOT kerang apakah Finish-------------------------#
+
+
+    #-------------------Fungsi Nyala/Matikan BOT cocoklogi Start-------------------------#            
+            elif msg.text in ["Rateon","rateon"]:
+              if msg.from_ in admin:
+                if wait["rate"] == True:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Rate cocoklogi aktiv")
+                    else:
+                        cl.sendText(msg.to,"Sudah nyala kok Rate cocokloginya")
+                else:
+                    wait["rate"] = True
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Rate cocoklogi aktiv")
+                    else:
+                        cl.sendText(msg.to,"Sudah nyala kok Rate cocokloginya")
+
+            elif msg.text in ["Rateoff","rateoff"]:
+              if msg.from_ in admin:
+                if wait["rate"] == False:
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Rate cocoklogi dimatikan")
+                    else:
+                        cl.sendText(msg.to,"Sudah dimatikan kok Rate cocokloginya")
+                else:
+                    wait["rate"] = False
+                    if wait["lang"] == "JP":
+                        cl.sendText(msg.to,"Rate cocoklogi dimatikan")
+                    else:
+                        cl.sendText(msg.to,"Sudah dimatikan kok Rate cocokloginya")
+    #-------------------Fungsi Nyala/Matikan BOT cocoklogi Finish-------------------------#
+
 
     #-------------Fungsi Leave Group Start---------------#
 
@@ -2408,7 +2486,7 @@ def bot(op):
 #                kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
             elif msg.text in ["#welcome"]:
                 if msg.from_ in admin:
-                    ki.sendText(msg.to,"Selamat datang di group Official Anime Loverz")
+                    ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
                     kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
