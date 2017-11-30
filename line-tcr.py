@@ -6,7 +6,7 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(token="")
+cl.login(token="EngJRvrps2or7ayV1jj3.2Ye65G/LL8JrF39EU8sJGW.f7EN7REKyXaXsgONoDkEDqoy7ckHWo3EHU2zeaa7msA=")
 cl.loginResult()
 
 ki = kk = kc = ks = ka = kb = ko = ke = ku = cl
@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.1.0
+helpMessage =""" NvStar BOT Version 2.1.2
 
 =================
      Command member
@@ -40,6 +40,7 @@ helpMessage =""" NvStar BOT Version 2.1.0
 > Tagall (Mention Semua User)
 > Banlist (Cek List Akun Banned)
 > Gn namagroup (Ganti Nama Group)
+> Cn (Merubah nama BOT)
 > Adminlist (Cek admin dengan realname)
 > Cancel (Membatalkan User Masuk Group)
 > Set View (Cek Privasi Group)
@@ -49,7 +50,7 @@ helpMessage =""" NvStar BOT Version 2.1.0
 > Set group (Melihat Configurasi Private Menu)
 > Banned @ (Memasukan target kedalam blacklist dengan mention)
 > Unban @ (Menghapus target dari daftar blacklist)
-> Kill (Mengeluarkan semua target blacklist dari group)
+> Kill ban (Mengeluarkan semua target blacklist dari group)
 > Nk @ (Mengaluarkan 1 member dari group)
 > Invite MID (Mengundang seseorang kedalam group dengan MID)
 > Kick MID (Mengeluarkan seseorang dari group dengan MID)
@@ -90,13 +91,16 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Merubah Tampilan "Help" yang baru
-=> Menambahkan permanent admin Mai
+=> Update bot dari 2.1.0 menjadi 2.1.2
+=> Memperbaiki Send message Apakah on
+=> Perubahan command "Kill" menjadi "Kill ban"
+=> Memperbaiki BUG command Setgroup "Join on/off"
+=> Menambahkan permanent admin Kyo
 
 =====================
-     New Setgroup Commands
+     New ADMIN Commands
 =====================
-> Join on/off (BOT auto join group)
+> Cn (Merubah nama BOT)
 """
 
 
@@ -113,8 +117,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -1368,8 +1372,8 @@ def bot(op):
             elif msg.text in ["Mc "]:
                 mmid = msg.text.replace("Mc ","")
                 msg.contentType = 13
-                msg.contentMetadata = {"mid":mmid}
-                cl.sendMessage(msg)
+                msg.contentMetadata = {'mid':mmid}
+                random.choice(KAC).sendText(msg)
             elif msg.text in ["Joinn on","joinn on"]:
               if msg.from_ in admin:
                 if wait["Protectjoin"] == True:
@@ -1965,8 +1969,9 @@ def bot(op):
                         kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "$set":
-                    cl.sendText(msg.to, "Check sider")
+            elif msg.text == "Check":
+                if msg.from_ in admin:
+                    cl.sendText(msg.to, "Absen")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1975,8 +1980,10 @@ def bot(op):
                     wait2['readPoint'][msg.to] = msg.id
                     wait2['readMember'][msg.to] = ""
                     wait2['ROM'][msg.to] = {}
+                    wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                     print wait2
-            elif msg.text == "$read":
+            elif msg.text == "Absen":
+                if msg.from_ in admin:
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -1986,9 +1993,9 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "Readed By %s\nthat's it\n\nignored By\n%sIt is abnormal 鈾猏n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
-                        cl.sendText(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")	
+                        cl.sendText(msg.to, "An already read point has not been set.\n銆宻et銆峺ou can send 鈾?? read point will be created 鈾??")	
 #-----------------------------------------------
 
 #-----------------------------------------------
@@ -2106,7 +2113,7 @@ def bot(op):
                 else:
                     wait["apakah"] = True
                     if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Kerang Ajaib Off")
+                        cl.sendText(msg.to,"Kerang Ajaib on")
                     else:
                         cl.sendText(msg.to,"Sudah nyala kok kerangnya")
 
