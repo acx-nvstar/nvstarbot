@@ -1965,9 +1965,8 @@ def bot(op):
                         kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "Check":
-                if msg.from_ in admin:
-                    cl.sendText(msg.to, "Absen")
+            elif msg.text == "$set":
+                    cl.sendText(msg.to, "Check sider")
                     try:
                         del wait2['readPoint'][msg.to]
                         del wait2['readMember'][msg.to]
@@ -1976,10 +1975,8 @@ def bot(op):
                     wait2['readPoint'][msg.to] = msg.id
                     wait2['readMember'][msg.to] = ""
                     wait2['ROM'][msg.to] = {}
-                    wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
                     print wait2
-            elif msg.text == "Absen":
-                if msg.from_ in admin:
+            elif msg.text == "$read":
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
                             chiya = ""
@@ -1989,9 +1986,9 @@ def bot(op):
                                 print rom
                                 chiya += rom[1] + "\n"
 
-                        cl.sendText(msg.to, "Readed By %s\nthat's it\n\nignored By\n%sIt is abnormal 鈾猏n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                        cl.sendText(msg.to, "People who readed %s\nthat's it\n\nPeople who have ignored reads\n%sIt is abnormal ♪\n\nReading point creation date n time:\n[%s]"  % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
                     else:
-                        cl.sendText(msg.to, "An already read point has not been set.\n銆宻et銆峺ou can send 鈾?? read point will be created 鈾??")	
+                        cl.sendText(msg.to, "An already read point has not been set.\n「set」you can send ♪ read point will be created ♪")	
 #-----------------------------------------------
 
 #-----------------------------------------------
