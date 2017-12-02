@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.1.2
+helpMessage =""" NvStar BOT Version 2.1.8
 
 =================
      Command member
@@ -27,12 +27,14 @@ helpMessage =""" NvStar BOT Version 2.1.2
 > Ginfo (Group Info)
 > Creator (Cek Creator BOT)
 > Gcreator (Melihat siapa pembuat group)
+> Memberfaq (Bertanya seputar BOT)
 > Apakah (Implementasi dari BOT Kerang Ajaib)
 > Rate (Implementasi dari BOT Cocoklogi)
 
 ==================
      Command Admin
 ==================
+> Adminfaq (Cara menggubakan BOT)
 > Respon (Cek Respon Bot)
 > Mid @ (Cek MID dengan mention)
 > Speedbot (Cek Kecepatan Bot)
@@ -91,16 +93,65 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update bot dari 2.1.0 menjadi 2.1.2
-=> Memperbaiki Send message Apakah on
-=> Perubahan command "Kill" menjadi "Kill ban"
-=> Memperbaiki BUG command Setgroup "Join on/off"
-=> Menambahkan permanent admin Kyo
+=> Update bot dari 2.1.0 menjadi 2.1.8
+=> Menambahkan permanent admin Reza Faesal
+
+=====================
+     New MEMBER Commands
+=====================
+> Memberfaq (bertanya seputar tentang BOT)
 
 =====================
      New ADMIN Commands
 =====================
-> Cn (Merubah nama BOT)
+> Adminfaq (Cara menggunakan BOT)
+"""
+
+Memberfaq ="""
+=================
+     MEMBER FAQ
+=================
+MASUKAN COMMAND TANPA TANDA PETIK (")
+
+1.Bagaimana cara meminjam BOT untuk masuk ke group kalian?
+ketik "Tutormem1"
+
+2.Mengapa setiap member yang baru saja bergabung langsung di usir keluar?
+ketik "Tutormem2"
+
+3.Mengapa saya tidak bisa menggunakan command admin?
+ketik "Tutormem3"
+
+4.Saya ingin mengeluarkan BOT tetapi saya takut diusir duluan oleh BOT
+ketik "Tutormem4"
+
+5.Mengapa LINE saya terasa berat atau error saat memasukan BOT ini pada group saya?
+ketik "Tutormem5"
+
+6. Mengapa saya tiba tiba diusir keluar oleh BOT?
+ketik "Tutormem6"
+
+7. Mengepa BOT tidak membalas ketika saya mengajukan pertanyaan Apakah atau Rate?
+ketik "Tutormem7"
+
+8. Mengapa nama saya masuk dalam blacklist?
+ketik "Tutormem8"
+"""
+
+Adminfaq ="""
+=================
+     ADMIN FAQ
+=================
+MASUKAN COMMAND TANPA TANDA PETIK (")
+
+1.Bagaimana cara mengeluarkan member dari group mengginakan BOT?
+ketik "Tutoradm1"
+
+2.Apa sih sebenarnya fungsi blacklist itu?
+ketik "Tutoradm2"
+
+3.Saya ingin berhenti menjadi admin BOT
+ketik "Tutoradm3"
 """
 
 
@@ -117,8 +168,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -152,7 +203,7 @@ wait = {
     "Protectjoin":False,
     "Protectcancl":False,
     "protectionOn":True,
-    "atjointicket":True,
+    "atjointicket":False,
     "apakah":True,
     "rate":True,
     }
@@ -891,6 +942,17 @@ def bot(op):
               if msg.from_ in admin:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,Whatsnew)
+                else:
+                    cl.sendText(msg.to,Sett)
+            elif msg.text in ["Memberfaq"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,Memberfaq)
+                else:
+                    cl.sendText(msg.to,Sett)
+            elif msg.text in ["Adminfaq"]:
+              if msg.from_ in admin:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,Adminfaq)
                 else:
                     cl.sendText(msg.to,Sett)
             elif ("Gn " in msg.text):
@@ -1932,6 +1994,39 @@ def bot(op):
                     cl.sendText(msg.to,"Hanya [NvStar] Agy Pascha yang dapat melakukannya")
 		 #-------------Fungsi Menambahkan / menghapus Admin Finish-------------#
 		
+		 #-------------FAQ MEMBER START-------------#
+            elif msg.text in ["Tutormem1"]:
+                    cl.sendText(msg.to,"Untuk Meminjamkan BOT agar masuk kedalam group.\nKalian dapat menghubungi admin atau Creator BOT dengan cara\nmengetik command Creator")
+            elif msg.text in ["Tutormem2"]:
+                    cl.sendText(msg.to,"BOT ini menggunakan system proteksi apabila jika ada member yang baru saja bergabung akan langsung di kick keluar.\nHubungi Admin BOT atau creator dengan cara mengetik command Creator")
+            elif msg.text in ["Tutormem3"]:
+                    cl.sendText(msg.to,"Karena Command admin hanya berfungsi untuk admin dan creator")
+            elif msg.text in ["Tutormem4"]:
+                    cl.sendText(msg.to,"Hanya ADMIN atau Creator yang dapat mengeluarkan BOT\nHubungi creator langsung dengan cara mengetik command Creator")
+            elif msg.text in ["Tutormem5"]:
+                    cl.sendText(msg.to,"BOT ini menggunakan kernel LINUX server versi 16.04 dan python versi 2.7.13\nDianjurkan kalian menginstall LINE diatas versi 7.15\nHubungi creator untuk informasi lebih lanjut\nKetik command Creator")
+            elif msg.text in ["Tutormem6"]:
+                    cl.sendText(msg.to,"Ada berbagai macam alasan untuk ini, BOT akan mengeluarkan member jika:\n1.Member mengusir member lain\n2.Membuka Link URL group\n3.Membuka Code QR Group\n4.Merubah nama group\n5.Merubah Profile Picture Group")
+            elif msg.text in ["Tutormem7"]:
+                    cl.sendText(msg.to,"Mungkin BOT dalam keadaan mati atau Fitur kerang ajaib dalam keadaan mati\nSilahkan hubungi ADMIN atau Creator")
+            elif msg.text in ["Tutormem9"]:
+                    cl.sendText(msg.to,"Mungkin kamu telah malekukan pelanggaran dalam satu group sehingga admin memasukan kamu kedalam blacklist.\nHubungi admin atau Creator untuk informasi lebih lanjut")
+		 #-------------FAQ MEMBER FINISH-------------#
+		
+		 #-------------FAQ ADMIN START-------------#
+            elif msg.text in ["Tutoradm1"]:
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,"Untuk Mengeluarkan member lain dengan cepat kalian dapat melakukannya dengan cara Mengetik command Nk<spasi>@nama orang")
+            elif msg.text in ["Tutoradm2"]:
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,"Blacklist berfungsi untuk jika ada seseorang masuk dalam blacklist maka member lain tidak dapat mengundang orang tersebut masuk kembali kedalam group kecuali ADMIN yang mengundang")
+            elif msg.text in ["Tutoradm3"]:
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,"Hubungi Creator")
+		 #-------------FAQ ADMIN FINISH---------
+		 #-------------FAQ ADMIN FINISH---------
+		 #-------------FAQ ADMIN FINISH-------------#
+		
 		 #-------------Fungsi Music start---------------#
 #            elif ".Music" in msg.text:
 #	            songname = msg.text.lower().replace(".music","")
@@ -2546,7 +2641,7 @@ def bot(op):
         #-----------Fungsi mematikan BOT-------------------------#
             elif msg.text in ["Shut Down"]:
                 if msg.from_ in Admin:
-                    ki.sendText(msg.to,"Shutting Down...")
+                    cl.sendText(msg.to,"Shutting Down...")
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
