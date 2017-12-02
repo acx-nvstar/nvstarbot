@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.1.8
+helpMessage =""" NvStar BOT Version 2.2.4
 
 =================
      Command member
@@ -23,6 +23,7 @@ helpMessage =""" NvStar BOT Version 2.1.8
 > What's new (Melihat Update apa yang baru keluar)
 > Me (Cek Akun Sendiri)
 > My mid (Cek Akun Mid)
+> Info @ (Untuk mengetahui informasi target)
 > Id Group (Cek Id Group)
 > Ginfo (Group Info)
 > Creator (Cek Creator BOT)
@@ -47,6 +48,7 @@ helpMessage =""" NvStar BOT Version 2.1.8
 > Cancel (Membatalkan User Masuk Group)
 > Set View (Cek Privasi Group)
 > Glist (Mengetahui dalam group mana sajakah BOT berada)
+> Group id (Mengetahui Group id yang dimasuki BOT)
 > Open Url (Membuka Url Group)
 > Close Url (Menutup Url Group)
 > Set group (Melihat Configurasi Private Menu)
@@ -93,18 +95,24 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update bot dari 2.1.0 menjadi 2.1.8
+=> 02/12/17
+=> Update bot dari 2.2.2 menjadi 2.2.4
 => Menambahkan permanent admin Reza Faesal
+=> Penambahan content di command "Set View"
+=> Perubahan tampilan command "Glist"
 
 =====================
      New MEMBER Commands
 =====================
 > Memberfaq (bertanya seputar tentang BOT)
+> Info @(Untuk mengetahui informasi target)
 
 =====================
      New ADMIN Commands
 =====================
 > Adminfaq (Cara menggunakan BOT)
+> Group id (mengetahui semua id group yang dimasuki BOT)
+
 """
 
 Memberfaq ="""
@@ -186,16 +194,16 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"風リボーン ",
-    "cName2":"風リボーン ",
-    "cName3":"風リボーン ",
-    "cName4":"風リボーン ",
-    "cName5":"風リボーン ",
-    "cName6":"風リボーン ",
-    "cName7":"風リボーン ",
-    "cName8":"風リボーン ",
-    "cName9":"風リボーン ",
-    "cName10":"風リボーン ",
+    "cName":"",
+    "cName2":"",
+    "cName3":"",
+    "cName4":"",
+    "cName5":"",
+    "cName6":"",
+    "cName7":"",
+    "cName8":"",
+    "cName9":"",
+    "cName10":"",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -212,7 +220,7 @@ wait2 = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
-    'ROM':{}
+    'ROM':{},
     }
 
 setTime = {}
@@ -1656,6 +1664,10 @@ def bot(op):
                     else:md+=" Auto add : off\n"
                     if wait["commentOn"] == True: md+=" Comment : on\n"
                     else:md+=" Comment : off\n"
+                    if wait["apakah"] == True: md+=" Kerang Ajaib : on\n"
+                    else:md+=" Kerang Ajaib : off\n"
+                    if wait["rate"] == True: md+=" Cocoklogi : on\n"
+                    else:md+=" Cocoklogi : off\n"
                     cl.sendText(msg.to,md)
             elif "album merit " in msg.text:
                 gid = msg.text.replace("album merit ","")
@@ -1937,9 +1949,23 @@ def bot(op):
                 cl.sendMessage(msg)
           #---------------Fungsi Creator Finish-------------------#
 
+          #---------------Fungsi INFO START-------------------#
+            elif "Info @" in msg.text:
+                nama = msg.text.replace("Info @","")
+                target = nama.rstrip(' ')
+                tob = cl.getGroup(msg.to)
+                for g in tob.members:
+                    if target == g.displayName:
+                        mid = cl.getContact(g.mid)
+                        try:
+                            cover = cl.channel.getCover(g.mid)
+                        except:
+                            cover = ""
+                        cl.sendText(msg.to,"[Display Name]:\n" + g.displayName + "\n[Mid]:\n" + g.mid + "\n[BIO]:\n" + mid.statusMessage + "\n[Ava]:\nhttp://dl.profile.line-cdn.net/" + mid.pictureStatus + "\n[Cover]:\n" + str(cover))
+                    else:
+                        pass
+          #---------------Fungsi INFO Finish-------------------#
 
-
-	 
          #-------------Fungsi Menambahkan / menghapus Admin Start-------------#
             elif "Admadd @" in msg.text:
                 if msg.from_ in creator:
@@ -2607,7 +2633,7 @@ def bot(op):
                         h = ""
                         for i in gid:
                             h += "=> %s  \n" % (cl.getGroup(i).name + " | Members : [ " + str(len (cl.getGroup(i).members))+" ]")
-                        cl.sendText(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
+                        cl.sendText(msg.to, "-=-Group LIST-=- \n\n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
 
       #-------------Fungsi Adminlist START---------------------#
             elif msg.text in ["Adminlist","adminlist"]:
