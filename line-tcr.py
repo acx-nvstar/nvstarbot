@@ -95,11 +95,7 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update bot dari 2.2.2 menjadi 2.2.4
-=> Menambahkan permanent admin Reza Faesal
-=> Penambahan content di command "Set View"
-=> Perubahan tampilan command "Glist"
-=> Cocoklogi tersedia dari 1%-100% bukan kelipatan 10%
+=> fixed BUG bot tidak dapat join otomatis kedalam group
 
 =====================
      New MEMBER Commands
