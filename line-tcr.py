@@ -176,7 +176,7 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
 admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
@@ -194,16 +194,16 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"",
-    "cName2":"",
-    "cName3":"",
-    "cName4":"",
-    "cName5":"",
-    "cName6":"",
-    "cName7":"",
-    "cName8":"",
-    "cName9":"",
-    "cName10":"",
+    "cName":"NvStar Protection",
+    "cName2":"NvStar Protection",
+    "cName3":"NvStar Protection",
+    "cName4":"NvStar Protection",
+    "cName5":"NvStar Protection",
+    "cName6":"NvStar Protection",
+    "cName7":"NvStar Protection",
+    "cName8":"NvStar Protection",
+    "cName9":"NvStar Protection",
+    "cName10":"NvStar Protection",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -211,7 +211,7 @@ wait = {
     "Protectjoin":False,
     "Protectcancl":False,
     "protectionOn":True,
-    "atjointicket":False,
+    "atjointicket":True,
     "apakah":True,
     "rate":True,
     }
@@ -243,8 +243,8 @@ def NOTIFIED_READ_MESSAGE(op):
             if Name in wait2['readMember'][op.param1]:
                 pass
             else:
-                wait2['readMember'][op.param1] += "\n??" + Name
-                wait2['ROM'][op.param1][op.param2] = "??" + Name
+                wait2['readMember'][op.param1] += "\n・" + Name
+                wait2['ROM'][op.param1][op.param2] = "・" + Name
         else:
             pass
     except:
