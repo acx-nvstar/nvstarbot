@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.2.4
+helpMessage =""" NvStar BOT Version 2.1.2
 
 =================
      Command member
@@ -23,19 +23,16 @@ helpMessage =""" NvStar BOT Version 2.2.4
 > What's new (Melihat Update apa yang baru keluar)
 > Me (Cek Akun Sendiri)
 > My mid (Cek Akun Mid)
-> Info @ (Untuk mengetahui informasi target)
 > Id Group (Cek Id Group)
 > Ginfo (Group Info)
 > Creator (Cek Creator BOT)
 > Gcreator (Melihat siapa pembuat group)
-> Memberfaq (Bertanya seputar BOT)
 > Apakah (Implementasi dari BOT Kerang Ajaib)
 > Rate (Implementasi dari BOT Cocoklogi)
 
 ==================
      Command Admin
 ==================
-> Adminfaq (Cara menggubakan BOT)
 > Respon (Cek Respon Bot)
 > Mid @ (Cek MID dengan mention)
 > Speedbot (Cek Kecepatan Bot)
@@ -48,7 +45,6 @@ helpMessage =""" NvStar BOT Version 2.2.4
 > Cancel (Membatalkan User Masuk Group)
 > Set View (Cek Privasi Group)
 > Glist (Mengetahui dalam group mana sajakah BOT berada)
-> Group id (Mengetahui Group id yang dimasuki BOT)
 > Open Url (Membuka Url Group)
 > Close Url (Menutup Url Group)
 > Set group (Melihat Configurasi Private Menu)
@@ -95,67 +91,8 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> fixed BUG bot tidak dapat join otomatis kedalam group
+=> Fallback BOT dari versi 2.2.4 menjadi 2.2.2
 
-=====================
-     New MEMBER Commands
-=====================
-> Memberfaq (bertanya seputar tentang BOT)
-> Info @(Untuk mengetahui informasi target)
-
-=====================
-     New ADMIN Commands
-=====================
-> Adminfaq (Cara menggunakan BOT)
-> Group id (mengetahui semua id group yang dimasuki BOT)
-
-"""
-
-Memberfaq ="""
-=================
-     MEMBER FAQ
-=================
-MASUKAN COMMAND TANPA TANDA PETIK (")
-
-1.Bagaimana cara meminjam BOT untuk masuk ke group kalian?
-ketik "Tutormem1"
-
-2.Mengapa setiap member yang baru saja bergabung langsung di usir keluar?
-ketik "Tutormem2"
-
-3.Mengapa saya tidak bisa menggunakan command admin?
-ketik "Tutormem3"
-
-4.Saya ingin mengeluarkan BOT tetapi saya takut diusir duluan oleh BOT
-ketik "Tutormem4"
-
-5.Mengapa LINE saya terasa berat atau error saat memasukan BOT ini pada group saya?
-ketik "Tutormem5"
-
-6. Mengapa saya tiba tiba diusir keluar oleh BOT?
-ketik "Tutormem6"
-
-7. Mengepa BOT tidak membalas ketika saya mengajukan pertanyaan Apakah atau Rate?
-ketik "Tutormem7"
-
-8. Mengapa nama saya masuk dalam blacklist?
-ketik "Tutormem8"
-"""
-
-Adminfaq ="""
-=================
-     ADMIN FAQ
-=================
-MASUKAN COMMAND TANPA TANDA PETIK (")
-
-1.Bagaimana cara mengeluarkan member dari group mengginakan BOT?
-ketik "Tutoradm1"
-
-2.Apa sih sebenarnya fungsi blacklist itu?
-ketik "Tutoradm2"
-
-3.Saya ingin berhenti menjadi admin BOT
-ketik "Tutoradm3"
 """
 
 
@@ -172,8 +109,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -190,16 +127,16 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"NvStar Protection",
-    "cName2":"NvStar Protection",
-    "cName3":"NvStar Protection",
-    "cName4":"NvStar Protection",
-    "cName5":"NvStar Protection",
-    "cName6":"NvStar Protection",
-    "cName7":"NvStar Protection",
-    "cName8":"NvStar Protection",
-    "cName9":"NvStar Protection",
-    "cName10":"NvStar Protection",
+    "cName":"風リボーン ",
+    "cName2":"風リボーン ",
+    "cName3":"風リボーン ",
+    "cName4":"風リボーン ",
+    "cName5":"風リボーン ",
+    "cName6":"風リボーン ",
+    "cName7":"風リボーン ",
+    "cName8":"風リボーン ",
+    "cName9":"風リボーン ",
+    "cName10":"風リボーン ",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -216,7 +153,7 @@ wait2 = {
     'readPoint':{},
     'readMember':{},
     'setTime':{},
-    'ROM':{},
+    'ROM':{}
     }
 
 setTime = {}
@@ -948,17 +885,6 @@ def bot(op):
                     cl.sendText(msg.to,Whatsnew)
                 else:
                     cl.sendText(msg.to,Sett)
-            elif msg.text in ["Memberfaq"]:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,Memberfaq)
-                else:
-                    cl.sendText(msg.to,Sett)
-            elif msg.text in ["Adminfaq"]:
-              if msg.from_ in admin:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,Adminfaq)
-                else:
-                    cl.sendText(msg.to,Sett)
             elif ("Gn " in msg.text):
               if msg.from_ in admin:
                 if msg.toType == 2:
@@ -1438,8 +1364,8 @@ def bot(op):
             elif msg.text in ["Mc "]:
                 mmid = msg.text.replace("Mc ","")
                 msg.contentType = 13
-                msg.contentMetadata = {'mid':mmid}
-                random.choice(KAC).sendText(msg)
+                msg.contentMetadata = {"mid":mmid}
+                cl.sendMessage(msg)
             elif msg.text in ["Joinn on","joinn on"]:
               if msg.from_ in admin:
                 if wait["Protectjoin"] == True:
@@ -1660,10 +1586,6 @@ def bot(op):
                     else:md+=" Auto add : off\n"
                     if wait["commentOn"] == True: md+=" Comment : on\n"
                     else:md+=" Comment : off\n"
-                    if wait["apakah"] == True: md+=" Kerang Ajaib : on\n"
-                    else:md+=" Kerang Ajaib : off\n"
-                    if wait["rate"] == True: md+=" Cocoklogi : on\n"
-                    else:md+=" Cocoklogi : off\n"
                     cl.sendText(msg.to,md)
             elif "album merit " in msg.text:
                 gid = msg.text.replace("album merit ","")
@@ -1945,23 +1867,9 @@ def bot(op):
                 cl.sendMessage(msg)
           #---------------Fungsi Creator Finish-------------------#
 
-          #---------------Fungsi INFO START-------------------#
-            elif "Info @" in msg.text:
-                nama = msg.text.replace("Info @","")
-                target = nama.rstrip(' ')
-                tob = cl.getGroup(msg.to)
-                for g in tob.members:
-                    if target == g.displayName:
-                        mid = cl.getContact(g.mid)
-                        try:
-                            cover = cl.channel.getCover(g.mid)
-                        except:
-                            cover = ""
-                        cl.sendText(msg.to,"[Display Name]:\n" + g.displayName + "\n[Mid]:\n" + g.mid + "\n[BIO]:\n" + mid.statusMessage + "\n[Ava]:\nhttp://dl.profile.line-cdn.net/" + mid.pictureStatus + "\n[Cover]:\n" + str(cover))
-                    else:
-                        pass
-          #---------------Fungsi INFO Finish-------------------#
 
+
+	 
          #-------------Fungsi Menambahkan / menghapus Admin Start-------------#
             elif "Admadd @" in msg.text:
                 if msg.from_ in creator:
@@ -2016,39 +1924,6 @@ def bot(op):
                     cl.sendText(msg.to,"Hanya [NvStar] Agy Pascha yang dapat melakukannya")
 		 #-------------Fungsi Menambahkan / menghapus Admin Finish-------------#
 		
-		 #-------------FAQ MEMBER START-------------#
-            elif msg.text in ["Tutormem1"]:
-                    cl.sendText(msg.to,"Untuk Meminjamkan BOT agar masuk kedalam group.\nKalian dapat menghubungi admin atau Creator BOT dengan cara\nmengetik command Creator")
-            elif msg.text in ["Tutormem2"]:
-                    cl.sendText(msg.to,"BOT ini menggunakan system proteksi apabila jika ada member yang baru saja bergabung akan langsung di kick keluar.\nHubungi Admin BOT atau creator dengan cara mengetik command Creator")
-            elif msg.text in ["Tutormem3"]:
-                    cl.sendText(msg.to,"Karena Command admin hanya berfungsi untuk admin dan creator")
-            elif msg.text in ["Tutormem4"]:
-                    cl.sendText(msg.to,"Hanya ADMIN atau Creator yang dapat mengeluarkan BOT\nHubungi creator langsung dengan cara mengetik command Creator")
-            elif msg.text in ["Tutormem5"]:
-                    cl.sendText(msg.to,"BOT ini menggunakan kernel LINUX server versi 16.04 dan python versi 2.7.13\nDianjurkan kalian menginstall LINE diatas versi 7.15\nHubungi creator untuk informasi lebih lanjut\nKetik command Creator")
-            elif msg.text in ["Tutormem6"]:
-                    cl.sendText(msg.to,"Ada berbagai macam alasan untuk ini, BOT akan mengeluarkan member jika:\n1.Member mengusir member lain\n2.Membuka Link URL group\n3.Membuka Code QR Group\n4.Merubah nama group\n5.Merubah Profile Picture Group")
-            elif msg.text in ["Tutormem7"]:
-                    cl.sendText(msg.to,"Mungkin BOT dalam keadaan mati atau Fitur kerang ajaib dalam keadaan mati\nSilahkan hubungi ADMIN atau Creator")
-            elif msg.text in ["Tutormem9"]:
-                    cl.sendText(msg.to,"Mungkin kamu telah malekukan pelanggaran dalam satu group sehingga admin memasukan kamu kedalam blacklist.\nHubungi admin atau Creator untuk informasi lebih lanjut")
-		 #-------------FAQ MEMBER FINISH-------------#
-		
-		 #-------------FAQ ADMIN START-------------#
-            elif msg.text in ["Tutoradm1"]:
-                if msg.from_ in admin:
-                    cl.sendText(msg.to,"Untuk Mengeluarkan member lain dengan cepat kalian dapat melakukannya dengan cara Mengetik command Nk<spasi>@nama orang")
-            elif msg.text in ["Tutoradm2"]:
-                if msg.from_ in admin:
-                    cl.sendText(msg.to,"Blacklist berfungsi untuk jika ada seseorang masuk dalam blacklist maka member lain tidak dapat mengundang orang tersebut masuk kembali kedalam group kecuali ADMIN yang mengundang")
-            elif msg.text in ["Tutoradm3"]:
-                if msg.from_ in admin:
-                    cl.sendText(msg.to,"Hubungi Creator")
-		 #-------------FAQ ADMIN FINISH---------
-		 #-------------FAQ ADMIN FINISH---------
-		 #-------------FAQ ADMIN FINISH-------------#
-		
 		 #-------------Fungsi Music start---------------#
 #            elif ".Music" in msg.text:
 #	            songname = msg.text.lower().replace(".music","")
@@ -2059,17 +1934,17 @@ def bot(op):
 #	            for song in data:
 #		            cl.sendMessage(msg.to, song[4])
 
-            elif ".Youtube " in msg.text:
-                 query = msg.text.replace(".Youtube ","")
-                 with requests.session() as s:
-                     s.headers['user-agent'] = 'Mozilla/5.0'
-                     url    = 'http://www.youtube.com/results'
-                     params = {'search_query': query}
-                     r    = s.get(url, params=params)
-                     soup = BeautifulSoup(r.content, 'html5lib')
-                     for a in soup.select('.yt-lockup-title > a[title]'):
-                         if '&List' not in a['href']:
-                               cl.sendText(msg.to,'http://www.youtube.com' + a['href'] + a['title'])
+#            elif ".Youtube " in msg.text:
+#                 query = msg.text.replace(".Youtube ","")
+#                 with requests.session() as s:
+#                     s.headers['user-agent'] = 'Mozilla/5.0'
+#                     url    = 'http://www.youtube.com/results'
+#                     params = {'search_query': query}
+#                     r    = s.get(url, params=params)
+#                     soup = BeautifulSoup(r.content, 'html5lib')
+#                     for a in soup.select('.yt-lockup-title > a[title]'):
+#                         if '&List' not in a['href']:
+#                               cl.sendText(msg.to,'http://www.youtube.com' + a['href'] + a['title'])
 		 #-------------Fungsi Music finish---------------#
         
          #-------------Fungsi Jam Update Start---------------------#            
@@ -2094,6 +1969,7 @@ def bot(op):
                         del wait2['readMember'][msg.to]
                     except:
                         pass
+                    now2 = datetime.now()
                     wait2['readPoint'][msg.to] = msg.id
                     wait2['readMember'][msg.to] = ""
                     wait2['ROM'][msg.to] = {}
@@ -2213,7 +2089,7 @@ def bot(op):
             elif "Rate " in msg.text:
               if wait["rate"] == True:
                 tanya = msg.text.replace("Rate","")
-                jawab = ("1%","2%","3%","4%","5%","6%","7%","9%","10%","11%","12%","13%","14%","15%","16%","17","18%","19%","20%","21%","22%","23%","24%","25%","26%","27%","28%","29%","30%","31%","32%","33%","34%","35%","36%","37%","38%","39%","40%","41%","42%","43%","44%","45%","46%","47%","48%","49%","50%","51%","52%","53%","54%","55%","56%","57%","58%","59%","60%","61%","62%","63%","64%","65%","66%","67%","68%","69%","70%","71%","72%","73%","74%","75%","76%","77%","78%","79%","80%","81%","82%","83%","84%","85%","86%","87%","88%","89%","90%","91%","92%","93%","94%","95%","96%","97%","98%","99%","100%")
+                jawab = ("1%","2%","3%","4%","5%","6%","7%","9%","10%","11%","12%","13%","""""""""""","20%","30%","40%","50%","60%","70%","80%","90%","100%")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,jawaban)
     #-------------------Fungsi BOT Kerang Ajaib & Cocoklogi Finish------------------#	
@@ -2629,7 +2505,7 @@ def bot(op):
                         h = ""
                         for i in gid:
                             h += "=> %s  \n" % (cl.getGroup(i).name + " | Members : [ " + str(len (cl.getGroup(i).members))+" ]")
-                        cl.sendText(msg.to, "-=-Group LIST-=- \n\n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
+                        cl.sendText(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
 
       #-------------Fungsi Adminlist START---------------------#
             elif msg.text in ["Adminlist","adminlist"]:
@@ -2663,7 +2539,7 @@ def bot(op):
         #-----------Fungsi mematikan BOT-------------------------#
             elif msg.text in ["Shut Down"]:
                 if msg.from_ in Admin:
-                    cl.sendText(msg.to,"Shutting Down...")
+                    ki.sendText(msg.to,"Shutting Down...")
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
@@ -2997,3 +2873,4 @@ class Daemon:
                 You should override this method when you subclass Daemon. It will be called after the process has been
                 daemonized by start() or restart().
                 """
+
