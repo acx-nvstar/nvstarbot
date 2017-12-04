@@ -15,7 +15,7 @@ print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.1.2
+helpMessage =""" NvStar BOT Version 2.2.6
 
 =================
      Command member
@@ -55,10 +55,8 @@ helpMessage =""" NvStar BOT Version 2.1.2
 > Invite MID (Mengundang seseorang kedalam group dengan MID)
 > Kick MID (Mengeluarkan seseorang dari group dengan MID)
 > Bye all (Mengeluarkan BOT dari group)
-> Apakahon (Menyalakan Fitur Kerang Ajaib)
-> Apakahoff (Mematikan fitur kerang ajaib)
-> Rateon (Menyalakan fitur rate cocoklogi)
-> Rateoff (Mematikan fitur rate cocoklogi)
+> .apakah on/off (mematikan/menyalakan BOT kerang ajaib)
+> .rate on/off (mematikan/menyalakan BOT rate cocoklogi)
 
 ========================
      Command Khusus [NvStar]Agy Pascha
@@ -91,8 +89,17 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Fallback BOT dari versi 2.2.4 menjadi 2.2.2
+=> Update BOT dari 2.2.2 menjadi 2.2.6
+=> Menambahkan permanent admin Reza Faesal
+=> Penambahan content command admin "Set view"
+=> fixed bug BOT tidak mau join otomatis kedalam group
+=> BOT akan menolak jika di dalam group kurang dari 20 orang
 
+=================
+     New Admin Commands
+=================
+> .apakah on/off (mematikan/menyalakan BOT kerang ajaib)
+> .rate on/off (mematikan/menyalakan BOT rate cocoklogi)
 """
 
 
@@ -109,13 +116,13 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
     'autoJoin':True,
-    'autoCancel':{"on":True,"members":1},
+    'autoCancel':{"on":True,"members":20},
     'leaveRoom':True,
     'timeline':False,
     'autoAdd':False,
@@ -1182,24 +1189,24 @@ def bot(op):
                     else:
                         kc.sendText(msg.to,"Not for use less than group")
             elif "jointicket " in msg.text.lower():
-		rplace=msg.text.lower().replace("jointicket ")
-		if rplace == "on":
-			wait["atjointicket"]=True
-		elif rplace == "off":
-			wait["atjointicket"]=False
-		cl.sendText(msg.to,"Auto Join Group by Ticket is %s" % str(wait["atjointicket"]))
+                rplace=msg.text.lower().replace("jointicket ")
+                if rplace == "on":
+                    wait["atjointicket"]=True
+                elif rplace == "off":
+                    wait["atjointicket"]=False
+                cl.sendText(msg.to,"Auto Join Group by Ticket is %s" % str(wait["atjointicket"]))
             elif '/ti/g/' in msg.text.lower():
-		link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
-		links = link_re.findall(msg.text)
-		n_links=[]
-		for l in links:
-			if l not in n_links:
-				n_links.append(l)
-		for ticket_id in n_links:
-			if wait["atjointicket"] == True:
-				group=cl.findGroupByTicket(ticket_id)
-				cl.acceptGroupInvitationByTicket(group.mid,ticket_id)
-				cl.sendText(msg.to,"Sukses join ke grup %s" % str(group.name))
+                link_re = re.compile('(?:line\:\/|line\.me\/R)\/ti\/g\/([a-zA-Z0-9_-]+)?')
+                links = link_re.findall(msg.text)
+                n_links=[]
+                for l in links:
+                    if l not in n_links:
+                        n_links.append(l)
+                for ticket_id in n_links:
+                    if wait["atjointicket"] == True:
+                        group=cl.findGroupByTicket(ticket_id)
+                        cl.acceptGroupInvitationByTicket(group.mid,ticket_id)
+                        cl.sendText(msg.to,"Sukses join ke grup %s" % str(group.name))
             elif msg.text == "Ginfo":
                 if msg.toType == 2:
                     ginfo = cl.getGroup(msg.to)
@@ -1586,6 +1593,10 @@ def bot(op):
                     else:md+=" Auto add : off\n"
                     if wait["commentOn"] == True: md+=" Comment : on\n"
                     else:md+=" Comment : off\n"
+                    if wait["apakah"] == True: md+=" Apakah : on\n"
+                    else:md+=" Apakah : off\n"
+                    if wait["rate"] == True: md+=" Rate : on\n"
+                    else:md+=" Rate : off\n"
                     cl.sendText(msg.to,md)
             elif "album merit " in msg.text:
                 gid = msg.text.replace("album merit ","")
@@ -2096,7 +2107,7 @@ def bot(op):
 	
 
     #-------------------Fungsi Nyala/Matikan BOT cocoklogi Start-------------------------#            
-            elif msg.text in ["Apakahon"]:
+            elif msg.text in [".apakah on"]:
               if msg.from_ in admin:
                 if wait["apakah"] == True:
                     if wait["lang"] == "JP":
@@ -2110,7 +2121,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Sudah nyala kok kerangnya")
 
-            elif msg.text in ["Apakahoff","apakahoff"]:
+            elif msg.text in [".apakah off"]:
               if msg.from_ in admin:
                 if wait["apakah"] == False:
                     if wait["lang"] == "JP":
@@ -2127,7 +2138,7 @@ def bot(op):
 
 
     #-------------------Fungsi Nyala/Matikan BOT cocoklogi Start-------------------------#            
-            elif msg.text in ["Rateon","rateon"]:
+            elif msg.text in [".rate on"]:
               if msg.from_ in admin:
                 if wait["rate"] == True:
                     if wait["lang"] == "JP":
@@ -2141,7 +2152,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Sudah nyala kok Rate cocokloginya")
 
-            elif msg.text in ["Rateoff","rateoff"]:
+            elif msg.text in [".rate off"]:
               if msg.from_ in admin:
                 if wait["rate"] == False:
                     if wait["lang"] == "JP":
