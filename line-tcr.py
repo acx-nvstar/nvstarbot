@@ -9,7 +9,15 @@ cl = LINETCR.LINE()
 cl.login(token="EngJRvrps2or7ayV1jj3.2Ye65G/LL8JrF39EU8sJGW.f7EN7REKyXaXsgONoDkEDqoy7ckHWo3EHU2zeaa7msA=")
 cl.loginResult()
 
-ki = kk = kc = ks = ka = kb = ko = ke = ku = cl
+ku = LINETCR.LINE()
+ku.login(token="EnxNGXmAfnyWKiOnrrw8.XiDURzmtJIEdrCTkAatqIa.mmzdTsfBcopYRvB6W+ntf7lMpxlHLiZe7UWQHvtANbg=")
+ku.loginResult()
+
+ke = LINETCR.LINE()
+ke.login(token="EnTuvXIPBwx1fOLvLZl8./mt7/UvP3QMi4cN0TJtVwa.l+3w0UeN8sOFsQxxgjCh4t8TNZpOij2T5MM9nBsc1mk=")
+ke.loginResult()
+
+ki = kk = kc = ks = ka = kb = ko = cl
 
 print "login success"
 reload(sys)
@@ -2004,7 +2012,7 @@ def bot(op):
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
-            elif msg.text in [".Sini dong",".Kuy join",".Ayo masuk"]:
+            elif msg.text in [".Masuk bro"]:
               if msg.from_ in admin:
                         G = cl.getGroup(msg.to)
                         ginfo = cl.getGroup(msg.to)
