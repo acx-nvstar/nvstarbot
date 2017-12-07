@@ -2890,4 +2890,15 @@ class Daemon:
                 You should override this method when you subclass Daemon. It will be called after the process has been
                 daemonized by start() or restart().
                 """
+		
+
+from socket import error as SocketError
+import errno
+
+try:
+    response = urllib2.urlopen(request).read()
+except SocketError as e:
+    if e.errno != errno.ECONNRESET:
+        raise # Not error we are looking for
+    pass # Handle error here.
 
