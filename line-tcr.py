@@ -62,6 +62,7 @@ helpMessage =""" NvStar BOT Version 2.2.6
 > Nk @ (Mengaluarkan 1 member dari group)
 > Invite MID (Mengundang seseorang kedalam group dengan MID)
 > Kick MID (Mengeluarkan seseorang dari group dengan MID)
+> .Sini dong (memanggil semua BOT)
 > Bye all (Mengeluarkan BOT dari group)
 > .apakah on/off (mematikan/menyalakan BOT kerang ajaib)
 > .rate on/off (mematikan/menyalakan BOT rate cocoklogi)
@@ -97,17 +98,14 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update BOT dari 2.2.2 menjadi 2.2.6
-=> Menambahkan permanent admin Reza Faesal
-=> Penambahan content command admin "Set view"
-=> fixed bug BOT tidak mau join otomatis kedalam group
-=> BOT akan menolak jika di dalam group kurang dari 20 orang
+=> Update BOT dari 2.2.6 menjadi 2.3.0
+=> fixed variable BUG
+=> Command "Shut Down" masih rusak
 
 =================
      New Admin Commands
 =================
-> .apakah on/off (mematikan/menyalakan BOT kerang ajaib)
-> .rate on/off (mematikan/menyalakan BOT rate cocoklogi)
+> .Sini dong (memanggil bot lainnya)
 """
 
 
