@@ -6,15 +6,15 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(token="EngJRvrps2or7ayV1jj3.2Ye65G/LL8JrF39EU8sJGW.f7EN7REKyXaXsgONoDkEDqoy7ckHWo3EHU2zeaa7msA=")
+cl.login(qr="True")
 cl.loginResult()
 
 ku = LINETCR.LINE()
-ku.login(token="EnxNGXmAfnyWKiOnrrw8.XiDURzmtJIEdrCTkAatqIa.mmzdTsfBcopYRvB6W+ntf7lMpxlHLiZe7UWQHvtANbg=")
+ku.login(qr="True")
 ku.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token="EnTuvXIPBwx1fOLvLZl8./mt7/UvP3QMi4cN0TJtVwa.l+3w0UeN8sOFsQxxgjCh4t8TNZpOij2T5MM9nBsc1mk=")
+ke.login(qr="True")
 ke.loginResult()
 
 ki = kk = kc = ks = ka = kb = ko = cl
