@@ -50,5 +50,5 @@ Cara Menjalankan Bot :
 - cd nvstarbot && python line-tcr.py<br>
 
 
-SPECIAL THANKS TO
+SPECIAL THANKS TO<br>
 [@andyihsan](https://github.com/andyihsan)
