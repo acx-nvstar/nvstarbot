@@ -30,7 +30,7 @@ Cara Menjalankan Bot :
 ================================================================================
 
 Cara Install Via Ubuntu Server :
-- $ sudo apt-get install update<br>
+- $ sudo apt-get update<br>
 - $ sudo apt-get update && sudo apt-get -y upgrade<br>
 - $ sudo apt-get install python-pip<br>
 - $ sudo apt-get install git<br>
