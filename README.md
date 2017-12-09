@@ -26,7 +26,7 @@ Cara Menjalankan Bot :
 - cd LIN3-TCR && python2 line-tcr.py<br>
 - Loginkan Dengan Akun Bot Kalian Lalu Masukkan MID Admin
 
-==================================================================================
+================================================================================
 
 Cara Install Via Ubuntu Server :
 - $ sudo apt-get install update<br>
