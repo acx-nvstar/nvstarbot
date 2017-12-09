@@ -1,4 +1,4 @@
-# LIN3-TCR
+# NvStar BOT
 NvStar BOT v 2.2.6
 
 Cara Install Via Android :
