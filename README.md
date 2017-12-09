@@ -39,7 +39,7 @@ Cara Install Via Ubuntu Server :
 - $ pip install thrift==0.9.3<br>
 - $ sudo apt-get install nano<br>
 - $ git clone https://github.com/kazereborn/nvstarbot<br>
-- $ Selesai
+- Selesai
 
 Cara Mengedit File Ubuntu Server :
 - Pastikan sudah menginstall nano (seperti diatas)<br>
