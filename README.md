@@ -51,4 +51,4 @@ Cara Menjalankan Bot :
 
 
 SPECIAL THANKS TO
-@andyihsan
+[@andyihsan](https://github.com/andyihsan)
