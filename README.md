@@ -1,4 +1,7 @@
 # NvStar BOT
+
+|Build Status| |PyPI version| |Documentation Status|
+
 NvStar BOT v 2.2.6
 
 Cara Install Via Android :
