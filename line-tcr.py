@@ -6,15 +6,15 @@ from datetime import datetime
 import time,random,sys,json,codecs,threading,glob,re
 
 cl = LINETCR.LINE()
-cl.login(qr="True")
+cl.login(qr=True)
 cl.loginResult()
 
 ku = LINETCR.LINE()
-ku.login(qr="True")
+ku.login(qr=True)
 ku.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(qr="True")
+ke.login(qr=True)
 ke.loginResult()
 
 ki = kk = kc = ks = ka = kb = ko = cl
