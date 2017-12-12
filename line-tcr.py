@@ -12,13 +12,21 @@ cl = LINETCR.LINE()
 cl.login(token="EnmfRZs4EZYYTdaTDcB8.XiDURzmtJIEdrCTkAatqIa.Sl1m7PzcxoPlXx8nbheOA7mRRdQ0MoCLEF5DYYMDM2I=")
 cl.loginResult()
 
-ki = kk = kc = ks = ka = kb = ko = ke = ku = cl
+ku = LINETCR.LINE()
+ku.login(token="EnM1GYjPaSZKNWhK7atd.Hm7VLCzGUiaFrXpQgHWUlq.9ka5jSG8senPicB99Dc28OlBY/QE8IUoDMKD5bV8Qfo=")
+ku.loginResult()
+
+ke = LINETCR.LINE()
+ke.login(token="EnpZsFoTbAUM7AFvKdh1.JnrupAXQaIElUJyEXM5jCq.WUY2qlRp9MSWyE6LpmA4I90dl/sakdl6vlB+cemi8K8=")
+ke.loginResult()
+
+ki = kk = kc = ks = ka = kb = ko = cl
 
 print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.3.2
+helpMessage =""" NvStar BOT Version 2.3.6
 
 =================
      Command member
@@ -50,6 +58,7 @@ helpMessage =""" NvStar BOT Version 2.3.2
 > Cancel (Membatalkan User Masuk Group)
 > Set View (Cek Privasi Group)
 > Glist (Mengetahui dalam group mana sajakah BOT berada)
+> Group id (Melihat nomor seri group)
 > Open Url (Membuka Url Group)
 > Close Url (Menutup Url Group)
 > Set group (Melihat Configurasi Private Menu)
@@ -95,16 +104,13 @@ Whatsnew ="""
 =================
      What's new??
 =================
-=> Update BOT dari 2.2.6 menjadi 2.3.2
-=> BIG UPDATE : LINE PROTOCOL 7.14.0
-=> Fixed Variable Bug
-
+=> Update BOT dari 2.3.3 menjadi 2.3.6
 
 =================
      New Admin Commands
 =================
-> Check (Membuat Check Point)
-> Absen (Melihat Sider)
+> Group id (Melihat list nomot seri group)
+> Bc (Broadcast ke semua group)
 """
 
 Botrule ="""
@@ -120,10 +126,10 @@ mengusir orang tersebut
 Seseorang yang merubah nama atau gambar
 group akan langsung di usir
 
-Seseorang yang membuka Url atau QR group
-akan langsung di usir
-
+Seseorang yang membuka Link atau QR group
+akan langsung diusir
 """
+
 
 
 KAC=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
@@ -918,7 +924,7 @@ def bot(op):
             elif msg.text in ["Botrule"]:
               if msg.from_ in admin:
                 if wait["lang"] == "JP":
-                    cl.sendText(msg.to,botrule)
+                    cl.sendText(msg.to,Botrule)
                 else:
                     cl.sendText(msg.to,Sett)
             elif ("Gn " in msg.text):
@@ -1265,15 +1271,16 @@ def bot(op):
             elif "My mid" == msg.text:
                 random.choice(KAC).sendText(msg.to, msg.from_)
             elif "Mid RA" == msg.text:
-                cl.sendText(msg.to,mid)
-                ki.sendText(msg.to,Amid)
-                kk.sendText(msg.to,Bmid)
-                kc.sendText(msg.to,Cmid)
-                ks.sendText(msg.to,Dmid)
-                ka.sendText(msg.to,Emid)
-                kb.sendText(msg.to,Fmid)
-                ko.sendText(msg.to,Gmid)
-                ke.sendText(msg.to,Hmid)
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,mid)
+                    ki.sendText(msg.to,Amid)
+                    kk.sendText(msg.to,Bmid)
+                    kc.sendText(msg.to,Cmid)
+                    ks.sendText(msg.to,Dmid)
+                    ka.sendText(msg.to,Emid)
+                    kb.sendText(msg.to,Fmid)
+                    ko.sendText(msg.to,Gmid)
+                    ke.sendText(msg.to,Hmid)
             elif "RA 1" == msg.text:
                 cl.sendText(msg.to,mid)
             elif "RA 2" == msg.text:
@@ -1677,11 +1684,12 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,str(i) + "åˆ é™¤äº†äº‹çš„ç›¸å†Œã€‚")
             elif msg.text in ["Group id"]:
-                gid = cl.getGroupIdsJoined()
-                h = ""
-                for i in gid:
-                    h += "[%s]:\n%s\n" % (cl.getGroup(i).name,i)
-                cl.sendText(msg.to,h)
+                if msg.from_ in admin:
+                    gid = cl.getGroupIdsJoined()
+                    h = ""
+                    for i in gid:
+                        h += "[%s]:\n%s\n" % (cl.getGroup(i).name,i)
+                    cl.sendText(msg.to,h)
             elif msg.text in ["Cancelall"]:
                 gid = cl.getGroupIdsInvited()
                 for i in gid:
@@ -2488,11 +2496,13 @@ def bot(op):
                     kk.sendText(msg.to,"P 􀔃􀆶squared up!􏿿")
         #-------------Fungsi Spam Finish---------------------#
 
-        #-------------Fungsi Broadcast Start------------#
+        #-------------Fungsi Broadcast all group Start------------#
             elif "Bc " in msg.text:
                 if msg.from_ in admin:
                     bctxt = msg.text.replace("Bc ","")
-                    ki.sendText(msg.to,(bctxt))
+                    a = cl.getGroupIdsJoined()
+                    for taf in a:
+                        cl.sendText(taf, (bctxt))
        #--------------Fungsi Broadcast Finish-----------#
 
 #            elif msg.text in ["Cv say hi"]:
