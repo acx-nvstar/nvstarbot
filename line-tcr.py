@@ -20,7 +20,15 @@ ke = LINETCR.LINE()
 ke.login(token="EnpZsFoTbAUM7AFvKdh1.JnrupAXQaIElUJyEXM5jCq.WUY2qlRp9MSWyE6LpmA4I90dl/sakdl6vlB+cemi8K8=")
 ke.loginResult()
 
-ki = kk = kc = ks = ka = kb = ko = cl
+ko = LINETCR.LINE()
+ko.login(token="EndoE9Scfy1xesiKYEJ1.RxVhRUoHC8fB8taFSQCeGq.TQ1Ztdl86sIymzJJ4PqvZOZ5niHzM6tTzVJRRGYTFqQ=")
+ko.loginResult()
+
+kb = LINETCR.LINE()
+kb.login(token="EncjEIkWhDEV4zlcifQ5.M5i7z4MHnHLIUxt14RaX5q.ZoBCzDqnVY3+rneO5D0yJ1NZv8iUrEe+Z8Sd3gSA7Ts=")
+kb.loginResult()
+
+ki = kk = kc = ks = ka = cl
 
 print "login success"
 reload(sys)
