@@ -14,18 +14,15 @@ from googletrans import Translator
 #JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib
 
 cl = LINETCR.LINE()
-#cl.login(qr=True)
-cl.login(token="EoLyR9dUWfNeeem4wW68.XiDURzmtJIEdrCTkAatqIa.CfgOJM4kzVSUMDvYlARum/JLx9Io/iQEjC/1lWUhfgs=")
+cl.login(qr=True)
 cl.loginResult()
 
 ku = LINETCR.LINE()
-#ku.login(qr=True)
-ku.login(token="EosBJvXeDVMxo8UAePU8.Av5v4LB9FM0/tRXjC4Nuga.hTFlqdRQ7bx2UiR5F9aMwryS1SGnz7HgDJGoagCLvts=")
+ku.login(qr=True)
 ku.loginResult()
 
 ke = LINETCR.LINE()
-#ke.login(qr=True)
-ke.login(token="EozvxNThuScodr6qq8X3.guHw1Zbg7+xYNC35a+kFGW.7iOt0cuW+9DiPDofEasb73x0OGYgpq+Y1H8DPBTBBvA=")
+ke.login(qr=True)
 ke.loginResult()
 
 #ko = LINETCR.LINE()
