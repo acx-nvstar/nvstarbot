@@ -51,4 +51,4 @@ Cara Menjalankan Bot :
 
 
 SPECIAL THANKS TO<br>
-[@andyihsan](https://github.com/andyihsan)
+[@andyihsan](https://github.com/andyihsan) <== fork dari bang andy script ini punya dia tapi di ubah beberapa
