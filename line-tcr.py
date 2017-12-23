@@ -2,33 +2,43 @@
 
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
-from io import StringIO
 from datetime import datetime
-import time,random,sys,json,codecs,threading,glob,sys
-import re,string,os
-import os.path,sys,urllib,shutil,subprocess,pickle
+import time, random, sys, ast, re, os, io, json, subprocess, threading, string, codecs, requests, ctypes, urllib, urllib2, urllib3, wikipedia, tempfile
+from bs4 import BeautifulSoup
+from urllib import urlopen
+import requests
+from io import StringIO
+from threading import Thread
+#from gtts import gTTS
+from googletrans import Translator
+#JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib
 
 cl = LINETCR.LINE()
-cl.login(token="EnzTJHCtEPvt42Amk0v8.XiDURzmtJIEdrCTkAatqIa.cCHQ4tV70S8XaZY+xmZyEVYflGBTicbAMn+mY7uSqJw=")
+#cl.login(qr=True)
+cl.login(token="EoLyR9dUWfNeeem4wW68.XiDURzmtJIEdrCTkAatqIa.CfgOJM4kzVSUMDvYlARum/JLx9Io/iQEjC/1lWUhfgs=")
 cl.loginResult()
 
 ku = LINETCR.LINE()
-ku.login(token="EnM1GYjPaSZKNWhK7atd.Hm7VLCzGUiaFrXpQgHWUlq.9ka5jSG8senPicB99Dc28OlBY/QE8IUoDMKD5bV8Qfo=")
+#ku.login(qr=True)
+ku.login(token="EosBJvXeDVMxo8UAePU8.Av5v4LB9FM0/tRXjC4Nuga.hTFlqdRQ7bx2UiR5F9aMwryS1SGnz7HgDJGoagCLvts=")
 ku.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(token="EnpZsFoTbAUM7AFvKdh1.JnrupAXQaIElUJyEXM5jCq.WUY2qlRp9MSWyE6LpmA4I90dl/sakdl6vlB+cemi8K8=")
+#ke.login(qr=True)
+ke.login(token="EozvxNThuScodr6qq8X3.guHw1Zbg7+xYNC35a+kFGW.7iOt0cuW+9DiPDofEasb73x0OGYgpq+Y1H8DPBTBBvA=")
 ke.loginResult()
 
-ko = LINETCR.LINE()
-ko.login(token="EndoE9Scfy1xesiKYEJ1.RxVhRUoHC8fB8taFSQCeGq.TQ1Ztdl86sIymzJJ4PqvZOZ5niHzM6tTzVJRRGYTFqQ=")
-ko.loginResult()
+#ko = LINETCR.LINE()
+#ko.login(qr=True)
+#ko.login(token="EndoE9Scfy1xesiKYEJ1.RxVhRUoHC8fB8taFSQCeGq.TQ1Ztdl86sIymzJJ4PqvZOZ5niHzM6tTzVJRRGYTFqQ=")
+#ko.loginResult()
 
-kb = LINETCR.LINE()
-kb.login(token="EncjEIkWhDEV4zlcifQ5.M5i7z4MHnHLIUxt14RaX5q.ZoBCzDqnVY3+rneO5D0yJ1NZv8iUrEe+Z8Sd3gSA7Ts=")
-kb.loginResult()
+#kb = LINETCR.LINE()
+#kb.login(qr=True)
+#kb.login(token="EncjEIkWhDEV4zlcifQ5.M5i7z4MHnHLIUxt14RaX5q.ZoBCzDqnVY3+rneO5D0yJ1NZv8iUrEe+Z8Sd3gSA7Ts=")
+#kb.loginResult()
 
-ki = kk = kc = ks = ka = cl
+ki = kk = kc = ks = ka = kb = ko = cl
 
 print "login success"
 reload(sys)
