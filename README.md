@@ -51,5 +51,5 @@ Cara Menjalankan Bot :
 
 
 SPECIAL THANKS TO<br>
-[@andyihsan](https://github.com/andyihsan)
+[@andyihsan](https://github.com/andyihsan) <br>
 [@merkremont](https://github.com/merkremont)
