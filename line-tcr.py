@@ -14,28 +14,23 @@ from googletrans import Translator
 #JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib
 
 cl = LINETCR.LINE()
-#cl.login(qr=True)
-cl.login(token="EousazBMx5mpGBGZdsk8.XiDURzmtJIEdrCTkAatqIa.NaMldLRPO2GnCG3U0JKHC2jAo0AgutXGtvLVoBAYoXY=")
+cl.login(qr=True)
 cl.loginResult()
 
 ku = LINETCR.LINE()
-#ku.login(qr=True)
-ku.login(token="EoVITZJneLmOJy69n1F8.Av5v4LB9FM0/tRXjC4Nuga.+M2aUlM/JuAXpHtr1kPLrZv08p95m/5my8nUTWjv/9I=")
+ku.login(qr=True)
 ku.loginResult()
 
 ke = LINETCR.LINE()
-#ke.login(qr=True)
-ke.login(token="EoNAkLpUpNj8oZF4aqo3.guHw1Zbg7+xYNC35a+kFGW.+9S0DQjgVwtFZHoL+TeNMCj1hEUaX+tsOdop97HmHJ4=")
+ke.login(qr=True)
 ke.loginResult()
 
 ko = LINETCR.LINE()
-#ko.login(qr=True)
-ko.login(token="EoQfKdZjxOGARddxgML6.lTTYCD5tXzg8tGB0dlYzrG.bCzVfir9ymv0uh7a3V9wzy8c2PMfD5mQTGTvNvLFT1Y=")
+ko.login(qr=True)
 ko.loginResult()
 
 kb = LINETCR.LINE()
-#kb.login(qr=True)
-kb.login(token="EoyL3z1sKyQlxVvUfc36.qhdGUjjOYv72x/iJfAISHG.uzBunfosyymYCUxgI4CUuf3U0SM+IHVOPSPozTyJedg=")
+kb.login(qr=True)
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
