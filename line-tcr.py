@@ -14,105 +14,118 @@ from googletrans import Translator
 #JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib
 
 cl = LINETCR.LINE()
-cl.login(qr=True)
+#cl.login(qr=True)
+cl.login(token="EousazBMx5mpGBGZdsk8.XiDURzmtJIEdrCTkAatqIa.NaMldLRPO2GnCG3U0JKHC2jAo0AgutXGtvLVoBAYoXY=")
 cl.loginResult()
 
 ku = LINETCR.LINE()
-ku.login(qr=True)
+#ku.login(qr=True)
+ku.login(token="EoVITZJneLmOJy69n1F8.Av5v4LB9FM0/tRXjC4Nuga.+M2aUlM/JuAXpHtr1kPLrZv08p95m/5my8nUTWjv/9I=")
 ku.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(qr=True)
+#ke.login(qr=True)
+ke.login(token="EoNAkLpUpNj8oZF4aqo3.guHw1Zbg7+xYNC35a+kFGW.+9S0DQjgVwtFZHoL+TeNMCj1hEUaX+tsOdop97HmHJ4=")
 ke.loginResult()
 
-#ko = LINETCR.LINE()
+ko = LINETCR.LINE()
 #ko.login(qr=True)
-#ko.login(token="EndoE9Scfy1xesiKYEJ1.RxVhRUoHC8fB8taFSQCeGq.TQ1Ztdl86sIymzJJ4PqvZOZ5niHzM6tTzVJRRGYTFqQ=")
-#ko.loginResult()
+ko.login(token="EoQfKdZjxOGARddxgML6.lTTYCD5tXzg8tGB0dlYzrG.bCzVfir9ymv0uh7a3V9wzy8c2PMfD5mQTGTvNvLFT1Y=")
+ko.loginResult()
 
-#kb = LINETCR.LINE()
+kb = LINETCR.LINE()
 #kb.login(qr=True)
-#kb.login(token="EncjEIkWhDEV4zlcifQ5.M5i7z4MHnHLIUxt14RaX5q.ZoBCzDqnVY3+rneO5D0yJ1NZv8iUrEe+Z8Sd3gSA7Ts=")
-#kb.loginResult()
+kb.login(token="EoyL3z1sKyQlxVvUfc36.qhdGUjjOYv72x/iJfAISHG.uzBunfosyymYCUxgI4CUuf3U0SM+IHVOPSPozTyJedg=")
+kb.loginResult()
 
-ki = kk = kc = ks = ka = kb = ko = cl
+ki = kk = kc = ks = ka = cl
 
 print "login success"
 reload(sys)
 sys.setdefaultencoding('utf-7')
 
-helpMessage =""" NvStar BOT Version 2.3.6
-
-=================
-     Command member
-=================
-> What's new (Melihat Update apa yang baru keluar)
-> Me (Cek Akun Sendiri)
-> My mid (Cek Akun Mid)
-> Id Group (Cek Id Group)
-> Ginfo (Group Info)
-> Creator (Cek Creator BOT)
-> Gcreator (Melihat siapa pembuat group)
-> Apakah (Implementasi dari BOT Kerang Ajaib)
-> Rate (Implementasi dari BOT Cocoklogi)
-
-==================
-     Command Admin
-==================
-> Respon (Cek Respon Bot)
-> Mid @ (Cek MID dengan mention)
-> Speedbot (Cek Kecepatan Bot)
-> Up (Fungsi Spam Chat)
-> Check (Membuat Setpoint Sider)
-> Absen (Melihat Sider)
-> Tagall (Mention Semua User)
-> Banlist (Cek List Akun Banned)
-> Gn namagroup (Ganti Nama Group)
-> Cn (Merubah nama BOT)
-> Adminlist (Cek admin dengan realname)
-> Cancel (Membatalkan User Masuk Group)
-> Set View (Cek Privasi Group)
-> Glist (Mengetahui dalam group mana sajakah BOT berada)
-> Group id (Melihat nomor seri group)
-> Open Url (Membuka Url Group)
-> Close Url (Menutup Url Group)
-> Set group (Melihat Configurasi Private Menu)
-> Banned @ (Memasukan target kedalam blacklist dengan mention)
-> Unban @ (Menghapus target dari daftar blacklist)
-> Kill ban (Mengeluarkan semua target blacklist dari group)
-> Nk @ (Mengaluarkan 1 member dari group)
-> Invite MID (Mengundang seseorang kedalam group dengan MID)
-> Kick MID (Mengeluarkan seseorang dari group dengan MID)
-> .Sini dong (memanggil semua BOT)
-> Bye all (Mengeluarkan BOT dari group)
-> .apakah on/off (mematikan/menyalakan BOT kerang ajaib)
-> .rate on/off (mematikan/menyalakan BOT rate cocoklogi)
-
-========================
-     Command Khusus [NvStar]Agy Pascha
-========================
-> Admadd @	| Menambahkan admin
-> Admrem @	| Menghilangkan admin
+helpMessage =""" 
+╔═══════════════════
+║ NvStar BOT V 2.3.6
+╠═══════════════════
+║ MEMBER COMMAND
+╠═══════════════════
+║╔══════════════════
+║╠❂➣ What's new
+║╠❂➣ Me
+║╠❂➣ My mid
+║╠❂➣ Id Group
+║╠❂➣ Ginfo
+║╠❂➣ Creator
+║╠❂➣ Gcreator
+║╠❂➣ Apakah
+║╠❂➣ Rate
+║╚═══════════════════
+╠════════════════════
+║ ADMIN COMMAND 
+╠════════════════════
+║╔═══════════════════
+║╠❂➣ Respon
+║╠❂➣ Mid @
+║╠❂➣ Speedbot
+║╠❂➣ Check
+║╠❂➣ Absen
+║╠❂➣ Tagall
+║╠❂➣ Banlist
+║╠❂➣ Gn (Nama)
+║╠❂➣ Cn (Nama)
+║╠❂➣ Adminlist
+║╠❂➣ Cancel
+║╠❂➣ Set View
+║╠❂➣ Glist
+║╠❂➣ Group id
+║╠❂➣ Open Url
+║╠❂➣ Close Url
+║╠❂➣ Set Group
+║╠❂➣ Banned @
+║╠❂➣ Unban @
+║╠❂➣ Kill ban
+║╠❂➣ Nk @
+║╠❂➣ Invite (MID)
+║╠❂➣ Kick (Mid)
+║╠❂➣ .Masuk bro
+║╠❂➣ Bye all
+║╚═══════════════════
+╠════════════════════
+║ OWNER BOT COMMAND 
+╠════════════════════
+║╔═══════════════════
+║╠❂➣ Admadd @
+║╠❂➣ Admrem @
+║╚═══════════════════
+╚════════════════════
 """
 
 Setgroup ="""
-========================
-     Private Command Admin
-========================
-Protect Group
--- Gr on/off
-
-Melihat info detail contact
--- Contact on/off
-
-Otomatis membatalkan undangan group
--- Cancl on/off
-
-Mengeluarkan member yang baru bergabung
--- Joinn on/off
-
-Auto Join BOT kedalam group
--- Join on/off
+╔═══════════════════════
+║ Private Command Admin
+╠═══════════════════════
+╠❂➣ Protect Group
+╠❂➣  Gr on/off
+║
+╠❂➣ Melihat info detail contact
+╠❂➣ Contact on/off
+║
+╠❂➣ Otomatis membatalkan undangan group
+╠❂➣ Cancl on/off
+║
+╠❂➣ Mengeluarkan member yang baru bergabung
+╠❂➣  Joinn on/off
+║
+╠❂➣ Auto Join BOT kedalam group
+╠❂➣  Join on/off
+║
+╠❂➣ mematikan/menyalakan BOT kerang ajaib
+╠❂➣ .apakah on/off
+║
+╠❂➣ mematikan/menyalakan BOT rate cocoklogi
+╠❂➣ .rate on/off
+╚═══════════════════════
 """
 
 Whatsnew ="""
