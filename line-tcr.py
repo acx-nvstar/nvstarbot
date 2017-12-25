@@ -14,23 +14,28 @@ from googletrans import Translator
 #JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib
 
 cl = LINETCR.LINE()
-cl.login(qr=True)
+#cl.login(qr=True)
+cl.login(token="MASUKAN TOKEN MU DISINI")
 cl.loginResult()
 
 ku = LINETCR.LINE()
-ku.login(qr=True)
+#ku.login(qr=True)
+ku.login(token="MASUKAN TOKEN MU DISINI")
 ku.loginResult()
 
 ke = LINETCR.LINE()
-ke.login(qr=True)
+#ke.login(qr=True)
+ke.login(token="MASUKAN TOKEN MU DISINI")
 ke.loginResult()
 
 ko = LINETCR.LINE()
-ko.login(qr=True)
+#ko.login(qr=True)
+ko.login(token="MASUKAN TOKEN MU DISINI")
 ko.loginResult()
 
 kb = LINETCR.LINE()
-kb.login(qr=True)
+#kb.login(qr=True)
+kb.login(token="MASUKAN TOKEN MU DISINI")
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
@@ -40,13 +45,14 @@ reload(sys)
 sys.setdefaultencoding('utf-7')
 
 helpMessage =""" 
-╔═══════════════════
-║ NvStar BOT V 2.3.6
-╠═══════════════════
-║ MEMBER COMMAND
-╠═══════════════════
-║╔══════════════════
+╔═════════════
+║ NvStar BOT V 2.4.0
+╠═════════════
+║ MEMBER COMMAND 
+╠═════════════
+║╔════════════
 ║╠❂➣ What's new
+║╠❂➣ Help
 ║╠❂➣ Me
 ║╠❂➣ My mid
 ║╠❂➣ Id Group
@@ -55,16 +61,20 @@ helpMessage ="""
 ║╠❂➣ Gcreator
 ║╠❂➣ Apakah
 ║╠❂➣ Rate
-║╚═══════════════════
-╠════════════════════
+║╠❂➣ .apakah on/off
+║╠❂➣ .rate on/off
+║╠❂➣ Simisimi on/off
+║╠❂➣ Cctv on
+║╠❂➣ Cctv off
+║╠❂➣ Check
+║╚════════════
+╠═════════════
 ║ ADMIN COMMAND 
-╠════════════════════
-║╔═══════════════════
+╠═════════════
+║╔════════════
 ║╠❂➣ Respon
 ║╠❂➣ Mid @
 ║╠❂➣ Speedbot
-║╠❂➣ Check
-║╠❂➣ Absen
 ║╠❂➣ Tagall
 ║╠❂➣ Banlist
 ║╠❂➣ Gn (Nama)
@@ -85,61 +95,70 @@ helpMessage ="""
 ║╠❂➣ Kick (Mid)
 ║╠❂➣ .Masuk bro
 ║╠❂➣ Bye all
-║╚═══════════════════
-╠════════════════════
-║ OWNER BOT COMMAND 
-╠════════════════════
-║╔═══════════════════
+║╚════════════
+╠═════════════
+║ OWNER COMMAND 
+╠═════════════
+║╔════════════
+║╠❂➣ Bc
 ║╠❂➣ Admadd @
 ║╠❂➣ Admrem @
-║╚═══════════════════
-╚════════════════════
+║╚════════════
+╠═════════════
+║ Hubungi owner jika
+║ memerlukan sesuatu
+║ line.me/ti/p/~KazeReborn
+╚═════════════
 """
 
 Setgroup ="""
-╔═══════════════════════
-║ Private Command Admin
-╠═══════════════════════
-╠❂➣ Protect Group
-╠❂➣  Gr on/off
-║
-╠❂➣ Melihat info detail contact
-╠❂➣ Contact on/off
-║
-╠❂➣ Otomatis membatalkan undangan group
-╠❂➣ Cancl on/off
-║
-╠❂➣ Mengeluarkan member yang baru bergabung
-╠❂➣  Joinn on/off
-║
-╠❂➣ Auto Join BOT kedalam group
-╠❂➣  Join on/off
-║
-╠❂➣ mematikan/menyalakan BOT kerang ajaib
-╠❂➣ .apakah on/off
-║
-╠❂➣ mematikan/menyalakan BOT rate cocoklogi
-╠❂➣ .rate on/off
-╚═══════════════════════
+╔═════════════
+║ PRIVATE COMMAND
+╠═════════════
+║╔════════════
+║╠❂➣ Gr on/off
+║╠❂➣ Contact on/off
+║╠❂➣ Cancl on/off
+║╠❂➣ Joinn on/off
+║╠❂➣ Join on/off
+║╠❂➣ .apakah on/off
+║╠❂➣ .rate on/off
+║╚════════════
+╠═════════════
+║ Hubungi owner jika
+║ memerlukan sesuatu
+║ line.me/ti/p/~KazeReborn
+╚═════════════
 """
 
 Whatsnew ="""
 =================
-     What's new??
+  WHAT'S NEW?
 =================
-=> Update BOT dari 2.3.3 menjadi 2.3.6
+=> Penambahan permanent admin HeLL untuk group Madridista Indonesia
+=> Fixed BUG auto kick open QR dan change name group
 
-=================
-     New Admin Commands
-=================
-> Group id (Melihat list nomot seri group)
-> Bc (Broadcast ke semua group)
+==================
+  NEW MEMBER COMMAND
+==================
+=> Cctv on (Membuat set point SIDER)
+=> Cctv off (Menghapus set point SIDER)
+=> Check (Melihat SIDER)
 """
 
 Botrule ="""
 =================
-     BOT RULE
+  WHAT IS THIS BOT?
 =================
+
+Ini adalah bot gratis, jika group anda
+ingin terhindar dari kicker silahkan invite
+BOT ini ke dalam group mu
+
+=================
+  BOT RULE
+=================
+
 BOT ini akan menolak group
 jika member kurang dari 20 orang
 
@@ -151,6 +170,11 @@ group akan langsung di usir
 
 Seseorang yang membuka Link atau QR group
 akan langsung diusir
+
+=================
+RULE DIATAS TIDAK BERLAKU
+UNTUK OWNER (PEMILIK) GROUP
+=================
 """
 
 
@@ -168,8 +192,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -215,6 +239,10 @@ wait2 = {
     'ROM':{}
     }
 
+settings = {
+    "simiSimi":{}
+    }
+
 setTime = {}
 setTime = wait2['setTime']
 
@@ -228,19 +256,19 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
         messageReq[to] = -1
     messageReq[to] += 1
 
-#def NOTIFIED_READ_MESSAGE(op):
-    #try:
-        #if op.param1 in wait2['readPoint']:
-            #Name = cl.getContact(op.param2).displayName
-            #if Name in wait2['readMember'][op.param1]:
-                #pass
-            #else:
-                #wait2['readMember'][op.param1] += "\n・" + Name
-                #wait2['ROM'][op.param1][op.param2] = "・" + Name
-        #else:
-            #pass
-    #except:
-        #pass
+def NOTIFIED_READ_MESSAGE(op):
+    try:
+        if op.param1 in wait2['readPoint']:
+            Name = cl.getContact(op.param2).displayName
+            if Name in wait2['readMember'][op.param1]:
+                pass
+            else:
+                wait2['readMember'][op.param1] += "\n・" + Name
+                wait2['ROM'][op.param1][op.param2] = "・" + Name
+        else:
+            pass
+    except:
+        pass
 
 
 def bot(op):
@@ -860,6 +888,20 @@ def bot(op):
             if msg.contentType == 16:
                 url = msg.contentMetadata("line://home/post?userMid="+mid+"&postId="+"new_post")
                 cl.like(url[25:58], url[66:], likeType=1001)
+
+        if op.type == 26:
+            msg = op.message
+            if msg.to in settings["simiSimi"]:
+                if settings["simiSimi"][msg.to] == True:
+                    if msg.text is not None:
+                        text = msg.text
+                        r = requests.get("http://api.ntcorp.us/chatbot/v1/?text=" + text.replace(" ","+") + "&key=beta1.nt")
+                        data = r.text
+                        data = json.loads(data)
+                        if data['status'] == 200:
+                            if data['result']['result'] == 100:
+                                cl.sendText(msg.to, "[From Simi]\n" + data['result']['response'].encode('utf-8'))
+
         if op.type == 26:
             msg = op.message
             if msg.contentType == 13:
@@ -927,7 +969,6 @@ def bot(op):
             elif msg.text is None:
                 return
             elif msg.text in ["Key","help","Help"]:
-              if msg.from_ in admin:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,helpMessage)
                 else:
@@ -945,7 +986,6 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,Sett)
             elif msg.text in ["Botrule"]:
-              if msg.from_ in admin:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,Botrule)
                 else:
@@ -1536,75 +1576,80 @@ def bot(op):
                         cl.sendText(msg.to,"Cek Mid Send Contact Off")
                     else:
                         cl.sendText(msg.to,"done")
-            elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ³","Join on","Auto join:on","è‡ªå‹•å�ƒåŠ ï¼šé–‹"]:
-                if wait["autoJoin"] == True:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+            elif msg.text in ["Join on"]:
+                if msg.from_ in admin:
+                    if wait["autoJoin"] == True:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"sudah menyala")
+                        else:
+                            cl.sendText(msg.to,"selesai")
                     else:
-                        cl.sendText(msg.to,"done")
-                else:
-                    wait["autoJoin"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        wait["autoJoin"] = True
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"sudah menyala")
+                        else:
+                            cl.sendText(msg.to,"Selesai")
+            elif msg.text in ["Join off"]:
+                if msg.from_ in admin:
+                    if wait["autoJoin"] == False:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Dimatikan")
+                        else:
+                            cl.sendText(msg.to,"Selesai")
                     else:
-                        cl.sendText(msg.to,"done")
-            elif msg.text in ["è‡ªå‹•å�‚åŠ :ã‚ªãƒ•","Join off","Auto join:off","è‡ªå‹•å�ƒåŠ ï¼šé—œ"]:
-                if wait["autoJoin"] == False:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
-                    else:
-                        cl.sendText(msg.to,"done")
-                else:
-                    wait["autoJoin"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
-                    else:
-                        cl.sendText(msg.to,"done")
+                        wait["autoJoin"] = False
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"Dimatikan")
+                        else:
+                            cl.sendText(msg.to,"Selesai")
             elif msg.text in ["Gcancel:"]:
-                try:
-                    strnum = msg.text.replace("Gcancel:","")
-                    if strnum == "off":
-                        wait["autoCancel"]["on"] = False
-                        if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
+                if msg.from_ in creator:
+                    try:
+                        strnum = msg.text.replace("Gcancel:","")
+                        if strnum == "off":
+                            wait["autoCancel"]["on"] = False
+                            if wait["lang"] == "JP":
+                                cl.sendText(msg.to,"Invitation refused turned off\nTo turn on please specify the number of people and send")
+                            else:
+                                cl.sendText(msg.to,"å…³äº†é‚€è¯·æ‹’ç»�ã€‚è¦�æ—¶å¼€è¯·æŒ‡å®šäººæ•°å�‘é€�")
                         else:
-                            cl.sendText(msg.to,"å…³äº†é‚€è¯·æ‹’ç»�ã€‚è¦�æ—¶å¼€è¯·æŒ‡å®šäººæ•°å�‘é€�")
-                    else:
-                        num =  int(strnum)
-                        wait["autoCancel"]["on"] = True
+                            num =  int(strnum)
+                            wait["autoCancel"]["on"] = True
+                            if wait["lang"] == "JP":
+                                cl.sendText(msg.to,strnum + "The group of people and below decided to automatically refuse invitation")
+                            else:
+                                cl.sendText(msg.to,strnum + "ä½¿äººä»¥ä¸‹çš„å°�ç»„ç”¨è‡ªåŠ¨é‚€è¯·æ‹’ç»�")
+                    except:
                         if wait["lang"] == "JP":
-                            cl.sendText(msg.to,strnum + "The group of people and below decided to automatically refuse invitation")
+                            cl.sendText(msg.to,"Value is wrong")
                         else:
-                            cl.sendText(msg.to,strnum + "ä½¿äººä»¥ä¸‹çš„å°�ç»„ç”¨è‡ªåŠ¨é‚€è¯·æ‹’ç»�")
-                except:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"Value is wrong")
+                            cl.sendText(msg.to,"Bizarre ratings")
+            elif msg.text in ["Leave on"]:
+                if msg.from_ in admin:
+                    if wait["leaveRoom"] == True:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"already on")
+                        else:
+                            cl.sendText(msg.to,"done")
                     else:
-                        cl.sendText(msg.to,"Bizarre ratings")
-            elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ³","Leave on","Auto leave:on","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé–‹"]:
-                if wait["leaveRoom"] == True:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already on")
+                        wait["leaveRoom"] = True
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"done")
+                        else:
+                            cl.sendText(msg.to,"è¦�äº†å¼€ã€‚")
+            elif msg.text in ["Leave off"]:
+                if msg.from_ in admin:
+                    if wait["leaveRoom"] == False:
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"already off")
+                        else:
+                            cl.sendText(msg.to,"done")
                     else:
-                        cl.sendText(msg.to,"done")
-                else:
-                    wait["leaveRoom"] = True
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"done")
-                    else:
-                        cl.sendText(msg.to,"è¦�äº†å¼€ã€‚")
-            elif msg.text in ["å¼·åˆ¶è‡ªå‹•é€€å‡º:ã‚ªãƒ•","Leave off","Auto leave:off","å¼·åˆ¶è‡ªå‹•é€€å‡ºï¼šé—œ"]:
-                if wait["leaveRoom"] == False:
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"already off")
-                    else:
-                        cl.sendText(msg.to,"done")
-                else:
-                    wait["leaveRoom"] = False
-                    if wait["lang"] == "JP":
-                        cl.sendText(msg.to,"done")
-                    else:
-                        cl.sendText(msg.to,"already")
+                        wait["leaveRoom"] = False
+                        if wait["lang"] == "JP":
+                            cl.sendText(msg.to,"done")
+                        else:
+                            cl.sendText(msg.to,"already")
             elif msg.text in ["å…±æœ‰:ã‚ªãƒ³","Share on","Share on"]:
                 if wait["timeline"] == True:
                     if wait["lang"] == "JP":
@@ -1632,30 +1677,30 @@ def bot(op):
             elif msg.text in ["Set View"]:
                 if msg.from_ in admin:
                     md = ""
-                    if wait["Protectjoin"] == True: md+="􀔃􀆑lock􏿿  Block Join\n"
-                    else: md+=" Block Join Off\n"
-                    if wait["Protectgr"] == True: md+="􀔃􀆑lock􏿿   Block Group\n"
-                    else: md+=" Block Group Off\n"
-                    if wait["Protectcancl"] == True: md+="􀔃􀆑lock􏿿 Cancel All Invited\n"
-                    else: md+=" Cancel All Invited Off\n"
-                    if wait["contact"] == True: md+=" Contact    : on\n"
-                    else: md+=" Contact    : off\n"
-                    if wait["autoJoin"] == True: md+=" Auto join : on\n"
-                    else: md +=" Auto join : off\n"
-                    if wait["autoCancel"]["on"] == True:md+=" Group cancel :" + str(wait["autoCancel"]["members"]) + "\n"
-                    else: md+= " Group cancel : off\n"
-                    if wait["leaveRoom"] == True: md+=" Auto leave    : on\n"
-                    else: md+=" Auto leave : off\n"
-                    if wait["timeline"] == True: md+=" Share   : on\n"
-                    else:md+=" Share   : off\n"
-                    if wait["autoAdd"] == True: md+=" Auto add : on\n"
-                    else:md+=" Auto add : off\n"
-                    if wait["commentOn"] == True: md+=" Comment : on\n"
-                    else:md+=" Comment : off\n"
-                    if wait["apakah"] == True: md+=" Apakah : on\n"
-                    else:md+=" Apakah : off\n"
-                    if wait["rate"] == True: md+=" Rate : on\n"
-                    else:md+=" Rate : off\n"
+                    if wait["Protectjoin"] == True: md+="╔═════════════\n╠❂➣ 􀔃􀆑lock􏿿  Block Join\n"
+                    else: md+=" ╔═════════════\n╠❂➣ Block Join Off\n"
+                    if wait["Protectgr"] == True: md+="╠❂➣ 􀔃􀆑lock􏿿   Block Group\n"
+                    else: md+=" ╠❂➣ Block Group Off\n"
+                    if wait["Protectcancl"] == True: md+="╠❂➣ 􀔃􀆑lock􏿿 Cancel All Invited\n"
+                    else: md+=" ╠❂➣ Cancel All Invited Off\n"
+                    if wait["contact"] == True: md+=" ╠❂➣ Contact    : on\n"
+                    else: md+=" ╠❂➣ Contact    : off\n"
+                    if wait["autoJoin"] == True: md+=" ╠❂➣ Auto join : on\n"
+                    else: md +=" ╠❂➣ Auto join : off\n"
+                    if wait["autoCancel"]["on"] == True:md+=" ╠❂➣ Group cancel : " + str(wait["autoCancel"]["members"]) + "\n"
+                    else: md+= " ╠❂➣ Group cancel : off\n"
+                    if wait["leaveRoom"] == True: md+=" ╠❂➣ Auto leave    : on\n"
+                    else: md+=" ╠❂➣ Auto leave : off\n"
+                    if wait["timeline"] == True: md+=" ╠❂➣ Share   : on\n"
+                    else:md+=" ╠❂➣ Share   : off\n"
+                    if wait["autoAdd"] == True: md+=" ╠❂➣ Auto add : on\n"
+                    else:md+=" ╠❂➣ Auto add : off\n"
+                    if wait["commentOn"] == True: md+=" ╠❂➣ Comment : on\n"
+                    else:md+=" ╠❂➣ Comment : off\n"
+                    if wait["apakah"] == True: md+=" ╠❂➣ Apakah : on\n"
+                    else:md+=" ╠❂➣ Apakah : off\n"
+                    if wait["rate"] == True: md+=" ╠❂➣ Rate : on\n╚════════════"
+                    else:md+=" ╠❂➣ Rate : off\n╚════════════"
                     cl.sendText(msg.to,md)
             elif "album merit " in msg.text:
                 gid = msg.text.replace("album merit ","")
@@ -2032,35 +2077,121 @@ def bot(op):
                         kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif msg.text == "Check":
-              if msg.from_ in admin:
-                cl.sendText(msg.to, "Berhasil, Silahkan masukan command Absen ")
-                try:
-                  del wait2['readPoint'][msg.to]
-                  del wait2['readMember'][msg.to]
-                except:
-                  pass
-                now2 = datetime.now()
-                wait2['readPoint'][msg.to] = msg.id
-                wait2['readMember'][msg.to] = ""
-                wait2['setTime'][msg.to] = datetime.strftime(now2,"%H:%M")
-                wait2['ROM'][msg.to] = {}
-                #print wait2
-              
-            elif msg.text == "Absen":
-                 if msg.from_ in admin:
+            elif "cctv on" == msg.text.lower():
+                if msg.to in wait2['readPoint']:
+                        try:
+                            del wait2['readPoint'][msg.to]
+                            del wait2['readMember'][msg.to]
+                            del wait2['setTime'][msg.to]
+                        except:
+                            pass
+                        wait2['readPoint'][msg.to] = msg.id
+                        wait2['readMember'][msg.to] = ""
+                        wait2['setTime'][msg.to] = datetime.now().strftime('%H:%M:%S')
+                        wait2['ROM'][msg.to] = {}
+                        with open('sider.json', 'w') as fp:
+                         json.dump(wait2, fp, sort_keys=True, indent=4)
+                         cl.sendText(msg.to,"Cctv sudah menyala silahkan masukan command [Check]")
+                else:
+                    try:
+                            del wait2['readPoint'][msg.to]
+                            del wait2['readMember'][msg.to]
+                            del wait2['setTime'][msg.to]
+                    except:
+                          pass
+                    wait2['readPoint'][msg.to] = msg.id
+                    wait2['readMember'][msg.to] = ""
+                    wait2['setTime'][msg.to] = datetime.now().strftime('%H:%M:%S')
+                    wait2['ROM'][msg.to] = {}
+                    with open('sider.json', 'w') as fp:
+                     json.dump(wait2, fp, sort_keys=True, indent=4)
+                     cl.sendText(msg.to, "Set reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+                     print wait2
+
+                    
+            elif "cctv off" == msg.text.lower():
+                if msg.to not in wait2['readPoint']:
+                    cl.sendText(msg.to,"Set Reading point tidak di temukan")
+                    cl.sendText(msg.to,"Silahkan masukan Command [Cctv on] untuk set point")
+                else:
+                    try:
+                            del wait2['readPoint'][msg.to]
+                            del wait2['readMember'][msg.to]
+                            del wait2['setTime'][msg.to]
+                    except:
+                          pass
+                    cl.sendText(msg.to, "Delete reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+
+
+                    
+#            elif msg.text in ["toong","Toong"]:
+#                 if msg.toType == 2:
+#                    print "\nRead aktif..."
+#                    if msg.to in wait2['readPoint']:
+#                        if wait2["ROM"][msg.to].items() == []:
+#                            chiya = ""
+#                        else:
+#                            chiya = ""
+#                            for rom in wait2["ROM"][msg.to].items():
+#                                print rom
+#                                chiya += rom[1] + "\n"
+#                        cl.sendText(msg.to, "╔═════════════ \n╠❂➣Sider :\n╠═════════════ %s\n╠\n╠═════════════\n╠❂➣Reader :\n╠═════════════ %s\n╠\n╠═════════════\n╠In the last seen point:\n╠[%s]\n╚═════════════" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+#                        print "\nReading Point Set..."
+#                        try:
+#                            del wait2['readPoint'][msg.to]
+#                            del wait2['readMember'][msg.to]
+#                        except:
+#                            pass
+#                        wait2['readPoint'][msg.to] = msg.id
+#                        wait2['readMember'][msg.to] = ""
+#                        wait2['setTime'][msg.to] = datetime.today().strftime('%Y-%m-%d %H:%M:%S')
+#                        wait2['ROM'][msg.to] = {}
+#                        print "toong ready"
+#                        cl.sendText(msg.to, "Auto Read Point!!" + (wait2['setTime'][msg.to]))
+#                    else:
+#                        cl.sendText(msg.to, "Ketik [Cctv on] dulu, baru ketik [Toong]")
+
+
+                    
+            elif "check" == msg.text.lower():
                     if msg.to in wait2['readPoint']:
                         if wait2["ROM"][msg.to].items() == []:
-                            chiya = ""
+                             cl.sendText(msg.to, "Reader:\nNone")
                         else:
-                            chiya = ""
+                            chiya = []
                             for rom in wait2["ROM"][msg.to].items():
-                                #print rom
-                                chiya += rom[1] + "\n"
-
-                        cl.sendText(msg.to, "-=-Bakekok SIDER-=-%s\n\nKena Deh\n%s\n[%s]" % (wait2['readMember'][msg.to],chiya,setTime[msg.to]))
+                                chiya.append(rom[1])
+                               
+                            cmem = cl.getContacts(chiya)
+                            zx = ""
+                            zxc = ""
+                            zx2 = []
+                            xpesan = ''
+                        for x in range(len(cmem)):
+                                xname = str(cmem[x].displayName)
+                                pesan = ''
+                                pesan2 = pesan+"@a\n"
+                                xlen = str(len(zxc)+len(xpesan))
+                                xlen2 = str(len(zxc)+len(pesan2)+len(xpesan)-1)
+                                zx = {'S':xlen, 'E':xlen2, 'M':cmem[x].mid}
+                                zx2.append(zx)
+                                zxc += pesan2
+                                msg.contentType = 0
+           
+                        print zxc
+                        msg.text = xpesan+ zxc + "\nBefore: %s\nAfter: %s"%(wait2['setTime'][msg.to],datetime.now().strftime('%H:%M:%S'))
+                        lol ={'MENTION':str('{"MENTIONEES":'+json.dumps(zx2).replace(' ','')+'}')}
+                        print lol
+                        msg.contentMetadata = lol
+                        try:
+                          cl.sendMessage(msg)
+                        except Exception as error:
+                              print error
+                        pass
+               
+           
                     else:
-                        cl.sendText(msg.to, "Ketik Check dulu Koplak\nBaru Ketik Absen\nDASAR TUA ♪")
+                        cl.sendText(msg.to, "Ketik [Cctv on] terlebih dahulu ")
 #-----------------------------------------------
 
 #-----------------------------------------------
@@ -2155,7 +2286,7 @@ def bot(op):
             elif "Apakah " in msg.text:
               if wait["apakah"] == True:
                 tanya = msg.text.replace("Apakah ","")
-                jawab = ("Ya","Tidak")
+                jawab = ("Ya","Tidak","Bacod")
                 jawaban = random.choice(jawab)
                 cl.sendText(msg.to,jawaban)
             elif "Rate " in msg.text:
@@ -2169,7 +2300,6 @@ def bot(op):
 
     #-------------------Fungsi Nyala/Matikan BOT cocoklogi Start-------------------------#            
             elif msg.text in [".apakah on"]:
-              if msg.from_ in admin:
                 if wait["apakah"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Kerang Ajaib on")
@@ -2183,7 +2313,6 @@ def bot(op):
                         cl.sendText(msg.to,"Sudah nyala kok kerangnya")
 
             elif msg.text in [".apakah off"]:
-              if msg.from_ in admin:
                 if wait["apakah"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Kerang Ajaib off")
@@ -2196,11 +2325,10 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Sudah dimatikan kok kerangnya")
     #-------------------Fungsi Nyala/Matikan BOT kerang apakah Finish-------------------------#
-
+		
 
     #-------------------Fungsi Nyala/Matikan BOT cocoklogi Start-------------------------#            
             elif msg.text in [".rate on"]:
-              if msg.from_ in admin:
                 if wait["rate"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Rate cocoklogi aktiv")
@@ -2213,8 +2341,9 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Sudah nyala kok Rate cocokloginya")
 
+
+
             elif msg.text in [".rate off"]:
-              if msg.from_ in admin:
                 if wait["rate"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Rate cocoklogi dimatikan")
@@ -2228,6 +2357,15 @@ def bot(op):
                         cl.sendText(msg.to,"Sudah dimatikan kok Rate cocokloginya")
     #-------------------Fungsi Nyala/Matikan BOT cocoklogi Finish-------------------------#
 
+    #-------------------Fungsi Nyala/Matikan BOT Simisimi start-------------------------#
+            elif msg.text in ["Simisimi on","Simisimi:on"]:
+                settings["simiSimi"][msg.to] = True
+                kr.sendText(msg.to,"Simi mode On")
+                
+            elif msg.text in ["Simisimi off","Simisimi:off"]:
+                settings["simiSimi"][msg.to] = False
+                kr.sendText(msg.to,"Simi mode Off")
+    #-------------------Fungsi Nyala/Matikan BOT Simisimi finish-------------------------#
 
     #-------------Fungsi Leave Group Start---------------#
 
@@ -2521,7 +2659,7 @@ def bot(op):
 
         #-------------Fungsi Broadcast all group Start------------#
             elif "Bc " in msg.text:
-                if msg.from_ in admin:
+                if msg.from_ in creator:
                     bctxt = msg.text.replace("Bc ","")
                     a = cl.getGroupIdsJoined()
                     for taf in a:
@@ -2557,7 +2695,6 @@ def bot(op):
                     kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
-                if msg.from_ in admin:
                     ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
 #-----------------------------------------------
 
@@ -2578,8 +2715,8 @@ def bot(op):
                         gid = cl.getGroupIdsJoined()
                         h = ""
                         for i in gid:
-                            h += "=> %s  \n" % (cl.getGroup(i).name + " | Members : [ " + str(len (cl.getGroup(i).members))+" ]")
-                        cl.sendText(msg.to, "#[List Grup]# \n"+ h +"Total Group : " +"[ "+str(len(gid))+" ]")
+                            h += "➣ %s  \n║" % (cl.getGroup(i).name + " | Members : [ " + str(len (cl.getGroup(i).members))+" ]")
+                        cl.sendText(msg.to, "╔═════════════\n║ LIST GROUP\n╠═════════════\n║"+ h +"\n║ Total Group : " +"[ "+str(len(gid))+"]\n╚══════════════")
 
       #-------------Fungsi Adminlist START---------------------#
             elif msg.text in ["Adminlist","adminlist"]:
@@ -2724,19 +2861,22 @@ def bot(op):
                         pass
 
         if op.type == 55:
-          try:
-            if op.param1 in wait2['readPoint']:
-              Name = cl.getContact(op.param2).displayName
-              if Name in wait2['readMember'][op.param1]:
-                 pass
-              else:
-                wait2['readMember'][op.param1] += "\n[•]" + Name
-                wait2['ROM'][op.param1][op.param2] = "[•]" + Name
-            else:
-              cl.sendText
-          except:
-             pass
-
+            try:
+                if op.param1 in wait2['readPoint']:
+           
+                    if op.param2 in wait2['readMember'][op.param1]:
+                        pass
+                    else:
+                        wait2['readMember'][op.param1] += op.param2
+                    wait2['ROM'][op.param1][op.param2] = op.param2
+                    with open('sider.json', 'w') as fp:
+                     json.dump(wait2, fp, sort_keys=True, indent=4)
+                else:
+                    pass
+            except:
+                pass           
+            
+        
         if op.type == 59:
             print op
 
