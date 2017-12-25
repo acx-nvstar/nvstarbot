@@ -8,6 +8,9 @@ Cara Install Via Android :
 - pip2 install rsa<br>
 - pip2 install requests<br>
 - pip2 install thrift==0.9.3<br>
+- pip2 install bs4<br>
+- pip2 install BeautifulSoup<br>
+- pip2 install urllib<br>
 - pkg install git<br>
 - pkg install nano<br>
 - git clone https://github.com/kazereborn/nvstarbot<br>
@@ -37,7 +40,10 @@ Cara Install Via Ubuntu Server :
 - $ pip install rsa<br>
 - $ pip install requests<br>
 - $ pip install thrift==0.9.3<br>
+- $ sudo pip install bs4<br>
+- $ sudo pip install BeautifulSoup<br>
 - $ sudo apt-get install nano<br>
+- $ sudo pip install urllib
 - $ git clone https://github.com/kazereborn/nvstarbot<br>
 - Selesai
 
