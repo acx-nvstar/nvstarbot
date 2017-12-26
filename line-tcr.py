@@ -15,27 +15,27 @@ from googletrans import Translator
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token="MASUKAN TOKEN MU DISINI")
+cl.login(token="EoSUO13jJnyFMsxRugn8.XiDURzmtJIEdrCTkAatqIa.PFUCY9b4D6HdVdXQyMN6NVeJBCecnfaWpC05vQdIfuI=")
 cl.loginResult()
 
 ku = LINETCR.LINE()
 #ku.login(qr=True)
-ku.login(token="MASUKAN TOKEN MU DISINI")
+ku.login(token="EofDxfmE8a0yr34KZMy8.Av5v4LB9FM0/tRXjC4Nuga.9YOc7PkOpDteZnXyN60MkgpZVI/0SghItYbwax3MQ6Y=")
 ku.loginResult()
 
 ke = LINETCR.LINE()
 #ke.login(qr=True)
-ke.login(token="MASUKAN TOKEN MU DISINI")
+ke.login(token="EotHbVaCdbJyufyAvoR3.guHw1Zbg7+xYNC35a+kFGW.BHvqSWTbIA61gYekLkNn10AyFiYdoWZcaGhS9kA1iqU=")
 ke.loginResult()
 
 ko = LINETCR.LINE()
 #ko.login(qr=True)
-ko.login(token="MASUKAN TOKEN MU DISINI")
+ko.login(token="EoAl4pivRbMjKywVyWU6.lTTYCD5tXzg8tGB0dlYzrG.WDFPNwd4nXohIEeMQIS/R7S7YB3r/C52W+poGNw3lQ4=")
 ko.loginResult()
 
 kb = LINETCR.LINE()
 #kb.login(qr=True)
-kb.login(token="MASUKAN TOKEN MU DISINI")
+kb.login(token="EoYPGNCWNfPMJ8k9v9n6.qhdGUjjOYv72x/iJfAISHG.84RkB7+b7CAnc4YP7D/9rMM1qFdPrsmETAjvfKPeZX0=")
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
@@ -46,7 +46,7 @@ sys.setdefaultencoding('utf-7')
 
 helpMessage =""" 
 ╔═════════════
-║ NvStar BOT V 2.4.0
+║ NvStar BOT V 2.4.5
 ╠═════════════
 ║ MEMBER COMMAND 
 ╠═════════════
@@ -67,6 +67,7 @@ helpMessage ="""
 ║╠❂➣ Cctv on
 ║╠❂➣ Cctv off
 ║╠❂➣ Check
+║╠❂➣ .yt
 ║╚════════════
 ╠═════════════
 ║ ADMIN COMMAND 
@@ -80,6 +81,9 @@ helpMessage ="""
 ║╠❂➣ Gn (Nama)
 ║╠❂➣ Cn (Nama)
 ║╠❂➣ Adminlist
+║╠❂➣ System
+║╠❂➣ Kernel
+║╠❂➣ Cpu
 ║╠❂➣ Cancel
 ║╠❂➣ Set View
 ║╠❂➣ Glist
@@ -100,6 +104,7 @@ helpMessage ="""
 ║ OWNER COMMAND 
 ╠═════════════
 ║╔════════════
+║╠❂➣ ifconfig
 ║╠❂➣ Bc
 ║╠❂➣ Admadd @
 ║╠❂➣ Admrem @
@@ -135,15 +140,29 @@ Whatsnew ="""
 =================
   WHAT'S NEW?
 =================
+=> Update BOT dari Versi 2.4.0 menjadi 2.4.5
 => Penambahan permanent admin HeLL untuk group Madridista Indonesia
-=> Fixed BUG auto kick open QR dan change name group
+=> Fixed variable BUG
+=> Penambahan command ".yt"
+=> cara menggunakan command ".yt" ketik ".yt<spasi>text" tanpa tanda petik
+kalau tidak keluar hasilnya coba gunakan keyword lain
 
 ==================
   NEW MEMBER COMMAND
 ==================
-=> Cctv on (Membuat set point SIDER)
-=> Cctv off (Menghapus set point SIDER)
-=> Check (Melihat SIDER)
+=> .yt (Youtube Search Engine)
+
+==================
+  NEW ADMIN COMMAND
+==================
+=> Kernel
+=> System
+=> Cpu
+
+==================
+  NEW OWNER COMMAND
+==================
+=> ifconfig
 """
 
 Botrule ="""
@@ -1468,6 +1487,7 @@ def bot(op):
                     kk.updateProfile(profile_B)
                     kk.sendText(msg.to,"name " + string + " done")
             elif msg.text in ["Mc "]:
+              #if msg.from_ in admin:
                 mmid = msg.text.replace("Mc ","")
                 msg.contentType = 13
                 msg.contentMetadata = {"mid":mmid}
@@ -1974,12 +1994,29 @@ def bot(op):
           #---------------Fungsi Cek Group Creator Finish-------------------#
 
 
+          #---------------Fungsi youtube Start-------------------#
+            elif ".yt " in msg.text:
+                query = msg.text.replace(".yt ","")
+                with requests.session() as s:
+                    s.headers['user-agent'] = 'Mozilla/5.0'
+                    url = 'http://www.youtube.com/results'
+                    params = {'search_query': query}
+                    r = s.get(url, params=params)
+                    soup = BeautifulSoup(r.content, 'html5lib')
+                    hasil = ""
+                    for a in soup.select('.yt-lockup-title > a[title]'):
+                        if '&list=' not in a['href']:
+                            hasil += ''.join((a['title'],'\nhttp://www.youtube.com' + a['href'],'\n\n'))
+                    cl.sendText(msg.to,hasil)
+                    print '[Command] Youtube Search'
+          #---------------Fungsi youtube Finish-------------------#
+
+
           #---------------Fungsi Creator Start-------------------#
             elif msg.text in ["Creator"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                cl.sendText(msg.to,"MyCreator")
-                cl.sendText(msg.to,"Mau ape lu?")
+                cl.sendText(msg.to,"Contact owner BOT jika membutuhkan sesuatu")
                 cl.sendMessage(msg)
           #---------------Fungsi Creator Finish-------------------#
 
@@ -2193,6 +2230,25 @@ def bot(op):
                     else:
                         cl.sendText(msg.to, "Ketik [Cctv on] terlebih dahulu ")
 #-----------------------------------------------
+            elif msg.text.lower() == 'ifconfig':
+              if msg.from_ in creator:
+                    botKernel = subprocess.Popen(["ifconfig"], stdout=subprocess.PIPE).communicate()[0]
+                    cl.sendText(msg.to,"===SERVER INFO NetStat===\n\n" + botKernel )
+
+            elif msg.text.lower() == 'system':
+              if msg.from_ in admin:
+                    botKernel = subprocess.Popen(["df","-h"], stdout=subprocess.PIPE).communicate()[0]
+                    cl.sendText(msg.to,"===SERVER INFO SYSTEM===\n\n" + botKernel )
+
+            elif msg.text.lower() == 'kernel':
+              if msg.from_ in admin:
+                    botKernel = subprocess.Popen(["uname","-srvmpio"], stdout=subprocess.PIPE).communicate()[0]
+                    cl.sendText(msg.to,"===SERVER INFO KERNEL===\n\n" + botKernel )
+
+            elif msg.text.lower() == 'cpu':
+              if msg.from_ in admin:
+                    botKernel = subprocess.Popen(["cat","/proc/cpuinfo"], stdout=subprocess.PIPE).communicate()[0]
+                    cl.sendText(msg.to,"===SERVER INFO CPU===\n\n" + botKernel )
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
