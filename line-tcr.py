@@ -15,27 +15,27 @@ from googletrans import Translator
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token="EoSUO1eahfsahjgugn8.XiDURzmtJIEdrCTkAatqIa.PFUCY9b4D6HdVdXQyMN6NVeJBCecnfaWpC05vQdIfuI=")
+cl.login(token="")
 cl.loginResult()
 
 ku = LINETCR.LINE()
 #ku.login(qr=True)
-ku.login(token="EofDtsdfbthyfsaMy8.Av5v4LB9FM0/tRXjC4Nuga.9YOc7PkOpDteZnXyN60MkgpZVI/0SghItYbwax3MQ6Y=")
+ku.login(token="")
 ku.loginResult()
 
 ke = LINETCR.LINE()
 #ke.login(qr=True)
-ke.login(token="EotHbVaCdbJyufyAvoR3.guHw1Zbg7+xYNC35a+kFGW.BHvqSWTbIA61gYekLkNn10AyFiYdoWZcaGhS9kA1iqU=")
+ke.login(token="")
 ke.loginResult()
 
 ko = LINETCR.LINE()
 #ko.login(qr=True)
-ko.login(token="EoAlarhaefva6.lTTYCD5tXzg8tGB0dlYzrG.WDFPNwd4nXohIEeMQIS/R7S7YB3r/C52W+poGNw3lQ4=")
+ko.login(token="")
 ko.loginResult()
 
 kb = LINETCR.LINE()
 #kb.login(qr=True)
-kb.login(token="EoYPGNCWNfPMJ8k9v9n6.qhdGUjjOYv72x/iJfaerhasrt7+b7CAnc4YP7D/9rMM1qFdPrsmETAjvfKPeZX0=")
+kb.login(token="")
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
