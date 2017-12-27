@@ -9,33 +9,33 @@ from urllib import urlopen
 import requests
 from io import StringIO
 from threading import Thread
-#from gtts import gTTS
+from gtts import gTTS
 from googletrans import Translator
 #JANGAN LUPA =>  sudo pip install bs4 => sudo pip install BeautifulSoup => sudo pip install urllib
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token="")
+cl.login(token="EoRuDOCPmEbmqiXRpvJ8.XiDURzmtJIEdrCTkAatqIa.Vrk+qLuoy/J5WG1JJCYVuiXexbo8isK1jYr52gSLcWk=")
 cl.loginResult()
 
 ku = LINETCR.LINE()
 #ku.login(qr=True)
-ku.login(token="")
+ku.login(token="EokhCumoLkfv3ziMsTp8.Av5v4LB9FM0/tRXjC4Nuga.VP2M5bRWKQjz3OxD+eYE5vZFaqpjykAh97NYIo7N2V8=")
 ku.loginResult()
 
 ke = LINETCR.LINE()
 #ke.login(qr=True)
-ke.login(token="")
+ke.login(token="EosNK7bglaHEsJA11m56.lTTYCD5tXzg8tGB0dlYzrG.D3YIWB+PKMLx/eZO2+PWLdaX1OwvSSHKf2wHWtR9n5w=")
 ke.loginResult()
 
 ko = LINETCR.LINE()
 #ko.login(qr=True)
-ko.login(token="")
+ko.login(token="Eosel7Nxu4agKLNjOZV3.guHw1Zbg7+xYNC35a+kFGW.9rmfnWRLqFqI1ffBCYek3pab1IgiWUmDvpLQoygY8pY=")
 ko.loginResult()
 
 kb = LINETCR.LINE()
 #kb.login(qr=True)
-kb.login(token="")
+kb.login(token="EoVDF0cQ6jTaywBp3li6.qhdGUjjOYv72x/iJfAISHG.0e0JpPNG8BGkVOqAIw0izN1G485zDn0xZl3fH2zuLdg=")
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
@@ -46,7 +46,7 @@ sys.setdefaultencoding('utf-7')
 
 helpMessage =""" 
 ╔═════════════
-║ NvStar BOT V 2.4.5
+║ NvStar BOT V 2.5.0
 ╠═════════════
 ║ MEMBER COMMAND 
 ╠═════════════
@@ -68,6 +68,7 @@ helpMessage ="""
 ║╠❂➣ Cctv off
 ║╠❂➣ Check
 ║╠❂➣ .yt
+║╠❂➣ Translate
 ║╚════════════
 ╠═════════════
 ║ ADMIN COMMAND 
@@ -136,33 +137,44 @@ Setgroup ="""
 ╚═════════════
 """
 
+helptranslate ="""
+╔═════════════
+║ NvStar BOT V 2.5.0
+╠═════════════
+║ TRANSLATE
+╠═════════════
+║╔════════════
+║╠❂➣Id@en
+║╠❂➣En@id
+║╠❂➣Id@jp
+║╠❂➣Jp@id
+║╠❂➣Id@th
+║╠❂➣Th@id
+║╠❂➣Id@ar
+║╠❂➣Ar@id
+║╠❂➣Id@ko
+║╠❂➣Ko@id
+║╚════════════
+╠═════════════
+║ Hubungi owner jika
+║ memerlukan sesuatu
+║ line.me/ti/p/~KazeReborn
+╚═════════════
+"""
+
 Whatsnew ="""
 =================
   WHAT'S NEW?
 =================
-=> Update BOT dari Versi 2.4.0 menjadi 2.4.5
-=> Penambahan permanent admin HeLL untuk group Madridista Indonesia
-=> Fixed variable BUG
-=> Penambahan command ".yt"
-=> cara menggunakan command ".yt" ketik ".yt<spasi>text" tanpa tanda petik
-kalau tidak keluar hasilnya coba gunakan keyword lain
+=> Update BOT dari Versi 2.4.5 menjadi 2.5.0
+=> Fixed some BUG
+=> Stability Improvement
+=> Penambahan Translate untuk beberapa bahasa
 
 ==================
   NEW MEMBER COMMAND
 ==================
-=> .yt (Youtube Search Engine)
-
-==================
-  NEW ADMIN COMMAND
-==================
-=> Kernel
-=> System
-=> Cpu
-
-==================
-  NEW OWNER COMMAND
-==================
-=> ifconfig
+=> Translate
 """
 
 Botrule ="""
@@ -229,16 +241,16 @@ wait = {
     "wblack":False,
     "dblack":False,
     "clock":False,
-    "cName":"風リボーン ",
-    "cName2":"風リボーン ",
-    "cName3":"風リボーン ",
-    "cName4":"風リボーン ",
-    "cName5":"風リボーン ",
-    "cName6":"風リボーン ",
-    "cName7":"風リボーン ",
-    "cName8":"風リボーン ",
-    "cName9":"風リボーン ",
-    "cName10":"風リボーン ",
+    "cName":"NvStar Protection 1 ",
+    "cName2":"NvStar Protection 2 ",
+    "cName3":"NvStar Protection 3 ",
+    "cName4":"NvStar Protection 4 ",
+    "cName5":"NvStar Protection 5 ",
+    "cName6":"NvStar Protection 6 ",
+    "cName7":"NvStar Protection 7 ",
+    "cName8":"NvStar Protection 8 ",
+    "cName9":"NvStar Protection 9 ",
+    "cName10":"NvStar Protection 10 ",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -265,6 +277,9 @@ settings = {
 setTime = {}
 setTime = wait2['setTime']
 
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -992,6 +1007,11 @@ def bot(op):
                     cl.sendText(msg.to,helpMessage)
                 else:
                     cl.sendText(msg.to,helpt)
+            elif msg.text in ["Translate"]:
+                if wait["lang"] == "JP":
+                    cl.sendText(msg.to,helptranslate)
+                else:
+                    cl.sendText(msg.to,helptranslate)
             elif msg.text in ["Set group"]:
               if msg.from_ in admin:
                 if wait["lang"] == "JP":
@@ -1486,6 +1506,128 @@ def bot(op):
                     profile_B.displayName = string
                     kk.updateProfile(profile_B)
                     kk.sendText(msg.to,"name " + string + " done")
+#==============================================================================#
+            elif "Id@en" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'en'
+                kata = msg.text.replace("Id@en ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM IDN]==\n" + "" + kata + "\n\n==[TO ENG]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "En@id" in msg.text:
+                bahasa_awal = 'en'
+                bahasa_tujuan = 'id'
+                kata = msg.text.replace("En@id ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM ENG]==\n" + "" + kata + "\n\n==[TO IDN]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Id@jp" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'ja'
+                kata = msg.text.replace("Id@jp ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM IDN]==\n" + "" + kata + "\n\n==[TO JPN]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Jp@id" in msg.text:
+                bahasa_awal = 'ja'
+                bahasa_tujuan = 'id'
+                kata = msg.text.replace("Jp@id ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM JPN]==\n" + "" + kata + "\n\n==[TO IDN]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Id@th" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'th'
+                kata = msg.text.replace("Id@th ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM IDN]==\n" + "" + kata + "\n\n==[TO THA]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Th@id" in msg.text:
+                bahasa_awal = 'th'
+                bahasa_tujuan = 'id'
+                kata = msg.text.replace("Th@id ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM THA]==\n" + "" + kata + "\n\n==[TO IDN]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Id@ar" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'ar'
+                kata = msg.text.replace("Id@ar ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM IDN]==\n" + "" + kata + "\n\n==[TO ARG]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Ar@id" in msg.text:
+                bahasa_awal = 'ar'
+                bahasa_tujuan = 'id'
+                kata = msg.text.replace("Ar@id ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM ARG]==\n" + "" + kata + "\n\n==[TO IDN]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Id@ko" in msg.text:
+                bahasa_awal = 'id'
+                bahasa_tujuan = 'ko'
+                kata = msg.text.replace("Id@ko ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM IDN]==\n" + "" + kata + "\n\n==[TO KOR]==\n" + "" + result + "\n\n==[SUKSES]==")
+            elif "Ko@id" in msg.text:
+                bahasa_awal = 'ko'
+                bahasa_tujuan = 'id'
+                kata = msg.text.replace("Ko@id ","")
+                url = 'https://translate.google.com/m?sl=%s&tl=%s&ie=UTF-8&prev=_m&q=%s' % (bahasa_awal, bahasa_tujuan, kata.replace(" ", "+"))
+                agent = {'User-Agent':'Mozilla/5.0'}
+                cari_hasil = 'class="t0">'
+                request = urllib2.Request(url, headers=agent)
+                page = urllib2.urlopen(request).read()
+                result = page[page.find(cari_hasil)+len(cari_hasil):]
+                result = result.split("<")[0]
+                cl.sendText(msg.to,"==[FROM KOR]==\n" + "" + kata + "\n\n==[TO IDN]==\n" + "" + result + "\n\n==[SUKSES]==")
+#==============================================================================#
             elif msg.text in ["Mc "]:
               #if msg.from_ in admin:
                 mmid = msg.text.replace("Mc ","")
@@ -2016,8 +2158,11 @@ def bot(op):
             elif msg.text in ["Creator"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                cl.sendText(msg.to,"Contact owner BOT jika membutuhkan sesuatu")
-                cl.sendMessage(msg)
+                random.choice(KAC).sendText(msg.to,"jika membutuhkan sesuatu")
+                random.choice(KAC).sendText(msg.to,"Silahkan PM/PC contact dibawah ini")
+                random.choice(KAC).sendText(msg)
+                random.choice(KAC).sendText(msg.to,"atau bisa melalui WA")
+                random.choice(KAC).sendText(msg.to,"+6283822526441")
           #---------------Fungsi Creator Finish-------------------#
 
 
@@ -2416,11 +2561,11 @@ def bot(op):
     #-------------------Fungsi Nyala/Matikan BOT Simisimi start-------------------------#
             elif msg.text in ["Simisimi on","Simisimi:on"]:
                 settings["simiSimi"][msg.to] = True
-                kr.sendText(msg.to,"Simi mode On")
+                cl.sendText(msg.to,"Simi mode On")
                 
             elif msg.text in ["Simisimi off","Simisimi:off"]:
                 settings["simiSimi"][msg.to] = False
-                kr.sendText(msg.to,"Simi mode Off")
+                cl.sendText(msg.to,"Simi mode Off")
     #-------------------Fungsi Nyala/Matikan BOT Simisimi finish-------------------------#
 
     #-------------Fungsi Leave Group Start---------------#
@@ -2753,6 +2898,17 @@ def bot(op):
             elif msg.text in ["PING","Ping","ping"]:
                     ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
 #-----------------------------------------------
+
+#--------------------------------------------------------
+#Restart_Program
+            elif msg.text in ["Bot restart"]:
+                if msg.from_ in creator:
+                    cl.sendText(msg.to, "Bot has been restarted")
+                    restart_program()
+                    print "@Restart"
+                else:
+                    cl.sendText(msg.to, "No Access")
+#--------------------------------------------------------
 
        #-------------Fungsi Respon Start---------------------#
             elif msg.text in ["Respon","respon","Respon Dong","respon dong"]:
