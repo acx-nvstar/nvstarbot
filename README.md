@@ -10,7 +10,7 @@ Cara Install Via Android :
 - pip2 install thrift==0.9.3<br>
 - pip2 install bs4<br>
 - pip2 install BeautifulSoup<br>
-- pip2 install urllib<br>
+- pip2 install html5lib<br>
 - pkg install git<br>
 - pkg install nano<br>
 - git clone https://github.com/kazereborn/nvstarbot<br>
@@ -43,7 +43,7 @@ Cara Install Via Ubuntu Server :
 - $ sudo pip install bs4<br>
 - $ sudo pip install BeautifulSoup<br>
 - $ sudo apt-get install nano<br>
-- $ sudo pip install urllib
+- $ sudo pip install html5lib<br>
 - $ git clone https://github.com/kazereborn/nvstarbot<br>
 - Selesai
 
