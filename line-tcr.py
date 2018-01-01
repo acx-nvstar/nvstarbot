@@ -15,38 +15,38 @@ from googletrans import Translator
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token="Eo2Mi02d6edzue0BPX28.XiDURzmtJIEdrCTkAatqIa.ggFEONMuc/d2lmL0WOBn2qnGBGqwDshNtBzmXh9cshE=")
+cl.login(token="Eo7FrSvTv07i9v2zfXu8.XiDURzmtJIEdrCTkAatqIa.hzHSP0SYcbA5U2GIBH6LNbJ2W2U2EVw3+b0t5UtGm2M=")
 cl.loginResult()
 
 ku = LINETCR.LINE()
 #ku.login(qr=True)
-ku.login(token="")
+ku.login(token="EoUgsVDweQ7IepNKfIR8.Av5v4LB9FM0/tRXjC4Nuga./336rlXuh3bUld1o5CMU+48agQ/0A2/uk05NlqSdc2M=")
 ku.loginResult()
 
 ke = LINETCR.LINE()
 #ke.login(qr=True)
-ke.login(token="")
+ke.login(token="EoeUcBub2RsiiyrHMWE6.lTTYCD5tXzg8tGB0dlYzrG.uVVZQWrBCWD6HUhK4OQMiieRULMN1Fj0zVaojiYgbBg=")
 ke.loginResult()
 
 ko = LINETCR.LINE()
 #ko.login(qr=True)
-ko.login(token="")
+ko.login(token="EoKGyWC5hV3VDiJvlfZ3.guHw1Zbg7+xYNC35a+kFGW.DbyOBtekbzlVGiK3gOp4McXh4y2DFgO0qLmSQnXfOBE=")
 ko.loginResult()
 
 kb = LINETCR.LINE()
 #kb.login(qr=True)
-kb.login(token="")
+kb.login(token="EokTxdO6BCf1EgABEST6.qhdGUjjOYv72x/iJfAISHG.OUqkSQ2RTgIrSh5+kvw6IvF2UR/egrvYSBuZth4qcwE=")
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
 
 print "login success"
 reload(sys)
-sys.setdefaultencoding('utf-7')
+sys.setdefaultencoding('utf+7')
 
 helpMessage =""" 
 ╔═════════════
-║ NvStar BOT V 2.5.0
+║ NvStar BOT v2.5.8
 ╠═════════════
 ║ MEMBER COMMAND 
 ╠═════════════
@@ -55,7 +55,6 @@ helpMessage ="""
 ║╠❂➣ Help
 ║╠❂➣ Me
 ║╠❂➣ My mid
-║╠❂➣ Id Group
 ║╠❂➣ Ginfo
 ║╠❂➣ Creator
 ║╠❂➣ Gcreator
@@ -75,20 +74,12 @@ helpMessage ="""
 ╠═════════════
 ║╔════════════
 ║╠❂➣ Respon
-║╠❂➣ Mid @
 ║╠❂➣ Speedbot
 ║╠❂➣ Tagall
 ║╠❂➣ Banlist
 ║╠❂➣ Gn (Nama)
 ║╠❂➣ Cn (Nama)
-║╠❂➣ Adminlist
-║╠❂➣ System
-║╠❂➣ Kernel
-║╠❂➣ Cpu
 ║╠❂➣ Cancel
-║╠❂➣ Set View
-║╠❂➣ Glist
-║╠❂➣ Group id
 ║╠❂➣ Open Url
 ║╠❂➣ Close Url
 ║╠❂➣ Set Group
@@ -105,8 +96,17 @@ helpMessage ="""
 ║ OWNER COMMAND 
 ╠═════════════
 ║╔════════════
+║╠❂➣ Adminlist
+║╠❂➣ Glist
+║╠❂➣ Group id
+║╠❂➣ Cn (Nama) 
+║╠❂➣ Kernel
+║╠❂➣ System
+║╠❂➣ Cpu
 ║╠❂➣ ifconfig
 ║╠❂➣ Bc
+║╠❂➣ Mc
+║╠❂➣ Mid @
 ║╠❂➣ Admadd @
 ║╠❂➣ Admrem @
 ║╚════════════
@@ -139,7 +139,7 @@ Setgroup ="""
 
 helptranslate ="""
 ╔═════════════
-║ NvStar BOT V 2.5.0
+║ NvStar BOT v2.5.8
 ╠═════════════
 ║ TRANSLATE
 ╠═════════════
@@ -166,15 +166,37 @@ Whatsnew ="""
 =================
   WHAT'S NEW?
 =================
-=> Update BOT dari Versi 2.4.5 menjadi 2.5.0
-=> Fixed some BUG
-=> Stability Improvement
-=> Penambahan Translate untuk beberapa bahasa
+=> Update BOT dari versi 2.5.0 menjadi 2.5.8
+=> Fixed some BUG.
+=> Stability Improvement.
+=> Perubahan command lebih detail.
+=> Sekarang member dapat mengecek kecepatan bot melalui command "Speedbot"
+=> Group ID pada member command "Ginfo" sekarang di rahasiakan.
+=> Hubungi owner untuk mendapatkan Group ID serta alasan mengapa di hidden.
 
 ==================
-  NEW MEMBER COMMAND
+  PERUBAHAN COMMAND
+    MEMBER COMMAND 
 ==================
-=> Translate
+=> Speedbot
+
+=================
+  NEW OWNER COMMAND
+=================
+=> Mc (Mid check)
+
+==================
+  PERUBAHAN COMMAND
+    KHUSUS OWNER 
+==================
+=> Adminlist
+=> Kernel
+=> System
+=> Cpu
+=> Glist
+=> Group id
+=> Cn
+=> Mid @
 """
 
 Botrule ="""
@@ -229,7 +251,7 @@ creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
     'autoJoin':True,
-    'autoCancel':{"on":True,"members":21},
+    'autoCancel':{"on":True,"members":1},
     'leaveRoom':True,
     'timeline':False,
     'autoAdd':False,
@@ -280,6 +302,14 @@ setTime = wait2['setTime']
 def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
+
+def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
+    tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
+    for texX in tex:
+        for command in commands:
+            if string ==command:
+                return True
+    return False
 
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
@@ -1019,12 +1049,12 @@ def bot(op):
                 else:
                     cl.sendText(msg.to,Sett)
             elif msg.text in ["What's new"]:
-              if msg.from_ in admin:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,Whatsnew)
                 else:
                     cl.sendText(msg.to,Sett)
             elif msg.text in ["Botrule"]:
+              if msg.from_ in creator:
                 if wait["lang"] == "JP":
                     cl.sendText(msg.to,Botrule)
                 else:
@@ -1035,8 +1065,8 @@ def bot(op):
                     X = cl.getGroup(msg.to)
                     X.name = msg.text.replace("Gn ","")
                     cl.updateGroup(X)
-                else:
-                    cl.sendText(msg.to,"It can't be used besides the group.")
+              else:
+                  cl.sendText(msg.to,"Silahkan hubungi pemilik group untuk merubah nama group")
             elif ("Cv1 gn " in msg.text):
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -1061,6 +1091,7 @@ def bot(op):
             elif "Kick " in msg.text:
               if msg.from_ in admin:
                 midd = msg.text.replace("Kick ","")
+                cl.kickoutFromGroup(msg.to,[midd])
                 cl.kickoutFromGroup(msg.to,[midd])
             elif "_second kick " in msg.text:
               if msg.from_ in admin:
@@ -1184,14 +1215,12 @@ def bot(op):
                             cl.cancelGroupInvitation(msg.to, gInviMids)
                         else:
                             if wait["lang"] == "JP":
-                                cl.sendText(msg.to,"No one is inviting")
+                                cl.sendText(msg.to,"Tidak ada satu orang pun yang masuk dalam daftar pending group")
                             else:
                                 cl.sendText(msg.to,"Sorry, nobody absent")
-                    else:
-                        if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Can not be used outside the group")
-                        else:
-                            cl.sendText(msg.to,"Not for use less than group")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan untuk menghubungi admin dalam masing masing group untuk membatalkan seluruh pending group")
             elif msg.text in ["Cv cancel","Bot cancel"]:
                 if msg.toType == 2:
                     G = k3.getGroup(msg.to)
@@ -1218,14 +1247,13 @@ def bot(op):
                         X.preventJoinByTicket = False
                         cl.updateGroup(X)
                         if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Invite by link open")
+                            cl.sendText(msg.to,"Invite by link dibuka")
                         else:
-                            cl.sendText(msg.to,"Already open")
-                    else:
-                        if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Can not be used outside the group")
-                        else:
-                            cl.sendText(msg.to,"Not for use less than group")
+                            cl.sendText(msg.to,"Sudah terbuka")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan menghubungi admin dalam masing masing group untuk membuka Url/QR code")
+                    cl.sendText(msg.to,"Dan dimohon untuk tidak membuka Url/QR code tanpa seizin admin group")
             elif msg.text in ["Cv1 ourl","Cv1 link on"]:
                 if msg.toType == 2:
                     X = cl.getGroup(msg.to)
@@ -1241,19 +1269,20 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv2 ourl","Cv2 link on"]:
-                if msg.toType == 2:
-                    X = kk.getGroup(msg.to)
-                    X.preventJoinByTicket = False
-                    kk.updateGroup(X)
-                    if wait["lang"] == "JP":
-                        kk.sendText(msg.to,"Done Chivas")
+                if msg.from_ in admin:
+                    if msg.toType == 2:
+                        X = kk.getGroup(msg.to)
+                        X.preventJoinByTicket = False
+                        kk.updateGroup(X)
+                        if wait["lang"] == "JP":
+                            kk.sendText(msg.to,"Done Chivas")
+                        else:
+                            kk.sendText(msg.to,"already open")
                     else:
-                        kk.sendText(msg.to,"already open")
-                else:
-                    if wait["lang"] == "JP":
-                        kk.sendText(msg.to,"Can not be used outside the group")
-                    else:
-                        kk.sendText(msg.to,"Not for use less than group")
+                        if wait["lang"] == "JP":
+                            kk.sendText(msg.to,"Can not be used outside the group")
+                        else:
+                            kk.sendText(msg.to,"Not for use less than group")
             elif msg.text in ["Cv3 ourl","Cv3 link on"]:
                 if msg.toType == 2:
                     X = kc.getGroup(msg.to)
@@ -1275,14 +1304,12 @@ def bot(op):
                         X.preventJoinByTicket = True
                         cl.updateGroup(X)
                         if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Invite by link Close")
+                            cl.sendText(msg.to,"Invite by link ditutup")
                         else:
-                            cl.sendText(msg.to,"Already close")
-                    else:
-                        if wait["lang"] == "JP":
-                            cl.sendText(msg.to,"Can not be used outside the group")
-                        else:
-                            cl.sendText(msg.to,"Not for use less than group")
+                            cl.sendText(msg.to,"Sudah tertutup")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan untuk menghubungi admin group untuk menutup Link/QR code")
             elif msg.text in ["Cv1 curl","Cv1 link off"]:
                 if msg.toType == 2:
                     X = ki.getGroup(msg.to)
@@ -1360,16 +1387,20 @@ def bot(op):
                             u = "close"
                         else:
                             u = "open"
-                        cl.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\nmembers:" + str(len(ginfo.members)) + "members\npending:" + sinvitee + "people\nURL:" + u + "it is inside")
+                        cl.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[Group ID] DIRAHASIAKAN\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus + "\nmembers:" + str(len(ginfo.members)) + "members\npending:" + sinvitee + "people\nURL:" + u + "it is inside")
                     else:
-                        cl.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[gid]\n" + msg.to + "\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
+                        cl.sendText(msg.to,"[group name]\n" + str(ginfo.name) + "\n[Group ID] DIRAHASIAKAN\n[group creator]\n" + gCreator + "\n[profile status]\nhttp://dl.profile.line.naver.jp/" + ginfo.pictureStatus)
                 else:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Can not be used outside the group")
                     else:
                         cl.sendText(msg.to,"Not for use less than group")
-            elif "Id Group" == msg.text:
-                kk.sendText(msg.to,msg.to)
+            elif "Id group" == msg.text:
+                if msg.from_ in admin:
+                    cl.sendText(msg.to,msg.to)
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Untuk mengetahui id group perlu izin dari masing masing admin dalam group untuk melihat id group")      
             elif "My mid" == msg.text:
                 random.choice(KAC).sendText(msg.to, msg.from_)
             elif "Mid RA" == msg.text:
@@ -1492,6 +1523,10 @@ def bot(op):
                         profile.displayName = string
                         cl.updateProfile(profile)
                         cl.sendText(msg.to,"name " + string + " done")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan menghubungi admin dari masing masing group untuk merubah nama group")
+                    cl.sendText(msg.to,"Dan dimohon untuk tidak merubah nama group oleh diri mu sendiri")
             elif msg.text in ["Cv1 rename "]:
                 string = msg.text.replace("Cv1 rename ","")
                 if len(string.decode('utf-8')) <= 20:
@@ -1628,11 +1663,11 @@ def bot(op):
                 result = result.split("<")[0]
                 cl.sendText(msg.to,"==[FROM KOR]==\n" + "" + kata + "\n\n==[TO IDN]==\n" + "" + result + "\n\n==[SUKSES]==")
 #==============================================================================#
-            elif msg.text in ["Mc "]:
-              #if msg.from_ in admin:
+            elif "Mc " in msg.text:
+              if msg.from_ in admin:
                 mmid = msg.text.replace("Mc ","")
                 msg.contentType = 13
-                msg.contentMetadata = {"mid":mmid}
+                msg.contentMetadata = {'mid': mmid}
                 cl.sendMessage(msg)
             elif msg.text in ["Joinn on","joinn on"]:
               if msg.from_ in admin:
@@ -1648,7 +1683,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Joinn off","joinn off"]:
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                 if wait["Protectjoin"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"kick Joined Group Off")
@@ -1661,7 +1696,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Cancl on","cancl on"]:
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                 if wait["Protectcancl"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Cancel All Invited On")
@@ -1674,7 +1709,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Cancl off","cancl off"]:
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                 if wait["Protectcancl"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Cancel All Invited Off")
@@ -1687,7 +1722,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Gr on","gr on"]:
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                 if wait["Protectgr"] == True:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Protect Group On")
@@ -1700,7 +1735,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Gr off","gr off"]:
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                 if wait["Protectgr"] == False:
                     if wait["lang"] == "JP":
                         cl.sendText(msg.to,"Protect Group Off")
@@ -1739,7 +1774,7 @@ def bot(op):
                     else:
                         cl.sendText(msg.to,"done")
             elif msg.text in ["Join on"]:
-                if msg.from_ in admin:
+                if msg.from_ in creator:
                     if wait["autoJoin"] == True:
                         if wait["lang"] == "JP":
                             cl.sendText(msg.to,"sudah menyala")
@@ -1752,7 +1787,7 @@ def bot(op):
                         else:
                             cl.sendText(msg.to,"Selesai")
             elif msg.text in ["Join off"]:
-                if msg.from_ in admin:
+                if msg.from_ in creator:
                     if wait["autoJoin"] == False:
                         if wait["lang"] == "JP":
                             cl.sendText(msg.to,"Dimatikan")
@@ -2155,14 +2190,12 @@ def bot(op):
 
 
           #---------------Fungsi Creator Start-------------------#
-            elif msg.text in ["Creator"]:
+            elif cms(msg.text,["creator","Creator"]):
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                random.choice(KAC).sendText(msg.to,"jika membutuhkan sesuatu")
-                random.choice(KAC).sendText(msg.to,"Silahkan PM/PC contact dibawah ini")
-                random.choice(KAC).sendText(msg)
-                random.choice(KAC).sendText(msg.to,"atau bisa melalui WA")
-                random.choice(KAC).sendText(msg.to,"+6283822526441")
+                cl.sendText(msg.to,"jika membutuhkan sesuatu")
+                cl.sendText(msg.to,"Silahkan PM/PC contact dibawah ini")
+                cl.sendMessage(msg)
           #---------------Fungsi Creator Finish-------------------#
 
 
@@ -2192,9 +2225,11 @@ def bot(op):
                                 pass
                     print "[Command]Staff add executed"
                 else:
-                    cl.sendText(msg.to,"Command DiTolak")
-                    cl.sendText(msg.to,"Lu bukan Creator")
-                    cl.sendText(msg.to,"Hanya [NvStar] Agy Pascha yang dapat melakukannya")
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
             elif "Admrem @" in msg.text:
                 if msg.from_ in creator:
                     print "[Command]Staff remove executing"
@@ -2218,8 +2253,11 @@ def bot(op):
                                 pass
                     print "[Command]Staff remove executed"
                 else:
-                    cl.sendText(msg.to,"Command DiTolak")
-                    cl.sendText(msg.to,"Hanya [NvStar] Agy Pascha yang dapat melakukannya")
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 		 #-------------Fungsi Menambahkan / menghapus Admin Finish-------------#
 		
 		 #-------------Fungsi Music start---------------#
@@ -2259,7 +2297,7 @@ def bot(op):
                         kc.sendText(msg.to,"Aktifkan jam terlebih dulu")
          #-------------Fungsi Jam Update Finish-------------------#
 
-            elif "cctv on" == msg.text.lower():
+            elif "set on" == msg.text.lower():
                 if msg.to in wait2['readPoint']:
                         try:
                             del wait2['readPoint'][msg.to]
@@ -2287,14 +2325,15 @@ def bot(op):
                     wait2['ROM'][msg.to] = {}
                     with open('sider.json', 'w') as fp:
                      json.dump(wait2, fp, sort_keys=True, indent=4)
-                     cl.sendText(msg.to, "Set reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+                     cl.sendText(msg.to, "Memasang reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+                     cl.sendText(msg.to,"Jangan lupa untuk di hapus jika sudah selesai menggunakannya")
                      print wait2
 
                     
-            elif "cctv off" == msg.text.lower():
+            elif "set off" == msg.text.lower():
                 if msg.to not in wait2['readPoint']:
                     cl.sendText(msg.to,"Set Reading point tidak di temukan")
-                    cl.sendText(msg.to,"Silahkan masukan Command [Cctv on] untuk set point")
+                    cl.sendText(msg.to,"Silahkan masukan Command [Set on] untuk set point")
                 else:
                     try:
                             del wait2['readPoint'][msg.to]
@@ -2302,7 +2341,7 @@ def bot(op):
                             del wait2['setTime'][msg.to]
                     except:
                           pass
-                    cl.sendText(msg.to, "Delete reading point:\n" + datetime.now().strftime('%H:%M:%S'))
+                    cl.sendText(msg.to, "Menghapus reading point:\n" + datetime.now().strftime('%H:%M:%S'))
 
 
                     
@@ -2373,27 +2412,51 @@ def bot(op):
                
            
                     else:
-                        cl.sendText(msg.to, "Ketik [Cctv on] terlebih dahulu ")
+                        cl.sendText(msg.to, "Ketik [Set on] terlebih dahulu ")
 #-----------------------------------------------
             elif msg.text.lower() == 'ifconfig':
               if msg.from_ in creator:
                     botKernel = subprocess.Popen(["ifconfig"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to,"===SERVER INFO NetStat===\n\n" + botKernel )
+              else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 
             elif msg.text.lower() == 'system':
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                     botKernel = subprocess.Popen(["df","-h"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to,"===SERVER INFO SYSTEM===\n\n" + botKernel )
+              else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 
             elif msg.text.lower() == 'kernel':
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                     botKernel = subprocess.Popen(["uname","-srvmpio"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to,"===SERVER INFO KERNEL===\n\n" + botKernel )
+              else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 
             elif msg.text.lower() == 'cpu':
-              if msg.from_ in admin:
+              if msg.from_ in Creator:
                     botKernel = subprocess.Popen(["cat","/proc/cpuinfo"], stdout=subprocess.PIPE).communicate()[0]
                     cl.sendText(msg.to,"===SERVER INFO CPU===\n\n" + botKernel )
+              else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 
 #-----------------------------------------------
          #----------------Fungsi Join Group Start-----------------------#
@@ -2745,6 +2808,10 @@ def bot(op):
                                 except:
                                     ki.sendText(msg.to,"Kasian Di Kick....")
                                     kc.sendText(msg.to,"Hehehe")
+                  else:
+                      cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                      cl.sendText(msg.to,"Silahkan menghubungi admin dalam group masing masing untuk mengeluarkan member")
+                      cl.sendText(msg.to,"Dan dimohon untuk tidak mengeluarkan member tanpa seizin admin/pemilik group ")
         #----------------Fungsi Kick User Target Finish----------------------#      
             elif "Blacklist @ " in msg.text:
                 if msg.from_ in admin:
@@ -2766,6 +2833,9 @@ def bot(op):
                                         k3.sendText(msg.to,"Succes Cv")
                                     except:
                                         ki.sendText(msg.to,"error")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan menghubungi admin group jika menemukan member yang melakukan tindakan negative dalam group")
             
             #----------------Fungsi Banned User Target Start-----------------------#
             elif "Banned @" in msg.text:
@@ -2793,6 +2863,9 @@ def bot(op):
                                 cl.sendText(msg.to,"Akun telah sukses di banned")
                             except:
                                 ki.sendText(msg.to,"Error")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan menghubungi admin group jika menemukan member yang melakukan tindakan negative dalam group")
             #----------------Fungsi Banned User Target Finish-----------------------# 
             
             #----------------Fungsi Unbanned User Target Start-----------------------#
@@ -2821,6 +2894,9 @@ def bot(op):
                                 cl.sendText(msg.to,"Akun Bersih Kembali")
                             except:
                                 ki.sendText(msg.to,"Error")
+                else:
+                    cl.sendText(msg.to,"Perintah ini hanya untuk admin group")
+                    cl.sendText(msg.to,"Silahkan menghubungi admin untuk melepaskan target dari daftar blacklist")
            #----------------Fungsi Unbanned User Target Finish-----------------------#
            
         #-------------Fungsi Spam Start---------------------#
@@ -2865,6 +2941,12 @@ def bot(op):
                     a = cl.getGroupIdsJoined()
                     for taf in a:
                         cl.sendText(taf, (bctxt))
+                else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Perintah ini digunakan owner untuk broadcast pengumuman ke semua group)
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
        #--------------Fungsi Broadcast Finish-----------#
 
 #            elif msg.text in ["Cv say hi"]:
@@ -2890,10 +2972,10 @@ def bot(op):
 #                ki.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
 #                kk.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
 #                kc.sendText(msg.to,"Chomel pekok 􀜁􀅔Har Har􏿿")
-            elif msg.text in ["#welcome"]:
-                if msg.from_ in admin:
-                    ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
-                    kk.sendText(msg.to,"Jangan nakal ok!")
+#            elif msg.text in ["#welcome"]:
+#                if msg.from_ in admin:
+#                    ki.sendText(msg.to,"Selamat datang di Chivas Family Room")
+#                    kk.sendText(msg.to,"Jangan nakal ok!")
 #-----------------------------------------------
             elif msg.text in ["PING","Ping","ping"]:
                     ki.sendText(msg.to,"PONG 􀨁􀄻double thumbs up􏿿􀜁􀅔Har Har􏿿")
@@ -2907,7 +2989,7 @@ def bot(op):
                     restart_program()
                     print "@Restart"
                 else:
-                    cl.sendText(msg.to, "No Access")
+                    cl.sendText(msg.to, "Maaf command ini sangat dilarang\nuntuk member dan juga admin")
 #--------------------------------------------------------
 
        #-------------Fungsi Respon Start---------------------#
@@ -2929,10 +3011,16 @@ def bot(op):
                         for i in gid:
                             h += "➣ %s  \n║" % (cl.getGroup(i).name + " | Members : [ " + str(len (cl.getGroup(i).members))+" ]")
                         cl.sendText(msg.to, "╔═════════════\n║ LIST GROUP\n╠═════════════\n║"+ h +"\n║ Total Group : " +"[ "+str(len(gid))+"]\n╚══════════════")
+                else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 
       #-------------Fungsi Adminlist START---------------------#
             elif msg.text in ["Adminlist","adminlist"]:
-              if msg.from_ in admin:
+              if msg.from_ in creator:
                 if admin == []:
                     cl.sendText(msg.to,"The adminlist is empty")
                 else:
@@ -2942,12 +3030,18 @@ def bot(op):
                         mc += "->" +cl.getContact(mi_d).displayName + "\n"
                     cl.sendText(msg.to,mc)
                     print "[Command]Stafflist executed"
+              else:
+                msg.contentType = 13
+                msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                cl.sendText(msg.to,"Informasi Admin list ini bersifat private")
+                cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                cl.sendMessage(msg)
       #-------------Fungsi Adminlist TUTUP---------------------#
 
       #-------------Fungsi Adminlist TUTUP---------------------#
 
             elif "Mid @" in msg.text:
-                if msg.from_ in admin:
+                if msg.from_ in creator:
                     _name = msg.text.replace("Mid @","")
                     _nametarget = _name.rstrip(' ')
                     gs = cl.getGroup(msg.to)
@@ -2955,23 +3049,29 @@ def bot(op):
                         if _nametarget == g.displayName:
                             cl.sendText(msg.to, g.mid)
                         else:
-                            pass	
+                            pass
+                else:
+                  msg.contentType = 13
+                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+                  cl.sendText(msg.to,"Member atau admin tidak dapat menggunakan perintah ini")
+                  cl.sendText(msg.to,"Untuk mendapatkan MID orang lain membutuhkan izin dari orang tersebut\n\n dengan cara mengetik command [Me] ")
+                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
+                  cl.sendMessage(msg)
 	
 	    #-------------Fungsi Adminlist TUTUP---------------------#
 
         #-----------Fungsi mematikan BOT-------------------------#
-            elif msg.text in ["Shut Down"]:
-                if msg.from_ in Admin:
-                    ki.sendText(msg.to,"Shutting Down...")
+#            elif msg.text in ["Shut Down"]:
+#                if msg.from_ in Admin:
+#                    ki.sendText(msg.to,"Shutting Down...")
       #-------------Fungsi Balesan Respon Finish---------------------#
 
        #-------------Fungsi Speedbot Start---------------------#
             elif msg.text in ["Speedbot","speedbot"]:
-                if msg.from_ in admin:
-                    start = time.time()
-                    cl.sendText(msg.to, "Waiting...")
-                    elapsed_time = time.time() - start
-                    cl.sendText(msg.to, "%sseconds" % (elapsed_time))
+                start = time.time()
+                cl.sendText(msg.to, "Waiting...")
+                elapsed_time = time.time() - start
+                cl.sendText(msg.to, "%sseconds" % (elapsed_time))
       #-------------Fungsi Speedbot Finish---------------------#
 
       #-------------Fungsi Banned Send Contact Start------------------#
@@ -3029,7 +3129,7 @@ def bot(op):
                         cl.sendText(msg.to,"Blacklist keluar aja yaa...")
 
             elif msg.text in ["Clear"]:
-                    if msg.from_ in admin:
+                    if msg.from_ in creator:
                         if msg.toType == 2:
                             group = cl.getGroup(msg.to)
                             gMembMids = [contact.mid for contact in group.invitee]
