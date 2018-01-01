@@ -1,6 +1,6 @@
 # NvStar BOT
 
-NvStar BOT v 2.4.0
+NvStar BOT v 2.5.8
 
 Cara Install Via Android :
 - Download Termux & Install<br>
