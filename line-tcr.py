@@ -15,27 +15,27 @@ from googletrans import Translator
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token="Eo7FrSvTv07i9v2zfXu8.XiDURzmtJIEdrCTkAatqIa.hzHSP0SYcbA5U2GIBH6LNbJ2W2U2EVw3+b0t5UtGm2M=")
+cl.login(token="Eoq5bhRLcexWIHM3vnz8.XiDURzmtJIEdrCTkAatqIa.CaCAUcvVyGgVjj5k2zD8dbzZUxqe7xdg5PGobBZ4h5o=")
 cl.loginResult()
 
 ku = LINETCR.LINE()
 #ku.login(qr=True)
-ku.login(token="EoUgsVDweQ7IepNKfIR8.Av5v4LB9FM0/tRXjC4Nuga./336rlXuh3bUld1o5CMU+48agQ/0A2/uk05NlqSdc2M=")
+ku.login(token="Eoy7zfNN4uPF9TxBbvZ8.Av5v4LB9FM0/tRXjC4Nuga.jZFPAZSsQfc9A63V7Yddo8ROh2md4X+0gjosh5rkwbA=")
 ku.loginResult()
 
 ke = LINETCR.LINE()
 #ke.login(qr=True)
-ke.login(token="EoeUcBub2RsiiyrHMWE6.lTTYCD5tXzg8tGB0dlYzrG.uVVZQWrBCWD6HUhK4OQMiieRULMN1Fj0zVaojiYgbBg=")
+ke.login(token="Eo2SIRuyC7iZ9tUfpj76.lTTYCD5tXzg8tGB0dlYzrG.FY6+yU73O6ypCCKR6Z7Ekdh20Sxil4w9nPhxcLhNFnw=")
 ke.loginResult()
 
 ko = LINETCR.LINE()
 #ko.login(qr=True)
-ko.login(token="EoKGyWC5hV3VDiJvlfZ3.guHw1Zbg7+xYNC35a+kFGW.DbyOBtekbzlVGiK3gOp4McXh4y2DFgO0qLmSQnXfOBE=")
+ko.login(token="EoNQiaySYF9bDKecFbi3.guHw1Zbg7+xYNC35a+kFGW.AV/55/bCalKiON6Ko2pMFEEOhwDKWunc1X/BhicFqEQ=")
 ko.loginResult()
 
 kb = LINETCR.LINE()
 #kb.login(qr=True)
-kb.login(token="EokTxdO6BCf1EgABEST6.qhdGUjjOYv72x/iJfAISHG.OUqkSQ2RTgIrSh5+kvw6IvF2UR/egrvYSBuZth4qcwE=")
+kb.login(token="EovTl8t2qlJWdAtPWLo6.qhdGUjjOYv72x/iJfAISHG.lAwW5BqiCg0YdskEokWc07DfRnD7N8YjT3gBMvsroo0=")
 kb.loginResult()
 
 ki = kk = kc = ks = ka = cl
@@ -167,12 +167,11 @@ Whatsnew ="""
   WHAT'S NEW?
 =================
 => Update BOT dari versi 2.5.0 menjadi 2.5.8
-=> Fixed some BUG.
-=> Stability Improvement.
-=> Perubahan command lebih detail.
+=> Fixed some BUG
+=> Stability Improvement
+=> Perubahan command lebih detail
 => Sekarang member dapat mengecek kecepatan bot melalui command "Speedbot"
-=> Group ID pada member command "Ginfo" sekarang di rahasiakan.
-=> Hubungi owner untuk mendapatkan Group ID serta alasan mengapa di hidden.
+=> Group ID pada command "Ginfo" sekarang di rahasiakan
 
 ==================
   PERUBAHAN COMMAND
@@ -245,8 +244,8 @@ Gmid = ko.getProfile().mid
 Hmid = ke.getProfile().mid
 Imid = ku.getProfile().mid
 
-Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651","u467aea8464c96bd16b09a43ea9adb70e","ud0be24b517e1c946bfb28c77493293fc"]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651","u467aea8464c96bd16b09a43ea9adb70e","ud0be24b517e1c946bfb28c77493293fc"]
+Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid,Fmid,Gmid,Hmid,Imid,"ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651","u467aea8464c96bd16b09a43ea9adb70e"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651","u467aea8464c96bd16b09a43ea9adb70e"]
 creator=["ua5f2cbc325816777be5ef529eb920c50"]
 wait = {
     'contact':False,
@@ -2944,7 +2943,7 @@ def bot(op):
                 else:
                   msg.contentType = 13
                   msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                  cl.sendText(msg.to,"Perintah ini digunakan owner untuk broadcast pengumuman ke semua group)
+                  cl.sendText(msg.to,"Perintah ini digunakan owner untuk broadcast pengumuman ke semua group")
                   cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
                   cl.sendMessage(msg)
        #--------------Fungsi Broadcast Finish-----------#
