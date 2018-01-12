@@ -128,9 +128,9 @@ mediaMessage ="""
 ║╠❂➣ Google: 
 ║╠❂➣ Playstore [NamaApp] 
 ║╠❂➣ Fancytext: Text 
-║╠❂➣ /musik [Judul-Penyanyi]
-║╠❂➣ /lirik [Judul-Penyanyi]
-║╠❂➣ /musrik [Judul-Penyanyi]
+║╠❂➣ .musik [Judul-Penyanyi]
+║╠❂➣ .lirik [Judul-Penyanyi]
+║╠❂➣ .musrik [Judul-Penyanyi]
 ║╠❂➣ /ig [Ursname] 
 ║╠❂➣ Checkig [Ursname] 
 ║╠❂➣ Apakah 
@@ -138,9 +138,9 @@ mediaMessage ="""
 ║╠❂➣ Hari
 ║╠❂➣ Berapa
 ║╠❂➣ Berapakah 
-║╠❂➣ Youtubelink: 
-║╠❂➣ Youtubevideo:
-║╠❂➣ Youtubesearch:
+║╠❂➣ .Youtubelink: 
+║╠❂➣ .Youtubevideo:
+║╠❂➣ .Youtubesearch:
 ║╠❂➣ Image NamaGambar 
 ║╠❂➣ Say-id 
 ║╠❂➣ Say-en 
@@ -689,11 +689,11 @@ def bot(op):
                                 if " " in Name:
                                     nick = Name.split(' ')
                                     if len(nick) == 2:
-                                        cl.sendText(op.param1, "Aloow~ " + nick[0] + "\nNgintip Aja Niih. . .\nBintitan looh nanti 􀜁􀅔Har Har􏿿 ")
+                                        cl.sendText(op.param1, "Hayoo~ " + nick[0] + "\nKetahuan deh 􀜁􀅔Har Har􏿿 ")
                                     else:
-                                        cl.sendText(op.param1, "Haii... " + nick[1] + "\nNonton terus aja kak\nSampai sakit matanya")
+                                        cl.sendText(op.param1, "Cilukba... " + nick[1] + "\nKetahuan deh 􀜁􀅔Har Har􏿿")
                                 else:
-                                    cl.sendText(op.param1, "Hallo " + Name + "\nChat bareng yuuk bro/sis\nDari pada nonton doang")
+                                    cl.sendText(op.param1, "Nahh looh~ " + Name + "\nKetahuan deh 􀜁􀅔Har Har􏿿")
                         else:
                             pass
                     else:
@@ -1855,7 +1855,7 @@ def bot(op):
             elif msg.text in ["Leave off"]:
 		if msg.from_ in Creator:
                     wait["Leave"] = False
-                    cl.sendText(msg.to,"Leave Sudah Aktif")
+                    cl.sendText(msg.to,"Leave Sudah Dimatikan")
 		else:
 		    msg.contentType = 13
 		    msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -1877,7 +1877,7 @@ def bot(op):
 	    elif msg.text in ["Autocancel off"]:
 	     if msg.from_ in Creator:	        
                 wait["AutoCancel"] = False
-                cl.sendText(msg.to,"Auto Cancel Sudah Di Nonaktifkan")
+                cl.sendText(msg.to,"Auto Cancel Sudah Dimatikan")
 		print wait["AutoCancel"]
 	     else:
 		    msg.contentType = 13
@@ -1900,7 +1900,7 @@ def bot(op):
 	    elif msg.text in ["Invitepro off"]:
 	     if msg.from_ in Creator:	        
                 wait["inviteprotect"] = False
-                cl.sendText(msg.to,"Invite Protect Sudah Di Nonaktifkan")
+                cl.sendText(msg.to,"Invite Protect Sudah Dimatikan")
 		print wait["inviteprotect"]
 	     else:
 		    msg.contentType = 13
@@ -1921,7 +1921,7 @@ def bot(op):
 	    elif "Qr off" in msg.text:
 	     if msg.from_ in Creator:	        
 	    	wait["Qr"] = False
-	    	cl.sendText(msg.to,"Qr Protect Sudah Di Nonaktifkan")
+	    	cl.sendText(msg.to,"Qr Protect Sudah Dimatikan")
 	     else:
 		    msg.contentType = 13
 		    msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -1941,7 +1941,7 @@ def bot(op):
             elif msg.text in ["Tag off"]:
 		if msg.from_ in Creator:
                     wait["Tag"] = False
-                    cl.sendText(msg.to,"Auto Tag Sudah Di Nonaktifkan")
+                    cl.sendText(msg.to,"Auto Tag Sudah Dimatikan")
 		else:
 		    msg.contentType = 13
 		    msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -1962,7 +1962,7 @@ def bot(op):
 	    elif "Autokick off" in msg.text:
 	     if msg.from_ in Creator:	 	        
 		     wait["AutoKick"] = False
-		     cl.sendText(msg.to,"Auto Kick Sudah Di Nonaktifkan")
+		     cl.sendText(msg.to,"Auto Kick Sudah Dimatikan")
 	     else:
 	        msg.contentType = 13
 	        msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -1982,7 +1982,7 @@ def bot(op):
 	    elif "Ghost off" in msg.text:
 	     if msg.from_ in Creator:	 	        
 		     wait["Ghost"] = False
-		     cl.sendText(msg.to,"Ghost Sudah Di Nonaktifkan")
+		     cl.sendText(msg.to,"Ghost Sudah Dimatikan")
 	     else:
 	        msg.contentType = 13
 	        msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -2010,7 +2010,7 @@ def bot(op):
                     wait["AutoKick"] = False
                     wait["Qr"] = False
                     wait["Ghost"] = False                    
-                    cl.sendText(msg.to,"All Protect Sudah Di Nonaktifkan Semua")
+                    cl.sendText(msg.to,"All Protect Sudah Dimatikan Semua")
 		else:
 		    msg.contentType = 13
 		    msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -2987,6 +2987,7 @@ def bot(op):
 
             elif msg.text in ["All join","Join all"]:
 		if msg.from_ in Creator:
+		  if wait["Qr"] == True:
 		    G = cl.getGroup(msg.to)
                     ginfo = cl.getGroup(msg.to)
                     G.preventJoinByTicket = False
@@ -3006,6 +3007,9 @@ def bot(op):
                     ki.updateGroup(G)
                     G.preventJoinByTicket(G)
                     ki.updateGroup(G)
+		  else:
+		      cl.sendText(msg.to,"Status QR protect: ON")
+		      cl.sendText(msg.to,"Ketik [Qr off] untuk mematikan Qr Protect")
 		else:
 		    msg.contentType = 13
 		    msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -3542,7 +3546,6 @@ def bot(op):
 
                     
 	    elif ".musik " in msg.text:
-				if msg.from_ in Creator:
 					songname = msg.text.replace(".musik ","")
 					params = {"songname": songname}
 					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
@@ -3554,15 +3557,8 @@ def bot(op):
 						cl.sendText(msg.to, "Lagu " + song[0] + "\nSedang Di Prosses... Tunggu Sebentar ^_^ ")
 						cl.sendAudioWithURL(msg.to,abc)
 						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
-				else:
-					msg.contentType = 13
-					msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-					cl.sendText(msg.to,"Untuk saat ini command [.music] [.lyric] dinonaktivkan")
-					cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-					cl.sendMessage(msg)
 	
             elif '.lirik ' in msg.text.lower():
-              if msg.from_ in Creator:
                 try:
                     songname = msg.text.lower().replace('.lirik ','')
                     params = {'songname': songname}
@@ -3577,16 +3573,9 @@ def bot(op):
                         cl.sendText(msg.to, hasil)
                 except Exception as wak:
                         cl.sendText(msg.to, str(wak))
-              else:
-                msg.contentType = 13
-                msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                cl.sendText(msg.to,"Untuk saat ini command [.music] [.lyric] dinonaktivkan")
-                cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-                cl.sendMessage(msg)
                         
-	    elif "/music " in msg.text:
-				if msg.from_ in Creator:
-					songname = msg.text.replace("/musrik ","")
+	    elif ".musrik " in msg.text:
+					songname = msg.text.replace(".musrik ","")
 					params = {"songname": songname}
 					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
 					data = r.text
@@ -3601,13 +3590,6 @@ def bot(op):
 						cl.sendAudioWithURL(msg.to,abc)
 						cl.sendText(msg.to, "Title : " + song[0] + "\nLength : " + song[1] + "\nLink download : " + song[4] +"\n\n" + hasil)
 						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
-				else:
-					msg.contentType = 13
-					msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-					cl.sendText(msg.to,"Untuk saat ini command [.music] [.lyric] dinonaktivkan")
-					cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-					cl.sendMessage(msg)
-             
             
             
             elif "Fancytext: " in msg.text:
@@ -3794,10 +3776,9 @@ def bot(op):
                         end_cursor = re.search(r'"end_cursor": "([^"]+)"', r.text).group(1)                	
 
 
-            elif 'Youtubelink: ' in msg.text:
-              if msg.from_ in Creator:
+            elif '.Youtubelink ' in msg.text:
                 try:
-                    textToSearch = (msg.text).replace('Youtube ', "").strip()
+                    textToSearch = (msg.text).replace('.Youtubelink ', "").strip()
                     query = urllib.quote(textToSearch)
                     url = "https://www.youtube.com/results?search_query=" + query
                     response = urllib2.urlopen(url)
@@ -3806,34 +3787,21 @@ def bot(op):
                     results = soup.find(attrs={'class':'yt-uix-tile-link'})
                     cl.sendText(msg.to,'https://www.youtube.com' + results['href'])
                 except:
-                    cl.sendText(msg.to,"Could not find it")
-              else:
-                  msg.contentType = 13
-                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                  cl.sendText(msg.to,"Untuk saat ini command\n[Youtubelink]\n[Youtubevideo]\n[Youtubesearch] dinonaktivkan")
-                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-                  cl.sendMessage(msg)
+                    cl.sendText(msg.to,"Tidak dapat mencarinya")
                     
                     
-            elif 'Youtubevideo: ' in msg.text:
-              if msg.from_ in Creator:
-                    try:
-                        textToSearch = (msg.text).replace('Youtubevideo: ', "").strip()
-                        query = urllib.quote(textToSearch)
-                        url = "https://www.youtube.com/results?search_query=" + query
-                        response = urllib2.urlopen(url)
-                        html = response.read()
-                        soup = BeautifulSoup(html, "html.parser")
-                        results = soup.find(attrs={'class': 'yt-uix-tile-link'})
-                        cl.sendVideoWithURL(msg.to,'https://www.youtube.com' + results['href'])
-                    except:
-                        cl.sendText(msg.to, "Could not find it")    
-              else:
-                  msg.contentType = 13
-                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                  cl.sendText(msg.to,"Untuk saat ini command\n[Youtubelink]\n[Youtubevideo]\n[Youtubesearch] dinonaktivkan")
-                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-                  cl.sendMessage(msg)
+            elif '.Youtubevideo ' in msg.text:
+                try:
+                    textToSearch = (msg.text).replace('.Youtubevideo ', "").strip()
+                    query = urllib.quote(textToSearch)
+                    url = "https://www.youtube.com/results?search_query=" + query
+                    response = urllib2.urlopen(url)
+                    html = response.read()
+                    soup = BeautifulSoup(html, "html.parser")
+                    results = soup.find(attrs={'class': 'yt-uix-tile-link'})
+                    cl.sendVideoWithURL(msg.to,'https://www.youtube.com' + results['href'])
+                except:
+                    cl.sendText(msg.to, "Could not find it")    
 
  
             elif "Say-id " in msg.text:
@@ -4093,27 +4061,20 @@ def bot(op):
                 except:
                     pass
  
-            elif "Youtubesearch: " in msg.text:
-              if msg.from_ in Creator:
-                    query = msg.text.replace("Youtube ","")
-                    with requests.session() as s:
-                        s.headers['user-agent'] = 'Mozilla/5.0'
-                        url = 'http://www.youtube.com/results'
-                        params = {'search_query': query}
-                        r = s.get(url, params=params)
-                        soup = BeautifulSoup(r.content, 'html.parser')
-                        hasil = ""
-                        for a in soup.select('.yt-lockup-title > a[title]'):
-                            if '&list=' not in a['href']:
-                                hasil += ''.join((a['title'],'\nUrl : http://www.youtube.com' + a['href'],'\n\n'))
-                        cl.sendText(msg.to,hasil)
-                        print '[Command] Youtube Search'
-              else:
-                  msg.contentType = 13
-                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                  cl.sendText(msg.to,"Untuk saat ini command\n[Youtubelink]\n[Youtubevideo]\n[Youtubesearch] dinonaktivkan")
-                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-                  cl.sendMessage(msg)
+            elif ".Youtubesearch " in msg.text:
+                query = msg.text.replace(".Youtubesearch ","")
+                with requests.session() as s:
+                    s.headers['user-agent'] = 'Mozilla/5.0'
+                    url = 'http://www.youtube.com/results'
+                    params = {'search_query': query}
+                    r = s.get(url, params=params)
+                    soup = BeautifulSoup(r.content, 'html.parser')
+                    hasil = ""
+                    for a in soup.select('.yt-lockup-title > a[title]'):
+                        if '&list=' not in a['href']:
+                            hasil += ''.join((a['title'],'\nUrl : http://www.youtube.com' + a['href'],'\n\n'))
+                    cl.sendText(msg.to,hasil)
+                    print '[Command] Youtube Search'
 
  
             elif "Tr-id " in msg.text:
@@ -4338,7 +4299,6 @@ def bot(op):
 #               kk.sendText(msg.to,"Udah ah gosip mulu doain aja biar dapet")
  
             elif "Getvid @" in msg.text:
-              if msg.from_ in admin:
                 print "[Command]dp executing"
                 _name = msg.text.replace("Getvid @","")
                 _nametarget = _name.rstrip('  ')
@@ -4358,12 +4318,6 @@ def bot(op):
                         except Exception as e:
                             raise e
                 print "[Command]dp executed"
-              else:
-                  msg.contentType = 13
-                  msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
-                  cl.sendText(msg.to,"Untuk saat ini command\n[Youtubelink]\n[Youtubevideo]\n[Youtubesearch] dinonaktivkan")
-                  cl.sendText(msg.to,"Hubungi owner dibawah ini untuk mendapatkan informasi lebih lanjut")
-                  cl.sendMessage(msg)
 
 
             elif "Getgroup image" in msg.text:
