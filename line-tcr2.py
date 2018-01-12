@@ -385,7 +385,7 @@ responsename5 = kr.getProfile().displayName
 
 
 wait = {
-    "LeaveRoom":True,
+    "LeaveRoom":False,
     "AutoJoin":False,
     "AutoJoinCancel":False,
     "memberscancel":20,
