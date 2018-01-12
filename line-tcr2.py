@@ -12,31 +12,31 @@ import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token='Eo49bOQVthmtkbnu0Hi8.XiDURzmtJIEdrCTkAatqIa.r2CTACqewioh922YPFQXSw6oUbD/TYJxR2ujNIUL+2I=')
+cl.login(token='Eo3NkN9YE6qtFeb85rX8.XiDURzmtJIEdrCTkAatqIa.J5nIZjiqtMGSjfR9CBJoygKNEqIbJn/nakcZws1+D8E=')
 cl.loginResult()
 print "Cl-Login Success\n"
 
 ki = LINETCR.LINE()
 #ki.login(qr=True)
-ki.login(token='EoNmQRO9DsFW4TLlT6a8.Av5v4LB9FM0/tRXjC4Nuga.km1KYMykZm93+8BgEcgbNat0U9puTNQuwOl4xSF/a7Q=')
+ki.login(token='EoNEnU1CRO2aSfPd6ZN8.Av5v4LB9FM0/tRXjC4Nuga.6cY2xth9ufsT95wwgKQctIddCMEUZL8FcvQf1b/jan4=')
 ki.loginResult()
 print "Ki-Login Success\n"
 
 kk = LINETCR.LINE()
 #kk.login(qr=True)
-kk.login(token='Eo0HIfYER0xUkq1n1Ew6.lTTYCD5tXzg8tGB0dlYzrG.dnXHddLLpOsh7l+EabHcexNc2ox+T2xrocpvuW8ENC0=')
+kk.login(token='Eoy9XP7F9susmtk3YCQ6.lTTYCD5tXzg8tGB0dlYzrG.7MtJ/mRI10x7B/OHA5Hh1EwjwKQHxhZjK7yXv3tuwjk=')
 kk.loginResult()
 print "Kk-Login Success\n"
 
 kc = LINETCR.LINE()
 #kc.login(qr=True)
-kc.login(token='EoGok5JSqkFbvlyOF513.guHw1Zbg7+xYNC35a+kFGW.jtqvtSlxmwTNtg8ge20mBDZwSLAZTs7EcPk15U5lezA=')
+kc.login(token='EoXJvnoD8e07Y1qSkGj3.guHw1Zbg7+xYNC35a+kFGW.V5Nf+NAwKQLJ3ki8wzVGTE6Vmq6Vlw/2X6xhspXniDU=')
 kc.loginResult()
 print "Kc-Login Success\n"
 
 kr = LINETCR.LINE()
 #kr.login(qr=True)
-kr.login(token='EoNwwTJduJhC4S6mJwE6.qhdGUjjOYv72x/iJfAISHG.a4bonBLcIoTJQFLxgWdOKemiS/DwVS9SUZlPkbc3hcg=')
+kr.login(token='EoKkEHG3YgLGcLI3pil6.qhdGUjjOYv72x/iJfAISHG.+MlnqDdRNsIYIeunpQvMpxV8OwSDB/fh1yxx5TLBqhc=')
 kr.loginResult()
 print "Kr-Login Success\n"
 
@@ -342,8 +342,9 @@ Cmid = kc.getProfile().mid
 Dmid = kr.getProfile().mid
 Emid = km.getProfile().mid
 Bots=[mid,Amid,Bmid,Cmid,Dmid,Emid]
-admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651","u467aea8464c96bd16b09a43ea9adb70e"]
+admin=["ua5f2cbc325816777be5ef529eb920c50","u354838cfb35216ada4dcfc789de6f205","uc33e556c10279d1ba84669b303da74dd","u6f1809a9977fc0e6de0ae8f740e03922","uce3f3af0c36f4bf099972c0a5687ed42","u15a96ad4cce3ed4f4a03513cad7ad822","u529ed08e968ba9d107784186eb66b76a","uaa81f36f1d8d1c9105aa347d3fee442b","u2d7040967b3413bc7e0c47800f0b71b5","u04ed2796b2b055f6ee910fe11f4592a4","u1592572d68b3f7bf057e28bd01334651","u467aea8464c96bd16b09a43ea9adb70e","u2de145ff1f62b6b416fc437dbd768c81"]
 Creator=["ua5f2cbc325816777be5ef529eb920c50"]
+anak=["uaa81f36f1d8d1c9105aa347d3fee442b","u529ed08e968ba9d107784186eb66b76a"]
 
 
 contact = cl.getProfile()
@@ -386,8 +387,8 @@ responsename5 = kr.getProfile().displayName
 wait = {
     "LeaveRoom":True,
     "AutoJoin":False,
-    "AutoJoinCancel":False,
-    "memberscancel":10,
+    "AutoJoinCancel":True,
+    "memberscancel":20,
     "Members":1,
     "AutoCancel":False,
     "AutoKick":True,
@@ -408,7 +409,7 @@ wait = {
     "comment5":"",    
     "commentOn":False,
     "commentBlack":{},
-    "message":"Thx For Add Me (^_^)\nInvite Me To Your Group ヘ(^_^)ヘ",    
+    "message":"Terima kasih telah menambahkan BOT ini menjadi teman\n\nSilahkan masukan BOT ini kedalam group mu\n\nMinimal 20 orang",    
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -690,7 +691,7 @@ def bot(op):
                                     if len(nick) == 2:
                                         cl.sendText(op.param1, "Aloow~ " + nick[0] + "\nNgintip Aja Niih. . .\nBintitan looh nanti 􀜁􀅔Har Har􏿿 ")
                                     else:
-                                        cl.sendText(op.param1, "Haii... " + nick[1] + "\nNonton terus nanti kak\nNanti sakit looh matanya")
+                                        cl.sendText(op.param1, "Haii... " + nick[1] + "\nNonton terus aja kak\nSampai sakit matanya")
                                 else:
                                     cl.sendText(op.param1, "Hallo " + Name + "\nChat bareng yuuk bro/sis\nDari pada nonton doang")
                         else:
@@ -837,7 +838,7 @@ def bot(op):
 		    G = cl.getGroup(op.param1)
                     if len(G.members) <= wait["memberscancel"]:
                         cl.acceptGroupInvitation(op.param1)
-                        cl.sendText(op.param1,"Maav... " + cl.getContact(op.param2).displayName + "\nUntuk Saat ini BOT sedang dalam perbaikan\nUntuk Informasi lebih lanjut, Silahkan hubungi owner kami dibawah ini\n\nline.me/ti/p/~KazeReborn")
+                        cl.sendText(op.param1,"Maav... " + cl.getContact(op.param2).displayName + "\nGroup kurang dari 20 orang\nUntuk Informasi lebih lanjut, Silahkan hubungi owner kami dibawah ini\n\nline.me/ti/p/~KazeReborn")
                         cl.leaveGroup(op.param1)                        
 		    else:
                         cl.acceptGroupInvitation(op.param1)
@@ -869,8 +870,6 @@ def bot(op):
 		               pass
 		           else:
 		               random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-		               if op.param2 in wait["blacklist"]:
-		                   pass
 		        else:
 			    random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
 		    except:
@@ -879,32 +878,22 @@ def bot(op):
 			        if op.param2 not in admin:
 			            if op.param2 not in Bots:
                                         random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-			    if op.param2 in wait["blacklist"]:
 			        pass
 			    else:
 			        random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
 		        except:
 			    print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
-                        if op.param2 in wait["blacklist"]:
                             pass
                         else:
 			    if op.param2 in Creator:
 			        if op.param2 in admin:
 			            if op.param2 in Bots:
 			              pass
-			    else:
-                                wait["blacklist"][op.param2] = True
-		    if op.param2 in wait["blacklist"]:
-                        pass
-                    else:
 		        if op.param2 in Creator:
 		            if op.param2 in admin:
 		                if op.param2 in Bots:
 			             pass
-		        else:
-                            wait["blacklist"][op.param2] = True
-		else:
-		    pass
+
 
 
                 if mid in op.param3:
@@ -919,8 +908,6 @@ def bot(op):
 			    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
-                        if op.param2 in wait["blacklist"]:
-                            pass
                         else:
 			    if op.param2 in Bots:
 			        pass
@@ -943,8 +930,6 @@ def bot(op):
                     else:
 		        if op.param2 in Bots:
 			    pass
-		        else:
-                            wait["blacklist"][op.param2] = True
 
                 if Amid in op.param3:
                     if op.param2 in Bots:
@@ -957,13 +942,9 @@ def bot(op):
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
-                        if op.param2 in wait["blacklist"]:
-                            pass
                         else:
 			    if op.param2 in Bots:
 			        pass
-			    else:
-                                wait["blacklist"][op.param2] = True
 
                     X = kk.getGroup(op.param1)
                     X.preventJoinByTicket = False
@@ -981,8 +962,6 @@ def bot(op):
                     else:
 		        if op.param2 in Bots:
 			    pass
-		        else:
-                            wait["blacklist"][op.param2] = True
 
                 if Bmid in op.param3:
                     if op.param2 in Bots:
@@ -995,8 +974,6 @@ def bot(op):
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
-                        if op.param2 in wait["blacklist"]:
-                            pass
                         else:
 			    if op.param2 in Bots:
 			        pass
@@ -1020,8 +997,6 @@ def bot(op):
                     else:
 		        if op.param2 in Bots:
 			    pass
-		        else:
-                            wait["blacklist"][op.param2] = True
 
                 if Cmid in op.param3:
                     if op.param2 in Bots:
@@ -1034,8 +1009,6 @@ def bot(op):
                             random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                         except:
                             print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
-                        if op.param2 in wait["blacklist"]:
-                            pass
                         else:
 			    if op.param2 in Bots:
 			        pass
@@ -1059,8 +1032,6 @@ def bot(op):
                     else:
 		        if op.param2 in Bots:
 			    pass
-		        else:
-                            wait["blacklist"][op.param2] = True
                             
                 if Dmid in op.param3:
                     if op.param2 in Bots:
@@ -1078,8 +1049,6 @@ def bot(op):
                         else:
 			    if op.param2 in Bots:
 			        pass
-			    else:
-                                wait["blacklist"][op.param2] = True
 
                     X = cl.getGroup(op.param1)
                     X.preventJoinByTicket = False
@@ -1097,9 +1066,7 @@ def bot(op):
                         pass
                     else:
 		        if op.param2 in Bots:
-			    pass
-		        else:
-                            wait["blacklist"][op.param2] = True                            
+			    pass                          
  
                 if Creator in op.param3:
                   if admin in op.param3:
@@ -1112,7 +1079,6 @@ def bot(op):
                         try:
 			    if op.param2 not in Bots:
                                 random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-			    if op.param2 in wait["blacklist"]:
 			        pass
 			    else:
 			        random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
@@ -1926,7 +1892,10 @@ def bot(op):
                 cl.sendText(msg.to,"Invite Protect Sudah Aktif")
 		print wait["inviteprotect"]
 	     else:
-		    cl.sendText(msg.to,"Khusus W⃟   I⃟   B⃟   ")		
+		    msg.contentType = 13
+		    msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
+		    cl.sendText(msg.to,"Perintah ditolak..\nCommand ini privasi hanya untuk owner kami\nUntuk informasi lebih lanjut hubungi owner kami dibawah ini")
+		    cl.sendMessage(msg) 
 
 	    elif msg.text in ["Invitepro off"]:
 	     if msg.from_ in Creator:	        
@@ -2119,7 +2088,54 @@ def bot(op):
                     cl.sendText(msg.to,"Perintah ditolak..\nCommand ini privasi hanya untuk owner kami\nUntuk informasi lebih lanjut hubungi owner kami dibawah ini")
                     cl.sendMessage(msg)
                         
+            elif "Papa" in msg.text:
+                if msg.from_ in anak:
+                 if msg.from_ in Creator:
+                    tanya = msg.text.replace("Papa","")
+                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
+                    jawaban = random.choice(jawab)
+                    cl.sendText(msg.to,jawaban)
                         
+            elif "papa" in msg.text:
+                if msg.from_ in anak:
+                 if msg.from_ in Creator:
+                    tanya = msg.text.replace("papa","")
+                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
+                    jawaban = random.choice(jawab)
+                    cl.sendText(msg.to,jawaban)
+
+            elif "pa" in msg.text:
+                if msg.from_ in anak:
+                 if msg.from_ in Creator:
+                    tanya = msg.text.replace("pa","")
+                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
+                    jawaban = random.choice(jawab)
+                    cl.sendText(msg.to,jawaban)
+
+            elif "Pa" in msg.text:
+                if msg.from_ in anak:
+                 if msg.from_ in Creator:
+                    tanya = msg.text.replace("Pa","")
+                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
+                    jawaban = random.choice(jawab)
+                    cl.sendText(msg.to,jawaban)
+										
+            elif "Paa" in msg.text:
+                if msg.from_ in anak:
+                 if msg.from_ in Creator:
+                    tanya = msg.text.replace("Paa","")
+                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
+                    jawaban = random.choice(jawab)
+                    cl.sendText(msg.to,jawaban)
+										
+            elif "paa" in msg.text:
+                if msg.from_ in anak:
+                 if msg.from_ in Creator:
+                    tanya = msg.text.replace("paa","")
+                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
+                    jawaban = random.choice(jawab)
+                    cl.sendText(msg.to,jawaban)
+										
             elif "Check on" in msg.text:
                 if msg.from_ in Creator:
                     try:
