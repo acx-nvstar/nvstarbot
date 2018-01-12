@@ -2088,54 +2088,6 @@ def bot(op):
                     cl.sendText(msg.to,"Perintah ditolak..\nCommand ini privasi hanya untuk owner kami\nUntuk informasi lebih lanjut hubungi owner kami dibawah ini")
                     cl.sendMessage(msg)
                         
-            elif "Papa" in msg.text:
-                if msg.from_ in anak:
-                 if msg.from_ in Creator:
-                    tanya = msg.text.replace("Papa","")
-                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
-                    jawaban = random.choice(jawab)
-                    cl.sendText(msg.to,jawaban)
-                        
-            elif "papa" in msg.text:
-                if msg.from_ in anak:
-                 if msg.from_ in Creator:
-                    tanya = msg.text.replace("papa","")
-                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
-                    jawaban = random.choice(jawab)
-                    cl.sendText(msg.to,jawaban)
-
-            elif "pa" in msg.text:
-                if msg.from_ in anak:
-                 if msg.from_ in Creator:
-                    tanya = msg.text.replace("pa","")
-                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
-                    jawaban = random.choice(jawab)
-                    cl.sendText(msg.to,jawaban)
-
-            elif "Pa" in msg.text:
-                if msg.from_ in anak:
-                 if msg.from_ in Creator:
-                    tanya = msg.text.replace("Pa","")
-                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
-                    jawaban = random.choice(jawab)
-                    cl.sendText(msg.to,jawaban)
-										
-            elif "Paa" in msg.text:
-                if msg.from_ in anak:
-                 if msg.from_ in Creator:
-                    tanya = msg.text.replace("Paa","")
-                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
-                    jawaban = random.choice(jawab)
-                    cl.sendText(msg.to,jawaban)
-										
-            elif "paa" in msg.text:
-                if msg.from_ in anak:
-                 if msg.from_ in Creator:
-                    tanya = msg.text.replace("paa","")
-                    jawab = ("Papa mu lagi main Osu~","Coba WA aja papa mu","Papa mu lagi ena ena sama mama","Private chat aja langsung nak","Papa lagi nganu sama mama")
-                    jawaban = random.choice(jawab)
-                    cl.sendText(msg.to,jawaban)
-										
             elif "Check on" in msg.text:
                 if msg.from_ in Creator:
                     try:
