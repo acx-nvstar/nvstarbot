@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+#Chucky_Bot
 
 import LINETCR
 from LINETCR.lib.curve.ttypes import *
@@ -3458,6 +3459,7 @@ def bot(op):
 
                     
 	    elif ".musik " in msg.text:
+	        if msg.from_ in Creator:
 					songname = msg.text.replace(".musik ","")
 					params = {"songname": songname}
 					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
@@ -3471,6 +3473,7 @@ def bot(op):
 						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
 	
             elif '.lirik ' in msg.text.lower():
+              if msg.from_ in Creator:
                 try:
                     songname = msg.text.lower().replace('.lirik ','')
                     params = {'songname': songname}
@@ -3487,6 +3490,7 @@ def bot(op):
                         cl.sendText(msg.to, str(wak))
                         
 	    elif ".musrik " in msg.text:
+	        if msg.from_ in Creator:
 					songname = msg.text.replace(".musrik ","")
 					params = {"songname": songname}
 					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
@@ -3689,6 +3693,7 @@ def bot(op):
 
 
             elif '.Youtubelink ' in msg.text:
+              if msg.from_ in Creator:
                 try:
                     textToSearch = (msg.text).replace('.Youtubelink ', "").strip()
                     query = urllib.quote(textToSearch)
@@ -3703,6 +3708,7 @@ def bot(op):
                     
                     
             elif '.Youtubevideo ' in msg.text:
+              if msg.from_ in Creator:
                 try:
                     textToSearch = (msg.text).replace('.Youtubevideo ', "").strip()
                     query = urllib.quote(textToSearch)
