@@ -3459,7 +3459,6 @@ def bot(op):
 
                     
 	    elif ".musik " in msg.text:
-	        if msg.from_ in Creator:
 					songname = msg.text.replace(".musik ","")
 					params = {"songname": songname}
 					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
@@ -3473,7 +3472,6 @@ def bot(op):
 						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
 	
             elif '.lirik ' in msg.text.lower():
-              if msg.from_ in Creator:
                 try:
                     songname = msg.text.lower().replace('.lirik ','')
                     params = {'songname': songname}
@@ -3490,7 +3488,6 @@ def bot(op):
                         cl.sendText(msg.to, str(wak))
                         
 	    elif ".musrik " in msg.text:
-	        if msg.from_ in Creator:
 					songname = msg.text.replace(".musrik ","")
 					params = {"songname": songname}
 					r = requests.get('http://ide.fdlrcn.com/workspace/yumi-apis/joox?' + urllib.urlencode(params))
@@ -3502,7 +3499,7 @@ def bot(op):
 						hasil += song[0]
 						hasil += ')\n\n'
 						hasil += song[5]
-						cl.sendText(msg.to, "Lagu " + song[0] + "\nSedang Di Prosses... Tunggu Sebentar ^_^ ")
+						cl.sendText(msg.to, "Lagu " + song[0] + "\nSedang Di Prosses... Tunggu Sebentar")
 						cl.sendAudioWithURL(msg.to,abc)
 						cl.sendText(msg.to, "Title : " + song[0] + "\nLength : " + song[1] + "\nLink download : " + song[4] +"\n\n" + hasil)
 						cl.sendText(msg.to, "Selamat Mendengarkan Lagu " + song[0])
@@ -3693,7 +3690,6 @@ def bot(op):
 
 
             elif '.Youtubelink ' in msg.text:
-              if msg.from_ in Creator:
                 try:
                     textToSearch = (msg.text).replace('.Youtubelink ', "").strip()
                     query = urllib.quote(textToSearch)
@@ -3708,7 +3704,6 @@ def bot(op):
                     
                     
             elif '.Youtubevideo ' in msg.text:
-              if msg.from_ in Creator:
                 try:
                     textToSearch = (msg.text).replace('.Youtubevideo ', "").strip()
                     query = urllib.quote(textToSearch)
