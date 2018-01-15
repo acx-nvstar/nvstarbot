@@ -22,8 +22,6 @@ class LINE:
 
   def __init__(self):
     self.Talk = Talk()
-    self._session = requests.session() 
-    self._headers = {'X-Line-Application': 'CHROMEOS\t1.4.17\tChrome_OS\t1'}    
 
   def login(self, mail=None, passwd=None, cert=None, token=None, qr=False, callback=None):
     if callback is None:
@@ -43,19 +41,20 @@ class LINE:
     self.authToken = self.Talk.authToken
     self.cert = self.Talk.cert
     self._headers = {
-              'X-Line-Application': 'CHROMEOS\t1.4.17\tChrome_OS\t1', 
-              'X-Line-Access': self.authToken, 
-              'User-Agent': 'Line/1.4.17'
+              'X-Line-Application': 'CHROMEOS\t.1.4.5\tChrome_HP\t1', #"CHROMEOS\x091.4.13\x09Chrome_OS\x091"
+              'X-Line-Access': self.authToken,
+              'User-Agent': 'Line/7.18.0'
    }
-   
+
     self.Poll = Poll(self.authToken)
-    self.channel = channel.Channel(self.authToken)
-    self.channel.login()	
-    self.mid = self.channel.mid
-    self.channel_access_token = self.channel.channel_access_token
-    self.token = self.channel.token
-    self.obs_token = self.channel.obs_token
-    self.refresh_token = self.channel.refresh_token
+#    self.channel = channel.Channel(self.authToken)
+#    self.channel.login()
+
+#    self.mid = self.channel.mid
+#    self.channel_access_token = self.channel.channel_access_token
+#    self.token = self.channel.token
+#    self.obs_token = self.channel.obs_token
+#    self.refresh_token = self.channel.refresh_token
 
 
   """User"""
