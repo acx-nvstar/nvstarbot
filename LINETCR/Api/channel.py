@@ -18,14 +18,8 @@ class Channel:
     http_query_path = "/S4"
     channel_query_path = "/CH4"
 
-    UA = "Line/7.18.0"#"Mozilla/5.0"
-    #LA = "CHROMEOS\t1.4.17\tChrome_OS\t1"#"CHROMEOS\x091.4.13\x09Chrome_OS\x091"
-    #UA = "Line/7.18.0"#"Mozilla/5.0"
-    LA = "IOSIPAD\t7.18.0\tiphone OS\t11.12.1"#"CHROMEOS\x091.4.13\x09Chrome_OS\x091"
-    #UA = "Line/6.0.0 iPad4,1 9.0.2"
-    #LA = "DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0"
-    #UA = "Line/7.18.0 AppleWebKit/534.30"#"Line/6.0.0 iPad4,1 9.0.2"
-    #LA = "DESKTOPMAC 10.10.2-YOSEMITE-x64    MAC 4.5.0"
+    UA = "Line/1.4.17"
+    LA = "CHROMEOS\t1.4.17\tChrome_OS\t1"
 
     authToken = None
     mid = None
