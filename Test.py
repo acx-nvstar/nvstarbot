@@ -8,7 +8,6 @@ from bs4 import BeautifulSoup
 from threading import Thread
 from googletrans import Translator
 from gtts import gTTS
-from socket import error as SocketError
 import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,os,subprocess,requests,tempfile,wikipedia
 
 cl = LINETCR.LINE() #NvStar Captain
@@ -3604,10 +3603,3 @@ while True:
         if (Op.type != OpType.END_OF_OPERATION):
             cl.Poll.rev = max(cl.Poll.rev, Op.revision)
             bot(Op)
-
-try:
-    response = urllib2.urlopen(request).read()
-except SocketError as e:
-    if e.errno != errno.ECONNRESET:
-        raise # Not error we are looking for
-    pass # Handle error here.
