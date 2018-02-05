@@ -9,7 +9,6 @@ from threading import Thread
 from googletrans import Translator
 from gtts import gTTS
 from socket import error as SocketError
-import errno
 import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,os,subprocess,requests,tempfile,wikipedia
 
 cl = LINETCR.LINE() #NvStar Captain
