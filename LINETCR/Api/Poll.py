@@ -18,8 +18,8 @@ class Poll:
   host = "gd2.line.naver.jp";
   port = 443;
 
-  UA = "Line/1.4.17"
-  LA = "CHROMEOS\t1.4.17\tChrome_OS\t1"
+  UA = "Line/1.4.5"
+  LA = "WIN10\t1.4.5\tiWIN-10\t11"
 
   rev = 0
 

@@ -38,7 +38,15 @@ kb = LINETCR.LINE()
 kb.login(token="EovTl8t2qlJWdAtPWLo6.qhdGUjjOYv72x/iJfAISHG.lAwW5BqiCg0YdskEokWc07DfRnD7N8YjT3gBMvsroo0=")
 kb.loginResult()
 
-ki = kk = kc = ks = ka = cl
+ka = cl
+
+ks = ku
+
+kc = ke
+
+kk = ko
+
+ki = kb
 
 print "login success"
 reload(sys)
@@ -51,7 +59,6 @@ helpMessage ="""
 ║ MEMBER COMMAND 
 ╠═════════════
 ║╔════════════
-║╠❂➣ What's new
 ║╠❂➣ Help
 ║╠❂➣ Me
 ║╠❂➣ My mid
@@ -116,119 +123,6 @@ helpMessage ="""
 ║ line.me/ti/p/~KazeReborn
 ╚═════════════
 """
-
-Setgroup ="""
-╔═════════════
-║ PRIVATE COMMAND
-╠═════════════
-║╔════════════
-║╠❂➣ Gr on/off
-║╠❂➣ Contact on/off
-║╠❂➣ Cancl on/off
-║╠❂➣ Joinn on/off
-║╠❂➣ Join on/off
-║╠❂➣ .apakah on/off
-║╠❂➣ .rate on/off
-║╚════════════
-╠═════════════
-║ Hubungi owner jika
-║ memerlukan sesuatu
-║ line.me/ti/p/~KazeReborn
-╚═════════════
-"""
-
-helptranslate ="""
-╔═════════════
-║ NvStar BOT v2.5.8
-╠═════════════
-║ TRANSLATE
-╠═════════════
-║╔════════════
-║╠❂➣Id@en
-║╠❂➣En@id
-║╠❂➣Id@jp
-║╠❂➣Jp@id
-║╠❂➣Id@th
-║╠❂➣Th@id
-║╠❂➣Id@ar
-║╠❂➣Ar@id
-║╠❂➣Id@ko
-║╠❂➣Ko@id
-║╚════════════
-╠═════════════
-║ Hubungi owner jika
-║ memerlukan sesuatu
-║ line.me/ti/p/~KazeReborn
-╚═════════════
-"""
-
-Whatsnew ="""
-=================
-  WHAT'S NEW?
-=================
-=> Update BOT dari versi 2.5.0 menjadi 2.5.8
-=> Fixed some BUG
-=> Stability Improvement
-=> Perubahan command lebih detail
-=> Sekarang member dapat mengecek kecepatan bot melalui command "Speedbot"
-=> Group ID pada command "Ginfo" sekarang di rahasiakan
-
-==================
-  PERUBAHAN COMMAND
-    MEMBER COMMAND 
-==================
-=> Speedbot
-
-=================
-  NEW OWNER COMMAND
-=================
-=> Mc (Mid check)
-
-==================
-  PERUBAHAN COMMAND
-    KHUSUS OWNER 
-==================
-=> Adminlist
-=> Kernel
-=> System
-=> Cpu
-=> Glist
-=> Group id
-=> Cn
-=> Mid @
-"""
-
-Botrule ="""
-=================
-  WHAT IS THIS BOT?
-=================
-
-Ini adalah bot gratis, jika group anda
-ingin terhindar dari kicker silahkan invite
-BOT ini ke dalam group mu
-
-=================
-  BOT RULE
-=================
-
-BOT ini akan menolak group
-jika member kurang dari 20 orang
-
-Dilarang kick member maka bot
-mengusir orang tersebut
-
-Seseorang yang merubah nama atau gambar
-group akan langsung di usir
-
-Seseorang yang membuka Link atau QR group
-akan langsung diusir
-
-=================
-RULE DIATAS TIDAK BERLAKU
-UNTUK OWNER (PEMILIK) GROUP
-=================
-"""
-
 
 
 KAC=[cl,ki,kk,kc,ks,ka,kb,ko,ke,ku]
@@ -298,9 +192,64 @@ settings = {
 setTime = {}
 setTime = wait2['setTime']
 
-def restart_program():
-    python = sys.executable
-    os.execl(python, python, * sys.argv)
+def download_page(url):
+    version = (3,0)
+    cur_version = sys.version_info
+    if cur_version >= version:     
+        import urllib,request    
+        try:
+            headers = {}
+            headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+            req = urllib,request.Request(url, headers = headers)
+            resp = urllib,request.urlopen(req)
+            respData = str(resp.read())
+            return respData
+        except Exception as e:
+            print(str(e))
+    else:                        
+        import urllib2
+        try:
+            headers = {}
+            headers['User-Agent'] = "Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17"
+            req = urllib2.Request(url, headers = headers)
+            response = urllib2.urlopen(req)
+            page = response.read()
+            return page
+        except:
+            return"Page Not found"
+
+
+def _images_get_next_item(s):
+    start_line = s.find('rg_di')
+    if start_line == -1:    
+        end_quote = 0
+        link = "no_links"
+        return link, end_quote
+    else:
+        start_line = s.find('"class="rg_meta"')
+        start_content = s.find('"ou"',start_line+90)
+        end_content = s.find(',"ow"',start_content-90)
+        content_raw = str(s[start_content+6:end_content-1])
+        return content_raw, end_content
+
+
+def _images_get_all_items(page):
+    items = []
+    while True:
+        item, end_content = _images_get_next_item(page)
+        if item == "no_links":
+            break
+        else:
+            items.append(item)      
+            time.sleep(0.1)        
+            page = page[end_content:]
+    return items
+    
+def waktu(secs):
+    mins, secs = divmod(secs,60)
+    hours, mins = divmod(mins,60)
+    return '%02d Jam %02d Menit %02d Detik' % (hours, mins, secs)      
+
 
 def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
     tex = ["+","@","/",">",";","^","%","$","＾","サテラ:","サテラ:","サテラ：","サテラ："]
@@ -310,6 +259,36 @@ def cms(string, commands): #/XXX, >XXX, ;XXX, ^XXX, %XXX, $XXX...
                 return True
     return False
 
+def upload_tempimage(client):
+     '''
+         Upload a picture of a kitten. We don't ship one, so get creative!
+     '''
+     config = {
+         'album': album,
+         'name':  'bot auto upload',
+         'title': 'bot auto upload',
+         'description': 'bot auto upload'
+     }
+
+     print("Uploading image... ")
+     image = client.upload_from_path(image_path, config=config, anon=False)
+     print("Done")
+     print()
+
+     return image
+     
+def sendAudio(self, to_, path):
+       M = Message()
+       M.text = None
+       M.to = to_
+       M.contentMetadata = None
+       M.contentPreview = None
+       M.contentType = 3
+       M_id = self._client.sendMessage(0,M).id
+       files = {
+             'file': open(path,  'rb'),
+       }
+
 def sendMessage(to, text, contentMetadata={}, contentType=0):
     mes = Message()
     mes.to, mes.from_ = to, profile.mid
@@ -318,6 +297,107 @@ def sendMessage(to, text, contentMetadata={}, contentType=0):
     if to not in messageReq:
         messageReq[to] = -1
     messageReq[to] += 1
+
+def sendImage(self, to_, path):
+      M = Message(to=to_, text=None, contentType = 1)
+      M.contentMetadata = None
+      M.contentPreview = None
+      M2 = self._client.sendMessage(0,M)
+      M_id = M2.id
+      files = {
+         'file': open(path, 'rb'),
+      }
+      params = {
+         'name': 'media',
+         'oid': M_id,
+         'size': len(open(path, 'rb').read()),
+         'type': 'image',
+         'ver': '1.0',
+      }
+      data = {
+         'params': json.dumps(params)
+      }
+      r = self.post_content('https://obs-sg.line-apps.com/talk/m/upload.nhn', data=data, files=files)
+      if r.status_code != 201:
+         raise Exception('Upload image failure.')
+      return True
+
+
+def sendImageWithURL(self, to_, url):
+      path = '%s/pythonLine-%i.data' % (tempfile.gettempdir(), randint(0, 9))
+      r = requests.get(url, stream=True)
+      if r.status_code == 200:
+         with open(path, 'w') as f:
+            shutil.copyfileobj(r.raw, f)
+      else:
+         raise Exception('Download image failure.')
+      try:
+         self.sendImage(to_, path)
+      except:
+         try:
+            self.sendImage(to_, path)
+         except Exception as e:
+            raise e
+
+def sendAudio(self, to_, path):
+        M = Message()
+        M.text = None
+        M.to = to_
+        M.contentMetadata = None
+        M.contentPreview = None
+        M.contentType = 3
+        M_id = self._client.sendMessage(0,M).id
+        files = {
+            'file': open(path, 'rb'),
+        }
+        params = {
+            'name': 'media',
+            'oid': M_id,
+            'size': len(open(path, 'rb').read()),
+            'type': 'audio',
+            'ver': '1.0',
+        }
+        data = {
+            'params': json.dumps(params)
+        }
+        r = self.post_content('https://os.line.naver.jp/talk/m/upload.nhn', data=data, files=files)
+        if r.status_code != 201:
+            raise Exception('Upload audio failure.')
+        return True
+
+def sendAudioWithURL(self, to_, url):
+        path = self.downloadFileWithURL(url)
+        try:
+            self.sendAudio(to_, path)
+        except Exception as e:
+            raise Exception(e)
+
+def sendAudioWithUrl(self, to_, url):
+        path = '%s/pythonLine-%1.data' % (tempfile.gettempdir(), randint(0, 9))
+        r = requests.get(url, stream=True, verify=False)
+        if r.status_code == 200:
+           with open(path, 'w') as f:
+              shutil.copyfileobj(r.raw, f)
+        else:
+           raise Exception('Download audio failure.')
+        try:
+            self.sendAudio(to_, path)
+        except Exception as e:
+            raise e
+            
+def downloadFileWithURL(self, fileUrl):
+        saveAs = '%s/pythonLine-%i.data' % (tempfile.gettempdir(), randint(0, 9))
+        r = self.get_content(fileUrl)
+        if r.status_code == 200:
+            with open(saveAs, 'wb') as f:
+                shutil.copyfileobj(r.raw, f)
+            return saveAs
+        else:
+            raise Exception('Download file failure.')
+
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 def NOTIFIED_READ_MESSAGE(op):
     try:
@@ -1047,17 +1127,6 @@ def bot(op):
                     cl.sendText(msg.to,Setgroup)
                 else:
                     cl.sendText(msg.to,Sett)
-            elif msg.text in ["What's new"]:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,Whatsnew)
-                else:
-                    cl.sendText(msg.to,Sett)
-            elif msg.text in ["Botrule"]:
-              if msg.from_ in creator:
-                if wait["lang"] == "JP":
-                    cl.sendText(msg.to,Botrule)
-                else:
-                    cl.sendText(msg.to,Sett)
             elif ("Gn " in msg.text):
               if msg.from_ in admin:
                 if msg.toType == 2:
@@ -1402,7 +1471,7 @@ def bot(op):
                     cl.sendText(msg.to,"Untuk mengetahui id group perlu izin dari masing masing admin dalam group untuk melihat id group")      
             elif "My mid" == msg.text:
                 random.choice(KAC).sendText(msg.to, msg.from_)
-            elif "Mid RA" == msg.text:
+            elif "Mid Nv" == msg.text:
                 if msg.from_ in admin:
                     cl.sendText(msg.to,mid)
                     ki.sendText(msg.to,Amid)

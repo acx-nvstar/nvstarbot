@@ -12,31 +12,31 @@ import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,
 
 cl = LINETCR.LINE()
 #cl.login(qr=True)
-cl.login(token='EoFHA1caIvIAgPKf4Qp8.XiDURzmtJIEdrCTkAatqIa.07j5NvgRwnlrhN/PQGm+NobEZUXlz9nPYBaVTfU7euk=')
+cl.login(token='Eo7qpby5ymgi2U5xu9d8.XiDURzmtJIEdrCTkAatqIa.xXcMEDIlKl1WSUntZDULHIKfUq9IWW2OqYX30fxKdug=')
 cl.loginResult()
 print "Cl-Login Success\n"
 
 ki = LINETCR.LINE()
 #ki.login(qr=True)
-ki.login(token='EoovaWqQqCe7nV5vfyL8.Av5v4LB9FM0/tRXjC4Nuga.EqInQTMQ8u6vAOb5+QED0AdY+xefNY6kZJAu1MPurK8=')
+ki.login(token='Eokkxib2Tk9HKWw8S7Q8.Av5v4LB9FM0/tRXjC4Nuga.lC3ShzlptUTHFZle8L29IubPfX9kOc5DayO0gpu2luo=')
 ki.loginResult()
 print "Ki-Login Success\n"
 
 kk = LINETCR.LINE()
 #kk.login(qr=True)
-kk.login(token='Eo5MuZ67oKQIMzkRSan6.lTTYCD5tXzg8tGB0dlYzrG.AuQsOPb13PAXfdTdKlixFQ0dOhjRVq+OH5FsCm9XjOk=')
+kk.login(token='EohbwvbZ1qqQIdDQVdn6.lTTYCD5tXzg8tGB0dlYzrG.zHrQN2P4nmGkGpoqjScRSy+FWFZObWLxzwlEp0jnKMM=')
 kk.loginResult()
 print "Kk-Login Success\n"
 
 kc = LINETCR.LINE()
 #kc.login(qr=True)
-kc.login(token='EoWQ8DQHiPIHQsV1u1q3.guHw1Zbg7+xYNC35a+kFGW.68Hi7nTMjFR9By+8zG9j+iCanINx23DZJfs/iF90RPQ=')
+kc.login(token='Eoev9U4s3j9Y9V8VIyi3.guHw1Zbg7+xYNC35a+kFGW.e7v74vlH78o7o+ZCD2zQGvKIRAu98VAs30ZPPOJrCqE=')
 kc.loginResult()
 print "Kc-Login Success\n"
 
 kr = LINETCR.LINE()
 #kr.login(qr=True)
-kr.login(token='Eo9ZMVcZ6nhBWw2Wi6e6.qhdGUjjOYv72x/iJfAISHG.zR8xban54fF0G4iifhQxX3GtUsbGxPtOrUbkn1Jdvao=')
+kr.login(token='EodHIL7TiQHbSqvwf7I6.qhdGUjjOYv72x/iJfAISHG.vqqPe1zbeb/W4CvK+LeDfZ/+Zmc3Mt8hRp0Av0Q8vzw=')
 kr.loginResult()
 print "Kr-Login Success\n"
 
@@ -384,7 +384,7 @@ responsename5 = kr.getProfile().displayName
 
 
 wait = {
-    "LeaveRoom":True,
+    "LeaveRoom":False,
     "AutoJoin":False,
     "AutoJoinCancel":False,
     "memberscancel":20,
@@ -807,6 +807,9 @@ def bot(op):
 		    if op.param3 in wait["blacklist"]:
 			cl.cancelGroupInvitation(op.param1, [op.param3])
 			cl.sendText(op.param1, "Blacklist Detected")
+			cl.sendText(op.param1, "Jika teman mu masuk kedalam daftar blacklist\nHubungi admin BOT dalam group kamu")
+			cl.sendText(op.param1, "Untuk admin BOT silahkan ketik [Clear ban]\nUntuk membersihkan daftar blacklist")
+			cl.sendText(op.param1, "Atau bisa hubungi owner kamu dibawah ini\n\nline.me/ti/p/~KazeReborn")
 		    else:
 			pass
 			
@@ -863,153 +866,286 @@ def bot(op):
 
         if op.type == 19:
             if op.param3 in admin:
-                random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                random.choice(KAC).inviteIntoGroup(op.param1,admin)
+              random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+              cl.inviteIntoGroup(op.param1,admin)
             else:
                 pass
 
         if op.type == 19:
-          if op.param2 in Bots:
-            pass
-          if op.param2 in admin:
-            pass
-          else:
-            if op.param3 in mid:
-              if op.param2 not in Bots or admin:
-                try:
-                  G = ki.getGroup(op.param1)
-                  kk.kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  kk.updateGroup(G)
-                  Ticket = kk.reissueGroupTicket(op.param1)
-                  ki.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  kk.updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                except:
-                  G = random.choice(KAC).getGroup(op.param1) #Sanji Bertindak
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  random.choice(KAC).updateGroup(G)
-                  Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
-                  ki.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  random.choice(KAC).updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                  
-            if op.param3 in Bmid:
-              if op.param2 not in Bots or admin:
-                try:
-                  G = kc.getGroup(op.param1)
-                  kc.kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  kc.updateGroup(G)
-                  Ticket = kc.reissueGroupTicket(op.param1)
-                  kk.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  kc.updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                except:
-                  G = random.choice(KAC).getGroup(op.param1) #Sanji Bertindak
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  random.choice(KAC).updateGroup(G)
-                  Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
-                  kk.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  random.choice(KAC).updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                  
-            if op.param3 in Cmid:
-              if op.param2 not in Bots or admin:
-                try:
-                  G = kr.getGroup(op.param1)
-                  kr.kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  kr.updateGroup(G)
-                  Ticket = kr.reissueGroupTicket(op.param1)
-                  kc.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  kr.updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                except:
-                  G = random.choice(KAC).getGroup(op.param1) #Sanji Bertindak
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  random.choice(KAC).updateGroup(G)
-                  Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
-                  kc.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  random.choice(KAC).updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                  
-            if op.param3 in Dmid:
-              if op.param2 not in Bots or admin:
-                try:
-                  G = cl.getGroup(op.param1)
-                  cl.kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  cl.updateGroup(G)
-                  Ticket = cl.reissueGroupTicket(op.param1)
-                  kr.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  cl.updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                except:
-                  G = random.choice(KAC).getGroup(op.param1) #Sanji Bertindak
-                  random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                  G.preventJoinByTicket = False
-                  random.choice(KAC).updateGroup(G)
-                  Ticket = random.choice(KAC).reissueGroupTicket(op.param1)
-                  kr.acceptGroupInvitationByTicket(op.param1,Ticket)
-                  time.sleep(0.01)
-                  G.preventJoinByTicket = True
-                  random.choice(KAC).updateGroup(G)
-                  wait["blacklist"][op.param2] = True
-                  f=codecs.open('st2__b.json','w','utf-8')
-                  json.dump(wait["blacklist"], f, sort_keys=True, indent=4,ensure_ascii=False)
-                  
-            if op.param3 in admin:
-              if op.param2 not in Bots:
-                try:
-                  cl.kickoutFromGroup(op.param1,[op.param2])
-                  cl.inviteIntoGroup(op.param1,[op.param3])
-                  wait["blacklist"][op.param2] = True
-                except:
-                  try:
-                    cl.kickoutFromGroup(op.param1,[op.param2])
-                    cl.inviteIntoGroup(op.param1,[admin])
-                    wait["blacklist"][op.param2] = True
-                  except:
+		if wait["AutoKick"] == True:
+		    try:
+			if op.param3 in Creator:
+			 if op.param3 in admin:
+			  if op.param3 in Bots:
+			      pass
+		         if op.param2 in Creator:
+		          if op.param2 in admin:
+		           if op.param2 in Bots:
+		               pass
+		           else:
+		               random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+		               if op.param2 in wait["blacklist"]:
+		                   pass
+		        else:
+			    random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+		    except:
+		        try:
+			    if op.param2 not in Creator:
+			        if op.param2 not in admin:
+			            if op.param2 not in Bots:
+                                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+			    if op.param2 in wait["blacklist"]:
+			        pass
+			    else:
+			        random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+		        except:
+			    print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        else:
+			    if op.param2 in Creator:
+			        if op.param2 in admin:
+			            if op.param2 in Bots:
+			              pass
+			    else:
+                                wait["blacklist"][op.param2] = True
+		    if op.param2 in wait["blacklist"]:
+                        pass
+                    else:
+		        if op.param2 in Creator:
+		            if op.param2 in admin:
+		                if op.param2 in Bots:
+			             pass
+		        else:
+                            wait["blacklist"][op.param2] = True
+		else:
+		    pass
+
+
+                if mid in op.param3:
+                    if op.param2 in Creator:
+                      if op.param2 in Bots:
+                        pass
                     try:
-                      random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                      random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
-                      wait["blacklist"][op.param2] = True
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+			random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                     except:
-                      random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
-                      random.choice(KAC).inviteIntoGroup(op.param1,[admin])
-                      wait["blacklist"][op.param2] = True
+                        try:
+			    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        else:
+			    if op.param2 in Bots:
+			        pass
+			    else:
+                                wait["blacklist"][op.param2] = True
+                    G = ki.getGroup(op.param1)
+                    G.preventJoinByTicket = False
+                    ki.updateGroup(G)
+                    Ti = ki.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kr.acceptGroupInvitationByTicket(op.param1,Ti)
+                    X = cl.getGroup(op.param1)
+                    X.preventJoinByTicket = True
+                    cl.updateGroup(X)
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    else:
+		        if op.param2 in Bots:
+			    pass
+		        else:
+                            wait["blacklist"][op.param2] = True
+
+                if Amid in op.param3:
+                    if op.param2 in Bots:
+                        pass
+                    try:
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        else:
+			    if op.param2 in Bots:
+			        pass
+			    else:
+                                wait["blacklist"][op.param2] = True
+
+                    X = kk.getGroup(op.param1)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    Ti = kk.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kr.acceptGroupInvitationByTicket(op.param1,Ti)
+                    G = ki.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    ki.updateGroup(G)
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    else:
+		        if op.param2 in Bots:
+			    pass
+		        else:
+                            wait["blacklist"][op.param2] = True
+
+                if Bmid in op.param3:
+                    if op.param2 in Bots:
+                        pass
+                    try:
+                        kc.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        else:
+			    if op.param2 in Bots:
+			        pass
+			    else:
+                                wait["blacklist"][op.param2] = True
+
+                    X = kc.getGroup(op.param1)
+                    X.preventJoinByTicket = False
+                    kc.updateGroup(X)
+                    Ti = kc.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kr.acceptGroupInvitationByTicket(op.param1,Ti)
+                    G = kk.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    kk.updateGroup(G)
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    else:
+		        if op.param2 in Bots:
+			    pass
+		        else:
+                            wait["blacklist"][op.param2] = True
+
+                if Cmid in op.param3:
+                    if op.param2 in Bots:
+                        pass
+                    try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        else:
+			    if op.param2 in Bots:
+			        pass
+			    else:
+                                wait["blacklist"][op.param2] = True
+
+                    X = cl.getGroup(op.param1)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    Ti = cl.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kr.acceptGroupInvitationByTicket(op.param1,Ti)
+                    G = kc.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    kc.updateGroup(G)
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    else:
+		        if op.param2 in Bots:
+			    pass
+		        else:
+                            wait["blacklist"][op.param2] = True
+                            
+                if Dmid in op.param3:
+                    if op.param2 in Bots:
+                        pass
+                    try:
+                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        kk.kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+                            random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                        except:
+                            print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        else:
+			    if op.param2 in Bots:
+			        pass
+			    else:
+                                wait["blacklist"][op.param2] = True
+
+                    X = cl.getGroup(op.param1)
+                    X.preventJoinByTicket = False
+                    cl.updateGroup(X)
+                    Ti = cl.reissueGroupTicket(op.param1)
+                    cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                    ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                    kr.acceptGroupInvitationByTicket(op.param1,Ti)
+                    G = kc.getGroup(op.param1)
+                    G.preventJoinByTicket = True
+                    kc.updateGroup(G)
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    else:
+		        if op.param2 in Bots:
+			    pass
+		        else:
+                            wait["blacklist"][op.param2] = True                            
+ 
+                if Creator in op.param3:
+                  if admin in op.param3:
+                    if op.param2 in Bots:
+                        pass
+                    try:
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+			random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+                    except:
+                        try:
+			    if op.param2 not in Bots:
+                                random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
+			    if op.param2 in wait["blacklist"]:
+			        pass
+			    else:
+			        random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+                        except:
+                            print ("client Kick regulation or Because it does not exist in the group\ngid=["+op.param1+"]\nmid=["+op.param2+"]")
+                        if op.param2 in wait["blacklist"]:
+                            pass
+                        if op.param2 in wait["whitelist"]:
+                            pass
+                        else:
+                            wait["blacklist"][op.param2] = True
+                    random.choice(KAC).inviteIntoGroup(op.param1,[op.param3])
+                    if op.param2 in wait["blacklist"]:
+                        pass
+                    if op.param2 in wait["whitelist"]:
+                        pass
+                    else:
+                        wait["blacklist"][op.param2] = True
 
 
         if op.type == 11:
@@ -3154,7 +3290,7 @@ def bot(op):
                                 except:
                                     ki.sendText(msg.to,"Error")
 			    else:
-				cl.sendText(msg.to,"Tidak dapat kick admin BOT ini")
+				cl.sendText(msg.to,"Tidak dapat Banned admin BOT ini")
                 else:
                   msg.contentType = 13
                   msg.contentMetadata = {'mid': "ua5f2cbc325816777be5ef529eb920c50"}
@@ -3205,7 +3341,7 @@ def bot(op):
                                 
                                 
             elif msg.text.lower() == 'clear ban':
-                if msg.from_ in Creator:
+                if msg.from_ in admin:
                     wait["blacklist"] = {}
                     cl.sendText(msg.to,"Blacklist di bersihkan") 
                     cl.sendText(msg.to,"Semua akun telah dibersihkan") 

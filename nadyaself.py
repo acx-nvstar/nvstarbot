@@ -12,7 +12,7 @@ import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,
 
 nadya = LINETCR.LINE()
 #nadya.login(qr=True)
-nadya.login(token='TOKEN_KAMU_DISINI_BEIB')
+nadya.login(token='')
 nadya.loginResult()
 print "Nadya-Login Success\n\n=====[Sukses Login]====="
 

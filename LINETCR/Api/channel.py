@@ -18,8 +18,9 @@ class Channel:
     http_query_path = "/S4"
     channel_query_path = "/CH4"
 
-    UA = "Line/1.4.17"
-    LA = "CHROMEOS\t1.4.17\tChrome_OS\t1"
+    UA = "Line/1.4.5"
+    LA = "WIN10\t1.4.5\tiWIN-10\t11"
+    
 
     authToken = None
     mid = None
@@ -42,7 +43,7 @@ class Channel:
         self.transport.path = self.channel_query_path
 
     def login(self):
-        result = self.client.issueChannelToken("1341209950")
+        result = self.client.issueChannelToken("1341209850")
 
         self.channel_access_token = result.channelAccessToken
         self.token = result.token
@@ -324,4 +325,4 @@ class Channel:
         #files = files
         #)
         return r.json()
-        #kr.createAlbum("cea9d61ba824e937aaf91637991ac934b","ss3ai","kawamuki.png")
+        #cl.createAlbum("cea9d61ba824e937aaf91637991ac934b","ss3ai","kawamuki.png")

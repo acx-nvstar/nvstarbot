@@ -22,8 +22,9 @@ class LINE:
 
   def __init__(self):
     self.Talk = Talk()
-    self._session = requests.session()
-    self._headers = {'X-Line-Application': 'CHROMEOS\t1.4.17\tChrome_OS\t1', 'X-Line-Access': self.authToken, 'User-Agent': 'Line/1.4.17'}
+    self._session = requests.session() 
+    self._headers = {'X-Line-Application': 'WIN10\t1.4.5\tiWIN-10\t11'}    
+    #self._headers = {'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0'}    
 
   def login(self, mail=None, passwd=None, cert=None, token=None, qr=False, callback=None):
     if callback is None:
@@ -43,18 +44,20 @@ class LINE:
     self.authToken = self.Talk.authToken
     self.cert = self.Talk.cert
     self._headers = {
-              'X-Line-Application': 'CHROMEOS\t1.4.17\tChrome_OS\t1', 
+              #'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0', 
+              'X-Line-Application': 'WIN10\t1.4.5\tiWIN-10\t11', 
               'X-Line-Access': self.authToken, 
-              'User-Agent': 'Line/1.4.17'
+              'User-Agent': 'Line/1.4.5'
    }
+   
     self.Poll = Poll(self.authToken)
-    #self.channel = channel.Channel(self.authToken)
-    #self.channel.login()	
-    #self.mid = self.channel.mid
-    #self.channel_access_token = self.channel.channel_access_token
-    #self.token = self.channel.token
-    #self.obs_token = self.channel.obs_token
-    #self.refresh_token = self.channel.refresh_token
+    self.channel = channel.Channel(self.authToken)
+    self.channel.login()	
+    self.mid = self.channel.mid
+    self.channel_access_token = self.channel.channel_access_token
+    self.token = self.channel.token
+    self.obs_token = self.channel.obs_token
+    self.refresh_token = self.channel.refresh_token
 
 
   """User"""
@@ -73,7 +76,7 @@ class LINE:
 
   def updateSettings(self, settingObject):
     return self.Talk.client.updateSettings(0, settingObject)
-  
+
   def cloneContactProfile(self, mid):
       contact = self.getContact(mid) 
       profile = self.getProfile()
@@ -82,9 +85,9 @@ class LINE:
       profile.pictureStatus = contact.pictureStatus
       self.updateDisplayPicture(profile.pictureStatus)
       return self.updateProfile(profile)
-
+    
   def updateDisplayPicture(self, hash_id):
-    return self.Talk.client.updateProfileAttribute(0, 8, hash_id)
+      return self.Talk.client.updateProfileAttribute(0, 8, hash_id)
 
 
   """Operation"""
@@ -183,6 +186,7 @@ class LINE:
          self.sendAudio(to_, path)
       except Exception as e:
          raise e
+         
   def sendAudio(self, to_, path):
       M = Message(to=to_,contentType = 3)
       M.contentMetadata = None
@@ -205,6 +209,7 @@ class LINE:
       if r.status_code != 201:
          raise Exception('Upload image failure.')
       return True
+      
   def sendVideo(self, to_, path):
       M = Message(to=to_,contentType = 2)
       M.contentMetadata = {
@@ -312,11 +317,11 @@ class LINE:
 
   def getMessageBoxWrapUpList(self, start, messageBoxCount):
         return self.Talk.client.getMessageBoxWrapUpList(start, messageBoxCount)
-    
+        
   def getCover(self,mid):
         h = self.getHome(mid)
         objId = h["result"]["homeInfo"]["objectId"]
-        return "http://dl.profile.line-cdn.net/myhome/c/download.nhn?userid=" + mid+ "&oid=" + objId    
+        return "http://dl.profile.line-cdn.net/myhome/c/download.nhn?userid=" + mid+ "&oid=" + objId        
 
   """Contact"""
 
@@ -423,7 +428,7 @@ class LINE:
 
   def updateGroup(self, groupObject):
         return self.Talk.client.updateGroup(0, groupObject)
-    
+        
   def findGroupByTicket(self,ticketId):
         return self.Talk.client.findGroupByTicket(0,ticketId)
 
@@ -492,15 +497,15 @@ class LINE:
     else:
       return 5
 
-  def loginResult(self, callback=None):
-    if callback is None:
+  def loginResult(self, callback=True):
+    if callback is True:
       callback = def_callback
 
       prof = self.getProfile()
 
       print("===============[NvStar Protection]================")
       print("        Thanks for TCR and my friend")
-      print("===============[NvStar Agy Pascha]================")
+      print("===============[NvStar] Agy Pascha================")
       print("mid -> " + prof.mid)
       print("name -> " + prof.displayName)
       print("authToken -> " + self.authToken)
