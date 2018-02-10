@@ -11,23 +11,23 @@ from gtts import gTTS
 import time,random,sys,json,codecs,threading,glob,urllib,urllib2,urllib3,re,ast,os,subprocess,requests,tempfile,wikipedia
 
 cl = LINETCR.LINE() #NvStar Captain
-cl.login(token='Ep2tjCyxj75wgf0RUWpb.9ji8SkFfgD8JtZs6ydV82W.WN33OtrIXLQPxzhTt22k3gI7/rKq6lbBEZnb5FGo6do=')
+cl.login(token='')
 cl.loginResult()
 
 #ki = LINETCR.LINE() #NvStar Protection 2
-#ki.login(token='Ep2tjCyxj75wgf0RUWpb.9ji8SkFfgD8JtZs6ydV82W.WN33OtrIXLQPxzhTt22k3gI7/rKq6lbBEZnb5FGo6do=')
+#ki.login(token='')
 #ki.loginResult()
 
 kk = LINETCR.LINE() #NvStar Protection 3
-kk.login(token='EpE5sCyEnTXEEwUT1Ae3.jdyOWRLffB6A0N6J2PyaWW.XdJz30IFf+5LUrcYTniT1sMg2YIGJxNP5+tRAWQP9dE=')
+kk.login(token='')
 kk.loginResult()
 
 kc = LINETCR.LINE() #NvStar Protection 4
-kc.login(token='Ep2lWopsvibKmXXxHC9d.4xpugoN02ultPiyRgGiahq.82mlL+YdW5n4x9lDGJjNZZl7plBGwqXDGov4dysHCZg=')
+kc.login(token='')
 kc.loginResult()
 
 ks = LINETCR.LINE() #NvStar Protection 5
-ks.login(token='Ep0sMwfRo7qT31RJ1wQ3.BhXPEnTSoV/wf8Am4MRdiW.GldgH4hpDcrhWXo1GjXf2jdjbgUqRIVVeDzGb53HmKU=')
+ks.login(token='')
 ks.loginResult()
 
 ki = cl
