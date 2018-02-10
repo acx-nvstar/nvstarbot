@@ -21,7 +21,7 @@ class Talk:
   port = 443;
 
   UA = "Line/1.4.5"
-  LA = "WIN10\t1.4.5\tiWIN-10\t11"
+  LA = ""
 
   authToken = None
   cert = None
