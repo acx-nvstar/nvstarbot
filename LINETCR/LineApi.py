@@ -22,9 +22,8 @@ class LINE:
 
   def __init__(self):
     self.Talk = Talk()
-    self._session = requests.session() 
-    self._headers = {'X-Line-Application': 'WIN10\t1.4.5\tiWIN-10\t11'}    
-    #self._headers = {'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0'}    
+    self._session = requests.session()   
+    self._headers = {'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0'}    
 
   def login(self, mail=None, passwd=None, cert=None, token=None, qr=False, callback=None):
     if callback is None:
@@ -44,8 +43,7 @@ class LINE:
     self.authToken = self.Talk.authToken
     self.cert = self.Talk.cert
     self._headers = {
-              #'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0', 
-              'X-Line-Application': 'WIN10\t1.4.5\tiWIN-10\t11', 
+              'X-Line-Application': 'DESKTOPMAC 10.10.2-YOSEMITE-x64 MAC 4.5.0', 
               'X-Line-Access': self.authToken, 
               'User-Agent': 'Line/1.4.5'
    }
